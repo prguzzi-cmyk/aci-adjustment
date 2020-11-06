@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.less';
 
-import { Button } from 'antd';
+import { Layout, Menu, Breadcrumb } from 'antd';
 
-import { SmileFilled } from '@ant-design/icons';
-
-import Link from 'next/link';
+const { Header, Content, Footer } = Layout;
 
 export default function Home() {
 	return (
@@ -14,70 +12,29 @@ export default function Home() {
 				<title>Create Next App</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-
-			<main className={styles.main}>
-				<h1 className={styles.title}>
-					Welcome to <a href='https://nextjs.org'>Next.js!</a>
-				</h1>
-
-				<p className={styles.description}>
-					Get started by editing{' '}
-					<code className={styles.code}>pages/index.js</code>
-				</p>
-
-				<div className={styles.grid}>
-					<a href='https://nextjs.org/docs' className={styles.card}>
-						<h3>Documentation &rarr;</h3>
-						<p>Find in-depth information about Next.js features and API.</p>
-					</a>
-
-					<a href='https://nextjs.org/learn' className={styles.card}>
-						<h3>Learn &rarr;</h3>
-						<p>Learn about Next.js in an interactive course with quizzes!</p>
-					</a>
-
-					<a
-						href='https://github.com/vercel/next.js/tree/master/examples'
-						className={styles.card}
-					>
-						<h3>Examples &rarr;</h3>
-						<p>Discover and deploy boilerplate example Next.js projects.</p>
-					</a>
-
-					<a
-						href='https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-						className={styles.card}
-					>
-						<h3>Deploy &rarr;</h3>
-						<p>
-							Instantly deploy your Next.js site to a public URL with Vercel.
-						</p>
-					</a>
+			<Header>
+				<div className='logo' />
+				<Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
+					<Menu.Item key='1'>nav 1</Menu.Item>
+					<Menu.Item key='2'>nav 2</Menu.Item>
+					<Menu.Item key='3'>nav 3</Menu.Item>
+				</Menu>
+			</Header>
+			<Content style={{ padding: '0 50px' }}>
+				<Breadcrumb style={{ margin: '16px 0' }}>
+					<Breadcrumb.Item>Home</Breadcrumb.Item>
+					<Breadcrumb.Item>List</Breadcrumb.Item>
+					<Breadcrumb.Item>App</Breadcrumb.Item>
+				</Breadcrumb>
+				<div className='site-layout-content'>
+					<h1 className={styles.title}>
+						Welcome to <a href='https://nextjs.org'>Next.js!</a>
+					</h1>
 				</div>
-				<Button size='large' type='primary' htmlType='submit'>
-					OK
-				</Button>
-				<Button size='large' style={{ marginLeft: 8 }}>
-					Cancel
-				</Button>
-
-				<Link href='#'>
-					<a className='logo mr-0'>
-						<SmileFilled size={48} strokeWidth={1} />
-					</a>
-				</Link>
-			</main>
-
-			<footer className={styles.footer}>
-				<a
-					href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Powered by{' '}
-					<img src='/vercel.svg' alt='Vercel Logo' className={styles.logo} />
-				</a>
-			</footer>
-		</div>
+			</Content>
+			<Footer style={{ textAlign: 'center' }}>
+				Ant Design ©2018 Created by Ant UED
+			</Footer>
+		</Layout>
 	);
 }
