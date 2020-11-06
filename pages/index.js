@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout;
 
 export default function Home() {
 	return (
-		<div className='container'>
+		<Layout className='container'>
 			<Head>
 				<title>Create Next App</title>
 				<link rel='icon' href='/favicon.ico' />
