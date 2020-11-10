@@ -1,16 +1,14 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.less';
-
 import { Layout, Menu, Breadcrumb } from 'antd';
+
+import Head from 'next/head';
 
 const { Header, Content, Footer } = Layout;
 
-export default function Home() {
+const LayoutCommon = ({ title }) => {
 	return (
 		<Layout className='container'>
 			<Head>
-				<title>Create Next App</title>
-				<link rel='icon' href='/favicon.ico' />
+				<title>{title}</title>
 			</Head>
 			<Header>
 				<div className='logo' />
@@ -32,7 +30,7 @@ export default function Home() {
 					<Breadcrumb.Item>App</Breadcrumb.Item>
 				</Breadcrumb>
 				<div className='site-layout-content'>
-					<h1 className={styles.title}>
+					<h1 className='title'>
 						Welcome to <a href='https://nextjs.org'>Next.js!</a>
 					</h1>
 				</div>
@@ -42,4 +40,6 @@ export default function Home() {
 			</Footer>
 		</Layout>
 	);
-}
+};
+
+export default LayoutCommon;
