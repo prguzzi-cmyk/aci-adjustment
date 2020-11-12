@@ -1,27 +1,4 @@
-/* Alignment classes */
-.text-center {
-	text-align: center !important;
-}
-
-.left {
-	float: left !important;
-}
-
-.right {
-	float: right !important;
-}
-
-.margin-auto {
-	margin: auto;
-}
-
-.no-margin {
-	margin: 0;
-}
-
-.inline {
-	display: inline;
-}
+@import './variables.less';
 
 /* Section container */
 .ant-layout {
@@ -59,7 +36,7 @@
 					height: 2px;
 					background: #001529;
 					margin-top: 4px;
-					transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+					transition: transform 0.3s @ease-in-out, opacity 0.3s @ease-in-out;
 				}
 			}
 
@@ -77,8 +54,9 @@
 
 				&.mobile-nav {
 					position: absolute;
+					visibility: hidden;
 					opacity: 0;
-					transition: opacity 0.3s ease-in-out;
+					transition: opacity 0.3s @ease-in-out;
 				}
 			}
 
@@ -101,6 +79,7 @@
 				}
 
 				.navbar {
+					visibility: visible;
 					opacity: 1;
 					pointer-events: auto;
 				}

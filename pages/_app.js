@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import '../styles/globals.less';
+import '../styles/utils.less';
 
 function MyApp({ Component, pageProps }) {
 	return (

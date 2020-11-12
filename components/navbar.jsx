@@ -23,7 +23,7 @@ const Navbar = ({ isMobile }) => {
 		<Row className={`nav-container ${phoneOpen ? 'open' : ''}`}>
 			<Col flex={isMobile ? '1 1 100%' : '1 1 auto'}>
 				<TweetOne
-					className={isMobile ? 'logo-container left' : 'logo-container'}
+					className={'logo-container'}
 					animation={{ x: 60, type: 'from', ease: 'easeOutQuad' }}
 				>
 					<Link href='/'>
@@ -39,10 +39,7 @@ const Navbar = ({ isMobile }) => {
 				</TweetOne>
 
 				{isMobile && (
-					<div
-						className='nav-toggle right'
-						onClick={() => setPhoneOpen(!phoneOpen)}
-					>
+					<div className='nav-toggle' onClick={() => setPhoneOpen(!phoneOpen)}>
 						<em />
 						<em />
 						<em />

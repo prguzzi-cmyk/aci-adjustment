@@ -39,7 +39,7 @@ const LayoutCommon = ({ title }) => {
 					</h1>
 				</div>
 			</Content>
-			<Footer style={{ textAlign: 'center' }}>
+			<Footer className='text-center'>
 				Ant Design ©2018 Created by Ant UED
 			</Footer>
 		</Layout>
