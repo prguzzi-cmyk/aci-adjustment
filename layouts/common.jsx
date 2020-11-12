@@ -1,27 +1,31 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { useState, useEffect } from 'react';
+
+import { Layout, Breadcrumb } from 'antd';
 
 import Head from 'next/head';
+
+import { enquireScreen } from 'enquire-js';
+
+import Navbar from '../components/navbar';
 
 const { Header, Content, Footer } = Layout;
 
 const LayoutCommon = ({ title }) => {
+	const [isMobile, setIsMobile] = useState();
+
+	useEffect(() => {
+		enquireScreen((b) => {
+			setIsMobile(!!b);
+		});
+	}, []);
+
 	return (
 		<Layout className='container'>
 			<Head>
 				<title>{title}</title>
 			</Head>
 			<Header>
-				<div className='logo' />
-				<Menu theme='light' mode='horizontal' defaultSelectedKeys={['home']}>
-					<Menu.Item key='home'>Home</Menu.Item>
-					<Menu.Item key='appointment'>Schedule Appointment</Menu.Item>
-					<Menu.Item key='services'>Our Services</Menu.Item>
-					<Menu.Item key='faq'>FAQ</Menu.Item>
-					<Menu.Item key='careers'>Careers</Menu.Item>
-					<Menu.Item key='contact'>Contact Us</Menu.Item>
-					<Menu.Item key='claim'>File a Claim</Menu.Item>
-					<Menu.Item key='about'>About Us</Menu.Item>
-				</Menu>
+				<Navbar isMobile={isMobile} />
 			</Header>
 			<Content style={{ padding: '0 50px' }}>
 				<Breadcrumb style={{ margin: '16px 0' }}>

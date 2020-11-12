@@ -1,0 +1,116 @@
+import { useState } from 'react';
+
+import { Menu } from 'antd';
+
+import { Row, Col, Typography } from 'antd';
+
+import Image from 'next/image';
+
+import TweetOne from 'rc-tween-one';
+
+import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
+
+const { Link } = Typography;
+
+const { SubMenu } = Menu;
+
+const Navbar = ({ isMobile }) => {
+	const [phoneOpen, setPhoneOpen] = useState(undefined);
+
+	const moment = phoneOpen === undefined ? 300 : null;
+
+	return (
+		<Row className={`nav-container ${phoneOpen ? 'open' : ''}`}>
+			<Col flex={isMobile ? '1 1 100%' : '1 1 auto'}>
+				<TweetOne
+					className={isMobile ? 'logo-container left' : 'logo-container'}
+					animation={{ x: 60, type: 'from', ease: 'easeOutQuad' }}
+				>
+					<Link href='/'>
+						<Image
+							className='logo'
+							src='/images/logo.png'
+							alt='Logo'
+							width={113}
+							height={50}
+							quality={100}
+						/>
+					</Link>
+				</TweetOne>
+
+				{isMobile && (
+					<div
+						className='nav-toggle right'
+						onClick={() => setPhoneOpen(!phoneOpen)}
+					>
+						<em />
+						<em />
+						<em />
+					</div>
+				)}
+			</Col>
+
+			<Col flex={isMobile ? '0 1 100%' : '0 1 auto'}>
+				<TweetOne
+					animation={
+						isMobile
+							? {
+									x: 0,
+									height: 0,
+									duartion: 300,
+									onComplete: (e) => {
+										if (phoneOpen) {
+											e.target.style.height = 'auto';
+										}
+									},
+									ease: 'easeInOutQuad',
+							  }
+							: null
+					}
+					moment={moment}
+					reverse={!!phoneOpen}
+				>
+					<Menu
+						className={`navbar ${isMobile ? 'mobile-nav' : ''}`}
+						theme='light'
+						mode={isMobile ? 'inline' : 'horizontal'}
+						defaultSelectedKeys={['home']}
+						overflowedIndicator={<MenuOutlined />}
+					>
+						<Menu.Item key='home' icon={<HomeTwoTone />}>
+							Home
+						</Menu.Item>
+						<Menu.Item key='appointment'>Schedule Appointment</Menu.Item>
+						<SubMenu key='services' title='Our Services'>
+							<Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
+							<Menu.Item key='file-claim'>File a Claim</Menu.Item>
+							<Menu.Item key='policy-review'>Policy Review</Menu.Item>
+						</SubMenu>
+						<SubMenu key='faq' title='FAQ'>
+							<SubMenu key='ques-claim' title='Questions About your Claim'>
+								<Menu.Item key='claim-denied'>
+									Home Owners insurance Claim Denied
+								</Menu.Item>
+							</SubMenu>
+							<SubMenu key='covered' title='Whats Covered?'>
+								<Menu.Item key='fire'>Fire</Menu.Item>
+								<Menu.Item key='oil-heater'>Oil Heater Puff Backs</Menu.Item>
+								<Menu.Item key='real-estate'>Real Estate</Menu.Item>
+								<Menu.Item key='storm'>Storm Claims</Menu.Item>
+								<Menu.Item key='water'>Water Claims</Menu.Item>
+							</SubMenu>
+						</SubMenu>
+						<Menu.Item key='careers'>Careers</Menu.Item>
+						<Menu.Item key='blog'>Blog</Menu.Item>
+						<SubMenu key='about' title='About Us'>
+							<Menu.Item key='testimonials'>Testimonials</Menu.Item>
+						</SubMenu>
+						<Menu.Item key='contact'>Contact Us</Menu.Item>
+					</Menu>
+				</TweetOne>
+			</Col>
+		</Row>
+	);
+};
+
+export default Navbar;
