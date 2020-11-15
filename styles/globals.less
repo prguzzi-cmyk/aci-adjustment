@@ -1,14 +1,22 @@
-@import './variables.less';
+@import './theme.less';
 
 /* Section container */
 .ant-layout {
 	/* Header */
 	.ant-layout-header {
 		height: auto;
+		padding: 0px;
+		background-color: @banner-background;
+		background-image: linear-gradient(
+			to top,
+			fade(@banner-background, 30) 0%,
+			fade(@banner-background-gradient, 30) 100%
+		);
 
 		/* Navigation Container */
 		.nav-container {
 			width: 100%;
+			padding: 0 50px;
 
 			/* Logo */
 			.logo-container {
@@ -43,6 +51,7 @@
 			/* Navigation Bar */
 			.navbar {
 				border-bottom: none;
+				background-color: rgba(255, 255, 255, 0);
 
 				li:nth-child(2) {
 					margin-left: 0px;
@@ -53,6 +62,7 @@
 				}
 
 				&.mobile-nav {
+					background-color: @layout-body-background;
 					position: absolute;
 					visibility: hidden;
 					opacity: 0;
@@ -82,6 +92,63 @@
 					visibility: visible;
 					opacity: 1;
 					pointer-events: auto;
+				}
+			}
+		}
+
+		/* Page banner */
+		.page-banner-wrapper {
+			width: 100%;
+			height: 80vh;
+			margin-top: @margin-2;
+			position: relative;
+			overflow: hidden;
+
+			.page-banner {
+				padding: 1px 0 0;
+				height: 100%;
+
+				.image-wrapper {
+					overflow: hidden;
+					position: absolute;
+
+					&::after {
+						content: '\A';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						background: rgba(0, 0, 0, 0.5);
+						transition: all 1s;
+						-webkit-transition: all 1s;
+					}
+				}
+
+				.content-wrapper {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+
+					.ant-space-vertical {
+						height: 100%;
+						justify-content: center;
+					}
+
+					.title {
+						color: @primary-color;
+					}
+
+					.tagline {
+						color: @white;
+					}
+
+					.content {
+						font-size: 18px;
+						color: @white;
+						margin-bottom: 48px;
+					}
 				}
 			}
 		}

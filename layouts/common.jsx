@@ -7,10 +7,11 @@ import Head from 'next/head';
 import { enquireScreen } from 'enquire-js';
 
 import Navbar from '../components/navbar';
+import Banner from '../components/banner';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({ title }) => {
+const LayoutCommon = ({ title, banner }) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -26,6 +27,7 @@ const LayoutCommon = ({ title }) => {
 			</Head>
 			<Header>
 				<Navbar isMobile={isMobile} />
+				<Banner banner={banner} />
 			</Header>
 			<Content style={{ padding: '0 50px' }}>
 				<Breadcrumb style={{ margin: '16px 0' }}>

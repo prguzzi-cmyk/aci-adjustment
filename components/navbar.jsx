@@ -6,7 +6,7 @@ import { Row, Col, Typography } from 'antd';
 
 import Image from 'next/image';
 
-import TweetOne from 'rc-tween-one';
+import TweenOne from 'rc-tween-one';
 
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
 
@@ -22,7 +22,7 @@ const Navbar = ({ isMobile }) => {
 	return (
 		<Row className={`nav-container ${phoneOpen ? 'open' : ''}`}>
 			<Col flex={isMobile ? '1 1 100%' : '1 1 auto'}>
-				<TweetOne
+				<TweenOne
 					className={'logo-container'}
 					animation={{ x: 60, type: 'from', ease: 'easeOutQuad' }}
 				>
@@ -36,7 +36,7 @@ const Navbar = ({ isMobile }) => {
 							quality={100}
 						/>
 					</Link>
-				</TweetOne>
+				</TweenOne>
 
 				{isMobile && (
 					<div className='nav-toggle' onClick={() => setPhoneOpen(!phoneOpen)}>
@@ -47,8 +47,8 @@ const Navbar = ({ isMobile }) => {
 				)}
 			</Col>
 
-			<Col flex={isMobile ? '0 1 100%' : '0 1 auto'}>
-				<TweetOne
+			<Col flex={isMobile ? '0 1 100%' : '0 1 auto'} style={{ zIndex: 1 }}>
+				<TweenOne
 					animation={
 						isMobile
 							? {
@@ -104,7 +104,7 @@ const Navbar = ({ isMobile }) => {
 						</SubMenu>
 						<Menu.Item key='contact'>Contact Us</Menu.Item>
 					</Menu>
-				</TweetOne>
+				</TweenOne>
 			</Col>
 		</Row>
 	);
