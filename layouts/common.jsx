@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Layout, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 
 import Head from 'next/head';
 
@@ -8,10 +8,11 @@ import { enquireScreen } from 'enquire-js';
 
 import Navbar from '../components/navbar';
 import Banner from '../components/banner';
+import Breadcrumb from '../components/breadcrumb';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({ title, banner }) => {
+const LayoutCommon = ({ title, banner, breadcrumb }) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -30,11 +31,8 @@ const LayoutCommon = ({ title, banner }) => {
 				<Banner banner={banner} />
 			</Header>
 			<Content style={{ padding: '0 50px' }}>
-				<Breadcrumb style={{ margin: '16px 0' }}>
-					<Breadcrumb.Item>Home</Breadcrumb.Item>
-					<Breadcrumb.Item>List</Breadcrumb.Item>
-					<Breadcrumb.Item>App</Breadcrumb.Item>
-				</Breadcrumb>
+				{breadcrumb && <Breadcrumb />}
+
 				<div className='site-layout-content'>
 					<h1 className='title'>
 						Welcome to <a href='https://nextjs.org'>Next.js!</a>
