@@ -118,7 +118,7 @@ export default function Home({ packConfigs }) {
 									loss and give you an opinion with no obligation!
 								</Text>
 								<div className='btn-wrapper'>
-									<Button type='primary' shape='circle' className='app-btn-lg'>
+									<Button type='primary' className='app-btn-lg'>
 										<Link href='#' strong>
 											Request a FREE Inspection!
 										</Link>
@@ -142,7 +142,7 @@ export default function Home({ packConfigs }) {
 									EASY! And you pay NO money out of pocket!
 								</Text>
 								<div className='btn-wrapper'>
-									<Button type='primary' shape='circle' className='app-btn-lg'>
+									<Button type='primary' className='app-btn-lg'>
 										<Link href='#' strong>
 											File a Claim Online Now!
 										</Link>
@@ -167,7 +167,7 @@ export default function Home({ packConfigs }) {
 									Calculator
 								</Text>
 								<div className='btn-wrapper'>
-									<Button type='primary' shape='circle' className='app-btn-lg'>
+									<Button type='primary' className='app-btn-lg'>
 										<Link href='#' strong>
 											ACI Claim Calculator
 										</Link>
@@ -191,9 +191,137 @@ export default function Home({ packConfigs }) {
 									Insurance Claim FAQ's!
 								</Text>
 								<div className='btn-wrapper'>
-									<Button type='primary' shape='circle' className='app-btn-lg'>
+									<Button type='primary' className='app-btn-lg'>
 										<Link href='#' strong>
 											Insurance Claim FAQ's
+										</Link>
+									</Button>
+								</div>
+							</div>
+						</Col>
+					</QueueAnim>
+				</OverPack>
+			</div>
+
+			{/* Services Section */}
+			<div className='service-container'>
+				<Title level={2} className='service-title'>
+					<Text>HIGHEST</Text> rated in customer service! <Text>LOWEST</Text>{' '}
+					fees!
+				</Title>
+
+				<OverPack playScale={packConfigs.OverPack.playScaleBottom}>
+					<QueueAnim
+						component={Row}
+						componentProps={{
+							className: 'service-content',
+							gutter: [40, 40],
+						}}
+						key='queue'
+						type='right'
+						leaveReverse
+						duration={400}
+						ease={['easeInCubic']}
+					>
+						<Col key='1' flex='2'>
+							<div className='service-block'>
+								<div className='img-wrapper'>
+									<Image
+										src='/images/storm-claim.png'
+										alt='Storm Claim'
+										width={217}
+										height={217}
+									/>
+								</div>
+
+								<div className='btn-wrapper'>
+									<Button type='primary' className='app-btn-lg'>
+										<Link href='#' strong>
+											Storm Claims
+										</Link>
+									</Button>
+								</div>
+							</div>
+						</Col>
+
+						<Col key='2' flex='2'>
+							<div className='service-block'>
+								<div className='img-wrapper'>
+									<Image
+										src='/images/fire-claim.png'
+										alt='Fire Claim'
+										width={217}
+										height={217}
+									/>
+								</div>
+
+								<div className='btn-wrapper'>
+									<Button type='primary' className='app-btn-lg'>
+										<Link href='#' strong>
+											Fire &amp; Smoke Claims
+										</Link>
+									</Button>
+								</div>
+							</div>
+						</Col>
+
+						<Col key='3' flex='2'>
+							<div className='service-block'>
+								<div className='img-wrapper'>
+									<Image
+										src='/images/water-claim.png'
+										alt='Water Claim'
+										width={217}
+										height={217}
+									/>
+								</div>
+
+								<div className='btn-wrapper'>
+									<Button type='primary' className='app-btn-lg'>
+										<Link href='#' strong>
+											Water Claims
+										</Link>
+									</Button>
+								</div>
+							</div>
+						</Col>
+
+						<Col key='4' flex='2'>
+							<div className='service-block'>
+								<div className='img-wrapper'>
+									<Image
+										src='/images/flood-claim.png'
+										alt='Flood Claim'
+										width={217}
+										height={217}
+									/>
+								</div>
+
+								<div className='btn-wrapper'>
+									<Button type='primary' className='app-btn-lg'>
+										<Link href='#' strong>
+											Flood Claims
+										</Link>
+									</Button>
+								</div>
+							</div>
+						</Col>
+
+						<Col key='5' flex='2'>
+							<div className='service-block'>
+								<div className='img-wrapper'>
+									<Image
+										src='/images/commercial-claim.png'
+										alt='Commercial Claim'
+										width={217}
+										height={217}
+									/>
+								</div>
+
+								<div className='btn-wrapper'>
+									<Button type='primary' className='app-btn-lg'>
+										<Link href='#' strong>
+											Commercial Claims
 										</Link>
 									</Button>
 								</div>
