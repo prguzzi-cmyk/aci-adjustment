@@ -26,7 +26,7 @@
 }
 
 .container {
-	/* Application button */
+	/* Application button Round */
 	.app-btn {
 		background-image: linear-gradient(
 			to right bottom,
@@ -55,6 +55,46 @@
 		a:focus,
 		span {
 			color: @white;
+		}
+	}
+
+	/* Application button Long Rectangle */
+	.app-btn-lg {
+		background-image: linear-gradient(
+			to right bottom,
+			@btn-gradient-start 0%,
+			@btn-gradient-end 0%
+		);
+		box-shadow: 0 8px 24px fade(@btn-shadow, 35);
+		border-radius: 2px;
+		border: none;
+		padding: 12px 42px;
+		line-height: 20px;
+		height: auto;
+		white-space: unset;
+		transition: transform 0.3s, box-shadow 0.3s;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 13px 24px fade(@btn-shadow, 45);
+			background-image: linear-gradient(
+				to right bottom,
+				@btn-gradient-start 0%,
+				@btn-gradient-end 0%
+			);
+		}
+
+		a,
+		a:focus,
+		span {
+			color: @white;
+		}
+	}
+
+	@media screen and (max-width: 1024px) and (min-width: 768px) {
+		/* Application button Long Rectangle */
+		.app-btn-lg {
+			padding: 12px 12px;
 		}
 	}
 }

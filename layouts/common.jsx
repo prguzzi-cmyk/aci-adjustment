@@ -12,7 +12,7 @@ import Breadcrumb from '../components/breadcrumb';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({ title, banner, breadcrumb }) => {
+const LayoutCommon = ({ title, banner, breadcrumb, children }) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -30,14 +30,10 @@ const LayoutCommon = ({ title, banner, breadcrumb }) => {
 				<Navbar isMobile={isMobile} />
 				<Banner banner={banner} />
 			</Header>
-			<Content style={{ padding: '0 50px' }}>
+			<Content>
 				{breadcrumb && <Breadcrumb />}
 
-				<div className='site-layout-content'>
-					<h1 className='title'>
-						Welcome to <a href='https://nextjs.org'>Next.js!</a>
-					</h1>
-				</div>
+				<div className='site-layout-content'>{children}</div>
 			</Content>
 			<Footer className='text-center'>
 				Ant Design ©2018 Created by Ant UED
