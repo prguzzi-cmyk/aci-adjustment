@@ -30,7 +30,7 @@ const TabSection = ({ packConfigs }) => {
 								src='https://www.youtube.com/embed/eCn_GuWyIkI'
 								frameBorder='0'
 								allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-								allowfullscreen
+								allowFullScreen
 							></iframe>
 						</Col>
 
@@ -94,7 +94,7 @@ const TabSection = ({ packConfigs }) => {
 								src='https://www.youtube.com/embed/TQO9QFl5wfA'
 								frameBorder='0'
 								allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-								allowfullscreen
+								allowFullScreen
 							></iframe>
 						</Col>
 
