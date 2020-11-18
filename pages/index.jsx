@@ -5,6 +5,8 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import Layout from '../layouts/common';
 
+import TabSection from '../components/home/tab-section';
+
 import '../styles/Home.module.less';
 
 const { Link, Title, Text } = Typography;
@@ -330,6 +332,8 @@ export default function Home({ packConfigs }) {
 					</QueueAnim>
 				</OverPack>
 			</div>
+
+			<TabSection packConfigs={packConfigs} />
 		</Layout>
 	);
 }
