@@ -42,13 +42,16 @@
 		transition: transform 0.3s, box-shadow 0.3s;
 
 		&:hover {
-			transform: translateY(-5px);
 			box-shadow: 0 13px 24px fade(@btn-shadow, 45);
 			background-image: linear-gradient(
 				to right bottom,
 				@btn-gradient-start 0%,
 				@btn-gradient-end 0%
 			);
+
+			&::not(.static) {
+				transform: translateY(-5px);
+			}
 		}
 
 		a,
