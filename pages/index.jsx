@@ -7,6 +7,7 @@ import ConsultationSection from '../components/home/consultation-section';
 import ServiceSection from '../components/home/service-section';
 import TabSection from '../components/home/tab-section';
 import InspectionFormSection from '../components/home/inspection-form-section';
+import AwardSection from '../components/home/award-section';
 
 import '../styles/Home.module.less';
 
@@ -40,6 +41,7 @@ export default function Home({ packConfigs }) {
 			<ServiceSection packConfigs={packConfigs} />
 			<TabSection packConfigs={packConfigs} />
 			<InspectionFormSection packConfigs={packConfigs} />
+			<AwardSection packConfigs={packConfigs} />
 		</Layout>
 	);
 }
