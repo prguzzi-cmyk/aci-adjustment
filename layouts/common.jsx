@@ -12,7 +12,14 @@ import FooterCopyright from '../components/common/footer-copyright';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({ title, banner, breadcrumb, config, children }) => {
+const LayoutCommon = ({
+	title,
+	banner,
+	breadcrumb,
+	config,
+	dataset,
+	children,
+}) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -39,8 +46,8 @@ const LayoutCommon = ({ title, banner, breadcrumb, config, children }) => {
 			</Content>
 
 			<Footer>
-				<FooterSocial config={config} />
-				<FooterLinks config={config} />
+				<FooterSocial config={config} dataset={dataset} />
+				<FooterLinks config={config} dataset={dataset} />
 				<FooterCopyright config={config} />
 			</Footer>
 		</Layout>

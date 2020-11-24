@@ -6,7 +6,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Title, Text, Link: TypoLink } = Typography;
 
-const FooterLinks = ({ config }) => {
+const FooterLinks = ({ config, dataset }) => {
 	return (
 		<OverPack
 			componentProps={{
@@ -57,17 +57,20 @@ const FooterLinks = ({ config }) => {
 
 					<Text className='footer-text'>
 						<ShopOutlined />
-						184 Railroad Dr, Warminster, PA 18974
+						{dataset.general.address}
 					</Text>
 					<Text className='footer-text'>
 						<PhoneOutlined />
-						Phone: <TypoLink href='tel:18008094302'>1-800-809-4302</TypoLink>
+						Phone:{' '}
+						<TypoLink href={`tel:${dataset.general.phone}`}>
+							{dataset.general.phoneFormatted}
+						</TypoLink>
 					</Text>
 					<Text className='footer-text'>
 						<MailOutlined />
 						Email:{' '}
-						<TypoLink href='mailto:office@aciadjustment.com'>
-							office@aciadjustment.com
+						<TypoLink href={`mailto:${dataset.general.email}`}>
+							{dataset.general.email}
 						</TypoLink>
 					</Text>
 				</Col>

@@ -11,7 +11,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Link } = Typography;
 
-const FooterSocial = ({ config }) => {
+const FooterSocial = ({ config, dataset }) => {
 	return (
 		<OverPack
 			componentProps={{
@@ -28,29 +28,23 @@ const FooterSocial = ({ config }) => {
 					key='queue'
 					{...config.QueueAnim({ type: 'right' })}
 				>
-					<Link key='1' href='https://www.facebook.com/ACIAdjustmentGroup'>
+					<Link key='1' href={dataset.socialLinks.facebook}>
 						<FacebookFilled />
 					</Link>
 
-					<Link key='2' href='https://twitter.com/aciadjustment'>
+					<Link key='2' href={dataset.socialLinks.twitter}>
 						<TwitterSquareFilled />
 					</Link>
 
-					<Link
-						key='3'
-						href='https://www.linkedin.com/company/aci-adjustment-group/about'
-					>
+					<Link key='3' href={dataset.socialLinks.linkedIn}>
 						<LinkedinFilled />
 					</Link>
 
-					<Link
-						key='4'
-						href='https://www.youtube.com/channel/UC3Syzn5Gmr1w36TJ0U2oYYQ'
-					>
+					<Link key='4' href={dataset.socialLinks.youTube}>
 						<YoutubeFilled />
 					</Link>
 
-					<Link key='5' href='mailto:office@aciadjustment.com'>
+					<Link key='5' href={`mailto:${dataset.general.email}`}>
 						<MailFilled />
 					</Link>
 				</QueueAnim>

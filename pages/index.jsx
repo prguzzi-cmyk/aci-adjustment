@@ -13,32 +13,33 @@ import '../styles/Home.module.less';
 
 const { Link } = Typography;
 
-export default function Home({ config }) {
+export default function Home({ config, dataset }) {
 	const LayoutConfig = {
-		title: 'ACI',
+		title: dataset.general.name,
 		banner: {
 			image: {
 				src: '/images/home-banner.jpg',
 				alt: 'Banner Image',
 			},
 			title: 'GET A FREE INSPECTION TODAY!',
-			tagline: 'ADJUSTMENT GROUP',
-			content: 'A DETAILED DESCRIPTION OF THE WEBSITE',
+			tagline: `${dataset.general.name} ${dataset.general.tagline}`,
+			content: dataset.general.description,
 			button: (
 				<Button key='call' type='primary' shape='circle' className='app-btn'>
-					<Link href='tel:18008094302' strong>
-						CALL 1-800-809-4302
+					<Link href={`tel:${dataset.general.phone}`} strong>
+						CALL {dataset.general.phoneFormatted}
 					</Link>
 				</Button>
 			),
 		},
 		config,
+		dataset,
 	};
 
 	return (
 		<Layout {...LayoutConfig}>
 			<RankedSection config={config} />
-			<ConsultationSection config={config} />
+			<ConsultationSection config={config} dataset={dataset} />
 			<ServiceSection config={config} />
 			<TabSection config={config} />
 			<InspectionFormSection config={config} />

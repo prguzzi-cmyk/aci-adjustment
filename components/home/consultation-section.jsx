@@ -5,12 +5,15 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Link, Title, Text } = Typography;
 
-const ConsultationSection = ({ config }) => {
+const ConsultationSection = ({ config, dataset }) => {
 	return (
 		<div className='consult-container'>
 			<Title level={2} className='consult-title'>
-				Call <Link href='tel:18008094302'>1-800-809-4302</Link> for a
-				<Text> FREE</Text> consultation!
+				Call{' '}
+				<Link href={`tel:${dataset.general.phone}`}>
+					{dataset.general.phoneFormatted}
+				</Link>{' '}
+				for a<Text> FREE</Text> consultation!
 			</Title>
 
 			<OverPack {...config.OverPack({})}>
