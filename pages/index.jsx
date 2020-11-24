@@ -32,6 +32,7 @@ export default function Home({ packConfigs }) {
 				</Button>
 			),
 		},
+		packConfigs,
 	};
 
 	return (
