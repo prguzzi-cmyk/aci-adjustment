@@ -5,7 +5,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Title, Text } = Typography;
 
-const RankedSection = ({ packConfigs }) => {
+const RankedSection = ({ config }) => {
 	return (
 		<div className='rank-container'>
 			<Title level={2} className='rank-title'>
@@ -19,16 +19,14 @@ const RankedSection = ({ packConfigs }) => {
 					justify: 'center',
 					align: 'middle',
 				}}
-				playScale={packConfigs.OverPack.playScaleBottom}
+				{...config.OverPack({})}
 			>
 				<QueueAnim
 					component={Col}
 					componentProps={{
 						md: 6,
 					}}
-					type='left'
-					leaveReverse
-					ease={['easeInCubic', 'easeOutCubic']}
+					{...config.QueueAnim({ type: 'left' })}
 				>
 					<Image
 						key='image'
@@ -45,9 +43,7 @@ const RankedSection = ({ packConfigs }) => {
 					componentProps={{
 						md: 8,
 					}}
-					type='right'
-					leaveReverse
-					ease={['easeInCubic', 'easeOutCubic']}
+					{...config.QueueAnim({ type: 'right' })}
 				>
 					<Text key='text' className='rank-text'>
 						ACI Adjustment Group was ranked #1 by the UPA (United Public

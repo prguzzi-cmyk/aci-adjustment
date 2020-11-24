@@ -5,14 +5,14 @@ import Image from 'next/image';
 
 const { Title, Text } = Typography;
 
-const AwardSection = ({ packConfigs }) => {
+const AwardSection = ({ config }) => {
 	return (
 		<div className='award-container'>
 			<Title level={2} className='award-title'>
 				<Text>Awards</Text> &amp; <Text>Achievements</Text>
 			</Title>
 
-			<OverPack playScale={packConfigs.OverPack.playScaleBottom}>
+			<OverPack {...config.OverPack({})}>
 				<QueueAnim
 					component={Row}
 					componentProps={{
@@ -20,9 +20,7 @@ const AwardSection = ({ packConfigs }) => {
 						gutter: [16, 24],
 					}}
 					key='queue'
-					type='left'
-					leaveReverse
-					interval={50}
+					{...config.QueueAnim({ type: 'left' })}
 				>
 					<Col key='1' md={6} className='img-wrapper'>
 						<Image

@@ -6,13 +6,13 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Title, Text, Link: TypoLink } = Typography;
 
-const FooterLinks = ({ packConfigs }) => {
+const FooterLinks = ({ config }) => {
 	return (
 		<OverPack
 			componentProps={{
 				className: 'links-container',
 			}}
-			playScale={packConfigs.OverPack.playScaleBottom}
+			{...config.OverPack({})}
 		>
 			<QueueAnim
 				component={Row}
@@ -20,11 +20,9 @@ const FooterLinks = ({ packConfigs }) => {
 					gutter: [60, 24],
 				}}
 				key='queue'
-				type='bottom'
-				leaveReverse
-				interval={50}
+				{...config.QueueAnim({})}
 			>
-				<Col key='2' md={8}>
+				<Col key='1' md={8}>
 					<Title level={4} className='footer-title'>
 						Information
 					</Title>
@@ -38,7 +36,7 @@ const FooterLinks = ({ packConfigs }) => {
 					</Link>
 				</Col>
 
-				<Col key='3' md={8}>
+				<Col key='2' md={8}>
 					<Title level={4} className='footer-title'>
 						Resources
 					</Title>
@@ -52,7 +50,7 @@ const FooterLinks = ({ packConfigs }) => {
 					</Link>
 				</Col>
 
-				<Col key='4' md={8}>
+				<Col key='3' md={8}>
 					<Title level={4} className='footer-title'>
 						Contact Us
 					</Title>

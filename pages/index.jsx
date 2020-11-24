@@ -13,8 +13,8 @@ import '../styles/Home.module.less';
 
 const { Link } = Typography;
 
-export default function Home({ packConfigs }) {
-	const configs = {
+export default function Home({ config }) {
+	const LayoutConfig = {
 		title: 'ACI',
 		banner: {
 			image: {
@@ -25,24 +25,24 @@ export default function Home({ packConfigs }) {
 			tagline: 'ADJUSTMENT GROUP',
 			content: 'A DETAILED DESCRIPTION OF THE WEBSITE',
 			button: (
-				<Button type='primary' shape='circle' className='app-btn'>
+				<Button key='call' type='primary' shape='circle' className='app-btn'>
 					<Link href='tel:18008094302' strong>
 						CALL 1-800-809-4302
 					</Link>
 				</Button>
 			),
 		},
-		packConfigs,
+		config,
 	};
 
 	return (
-		<Layout {...configs}>
-			<RankedSection packConfigs={packConfigs} />
-			<ConsultationSection packConfigs={packConfigs} />
-			<ServiceSection packConfigs={packConfigs} />
-			<TabSection packConfigs={packConfigs} />
-			<InspectionFormSection packConfigs={packConfigs} />
-			<AwardSection packConfigs={packConfigs} />
+		<Layout {...LayoutConfig}>
+			<RankedSection config={config} />
+			<ConsultationSection config={config} />
+			<ServiceSection config={config} />
+			<TabSection config={config} />
+			<InspectionFormSection config={config} />
+			<AwardSection config={config} />
 		</Layout>
 	);
 }

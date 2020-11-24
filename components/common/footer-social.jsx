@@ -11,13 +11,13 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Link } = Typography;
 
-const FooterSocial = ({ packConfigs }) => {
+const FooterSocial = ({ config }) => {
 	return (
 		<OverPack
 			componentProps={{
 				className: 'social-container',
 			}}
-			playScale={packConfigs.OverPack.playScaleBottom}
+			{...config.OverPack({})}
 		>
 			<Row gutter={[10, 30]}>
 				<QueueAnim
@@ -26,9 +26,7 @@ const FooterSocial = ({ packConfigs }) => {
 						md: 24,
 					}}
 					key='queue'
-					type='right'
-					leaveReverse
-					interval={50}
+					{...config.QueueAnim({ type: 'right' })}
 				>
 					<Link key='1' href='https://www.facebook.com/ACIAdjustmentGroup'>
 						<FacebookFilled />

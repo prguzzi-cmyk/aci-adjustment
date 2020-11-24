@@ -31,7 +31,7 @@ const tailFormItemLayout = {
 	},
 };
 
-const InspectionFormSection = ({ packConfigs }) => {
+const InspectionFormSection = ({ config }) => {
 	const [form] = Form.useForm();
 
 	const onFinish = (values) => {
@@ -52,7 +52,7 @@ const InspectionFormSection = ({ packConfigs }) => {
 				Request a <Text>FREE</Text> Inspection!
 			</Title>
 
-			<OverPack playScale={packConfigs.OverPack.playScaleBottom}>
+			<OverPack {...config.OverPack({})}>
 				<QueueAnim
 					component={Form}
 					componentProps={{
@@ -66,12 +66,7 @@ const InspectionFormSection = ({ packConfigs }) => {
 						scrollToFirstError: true,
 					}}
 					key='queue'
-					type='bottom'
-					leaveReverse
-					interval={100}
-					delay={0}
-					duration={500}
-					ease={['easeInCubic', 'easeOutCubic']}
+					{...config.QueueAnim({})}
 				>
 					<Form.Item
 						name='first-name'

@@ -4,13 +4,13 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Text } = Typography;
 
-const FooterCopyright = ({ packConfigs }) => {
+const FooterCopyright = ({ config }) => {
 	return (
 		<OverPack
 			componentProps={{
 				className: 'copyright-container',
 			}}
-			playScale={packConfigs.OverPack.playScaleZero}
+			{...config.OverPack({ playScale: config.PlayScale.noScale })}
 		>
 			<Row gutter={[10, 30]}>
 				<QueueAnim
@@ -19,9 +19,7 @@ const FooterCopyright = ({ packConfigs }) => {
 						md: 24,
 					}}
 					key='queue'
-					type='bottom'
-					leaveReverse
-					interval={50}
+					{...config.QueueAnim({})}
 				>
 					<Text>
 						&#169;2020, ACI Adjustment&#8482; &#124; ALL RIGHTS RESERVED

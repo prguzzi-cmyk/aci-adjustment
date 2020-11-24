@@ -5,7 +5,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Link, Title, Text } = Typography;
 
-const ConsultationSection = ({ packConfigs }) => {
+const ConsultationSection = ({ config }) => {
 	return (
 		<div className='consult-container'>
 			<Title level={2} className='consult-title'>
@@ -13,7 +13,7 @@ const ConsultationSection = ({ packConfigs }) => {
 				<Text> FREE</Text> consultation!
 			</Title>
 
-			<OverPack playScale={packConfigs.OverPack.playScaleBottom}>
+			<OverPack {...config.OverPack({})}>
 				<QueueAnim
 					component={Row}
 					componentProps={{
@@ -21,9 +21,7 @@ const ConsultationSection = ({ packConfigs }) => {
 						gutter: [16, 24],
 					}}
 					key='queue'
-					type='bottom'
-					leaveReverse
-					interval={50}
+					{...config.QueueAnim({})}
 				>
 					<Col key='1' md={6}>
 						<div className='consult-block'>
@@ -35,10 +33,12 @@ const ConsultationSection = ({ packConfigs }) => {
 									height={109}
 								/>
 							</div>
+
 							<Text className='consult-text'>
 								Do you have damage? Let ACI Adjustment Group evaluate your loss
 								and give you an opinion with no obligation!
 							</Text>
+
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
 									<Link href='#' strong>
@@ -59,10 +59,12 @@ const ConsultationSection = ({ packConfigs }) => {
 									height={109}
 								/>
 							</div>
+
 							<Text className='consult-text'>
 								Do you have claim? You can file online NOW! It's FAST! It's
 								EASY! And you pay NO money out of pocket!
 							</Text>
+
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
 									<Link href='#' strong>
@@ -83,10 +85,12 @@ const ConsultationSection = ({ packConfigs }) => {
 									height={50}
 								/>
 							</div>
+
 							<Text className='consult-text'>
 								Find out what your damage is worth in 15 minutes or less! Click
 								the button below to use our state-of-the-art Claim Calculator
 							</Text>
+
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
 									<Link href='#' strong>
@@ -107,10 +111,12 @@ const ConsultationSection = ({ packConfigs }) => {
 									height={109}
 								/>
 							</div>
+
 							<Text className='consult-text'>
 								Do you have a question? We've got the answer! Check out our
 								Insurance Claim FAQ's!
 							</Text>
+
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
 									<Link href='#' strong>

@@ -5,7 +5,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 const { Link, Title, Text } = Typography;
 
-const ServiceSection = ({ packConfigs }) => {
+const ServiceSection = ({ config }) => {
 	const imgConfig = {
 		width: 217,
 		height: 217,
@@ -18,7 +18,7 @@ const ServiceSection = ({ packConfigs }) => {
 				fees!
 			</Title>
 
-			<OverPack playScale={packConfigs.OverPack.playScaleBottom}>
+			<OverPack {...config.OverPack({})}>
 				<QueueAnim
 					component={Row}
 					componentProps={{
@@ -26,10 +26,7 @@ const ServiceSection = ({ packConfigs }) => {
 						gutter: [40, 40],
 					}}
 					key='queue'
-					type='right'
-					leaveReverse
-					duration={400}
-					ease={['easeInCubic']}
+					{...config.QueueAnim({ type: 'right' })}
 				>
 					<Col key='1' flex='2'>
 						<div className='service-block'>

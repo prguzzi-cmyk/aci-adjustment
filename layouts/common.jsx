@@ -1,21 +1,18 @@
 import { useState, useEffect } from 'react';
-
 import { Layout } from 'antd';
-
 import Head from 'next/head';
-
 import { enquireScreen } from 'enquire-js';
 
-import Navbar from '../components/navbar';
-import Banner from '../components/banner';
-import Breadcrumb from '../components/breadcrumb';
-import FooterSocial from '../components/footer-social';
-import FooterLinks from '../components/footer-links';
-import FooterCopyright from '../components/footer-copyright';
+import Navbar from '../components/common/navbar';
+import Banner from '../components/common/banner';
+import Breadcrumb from '../components/common/breadcrumb';
+import FooterSocial from '../components/common/footer-social';
+import FooterLinks from '../components/common/footer-links';
+import FooterCopyright from '../components/common/footer-copyright';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({ title, banner, breadcrumb, packConfigs, children }) => {
+const LayoutCommon = ({ title, banner, breadcrumb, config, children }) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -31,20 +28,20 @@ const LayoutCommon = ({ title, banner, breadcrumb, packConfigs, children }) => {
 			</Head>
 
 			<Header>
-				<Navbar isMobile={isMobile} />
-				<Banner banner={banner} />
+				<Navbar config={config} isMobile={isMobile} />
+				<Banner config={config} banner={banner} />
 			</Header>
 
 			<Content>
-				{breadcrumb && <Breadcrumb />}
+				{breadcrumb && <Breadcrumb config={config} />}
 
 				<div className='site-layout-content'>{children}</div>
 			</Content>
 
 			<Footer>
-				<FooterSocial packConfigs={packConfigs} />
-				<FooterLinks packConfigs={packConfigs} />
-				<FooterCopyright packConfigs={packConfigs} />
+				<FooterSocial config={config} />
+				<FooterLinks config={config} />
+				<FooterCopyright config={config} />
 			</Footer>
 		</Layout>
 	);

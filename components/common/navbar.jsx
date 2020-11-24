@@ -1,20 +1,15 @@
 import { useState } from 'react';
-
 import { Menu } from 'antd';
-
 import { Row, Col, Typography } from 'antd';
-
 import Image from 'next/image';
-
 import TweenOne from 'rc-tween-one';
-
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
 
 const { Link } = Typography;
 
 const { SubMenu } = Menu;
 
-const Navbar = ({ isMobile }) => {
+const Navbar = ({ config, isMobile }) => {
 	const [phoneOpen, setPhoneOpen] = useState(undefined);
 
 	const moment = phoneOpen === undefined ? 300 : null;
@@ -24,7 +19,7 @@ const Navbar = ({ isMobile }) => {
 			<Col flex={isMobile ? '1 1 100%' : '1 1 auto'}>
 				<TweenOne
 					className={'logo-container'}
-					animation={{ x: 60, type: 'from', ease: 'easeOutQuad' }}
+					{...config.TweenOne({ coordinate: 'x', path: '-=30', delay: 200 })}
 				>
 					<Link href='/'>
 						<Image
@@ -54,7 +49,7 @@ const Navbar = ({ isMobile }) => {
 							? {
 									x: 0,
 									height: 0,
-									duartion: 300,
+									duration: 300,
 									onComplete: (e) => {
 										if (phoneOpen) {
 											e.target.style.height = 'auto';

@@ -6,11 +6,11 @@ const { TabPane } = Tabs;
 
 const { Link, Title } = Typography;
 
-const TabSection = ({ packConfigs }) => {
+const TabSection = ({ config }) => {
 	return (
 		<Tabs className='tab-container' defaultActiveKey='1' centered animated>
 			<TabPane tab='ACI Adjustment Group' key='1' className='tabpane-adjuster'>
-				<OverPack playScale={packConfigs.OverPack.playScaleCenter}>
+				<OverPack {...config.OverPack({})}>
 					<QueueAnim
 						component={Row}
 						componentProps={{
@@ -18,10 +18,7 @@ const TabSection = ({ packConfigs }) => {
 							align: 'middle',
 						}}
 						key='queue'
-						type='bottom'
-						leaveReverse
-						duration={400}
-						ease={['easeInCubic']}
+						{...config.QueueAnim({})}
 					>
 						<Col key='1' span={12}>
 							<iframe
@@ -74,7 +71,7 @@ const TabSection = ({ packConfigs }) => {
 			</TabPane>
 
 			<TabPane tab='Winter Insurance Claims' key='2' className='tabpane-winter'>
-				<OverPack playScale={packConfigs.OverPack.playScaleBottom}>
+				<OverPack {...config.OverPack({})}>
 					<QueueAnim
 						component={Row}
 						componentProps={{
@@ -82,10 +79,7 @@ const TabSection = ({ packConfigs }) => {
 							align: 'middle',
 						}}
 						key='queue'
-						type='bottom'
-						leaveReverse
-						duration={400}
-						ease={['easeInCubic']}
+						{...config.QueueAnim({})}
 					>
 						<Col key='1' span={12}>
 							<iframe

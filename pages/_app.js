@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import packConfigs from '../utils/pack-configs';
+import config from '../utils/config';
 
 import '../styles/globals.less';
 import '../styles/utils.less';
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 					content='width=device-width, initial-scale=1, shrink-to-fit=no'
 				/>
 			</Head>
-			<Component {...pageProps} packConfigs={packConfigs} />
+			<Component {...pageProps} config={config} />
 		</>
 	);
 }

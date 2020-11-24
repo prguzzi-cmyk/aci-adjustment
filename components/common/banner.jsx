@@ -5,24 +5,14 @@ import TweenOne from 'rc-tween-one';
 
 const { Title } = Typography;
 
-const Banner = ({ banner }) => {
-	const animConf = {
-		queue: 'bottom',
-		one: {
-			y: '+=30',
-			opacity: 0,
-			type: 'from',
-			ease: 'easeOutQuad',
-		},
-	};
-
+const Banner = ({ banner, config }) => {
 	return (
 		<div className='page-banner-wrapper'>
 			<div className='page-banner'>
 				<TweenOne
 					key='banner'
 					className='image-wrapper'
-					animation={animConf.one}
+					{...config.TweenOne({})}
 				>
 					<Image
 						className='image'
@@ -39,27 +29,25 @@ const Banner = ({ banner }) => {
 
 				<div className='content-wrapper'>
 					<Space align='center' direction='vertical'>
-						<QueueAnim
-							key='text'
-							type={animConf.queue}
-							leaveReverse
-							ease={['easeOutQuad', 'easeInQuad']}
-						>
+						<QueueAnim key='text' {...config.QueueAnim({})}>
 							{banner.title && (
 								<Title key='title' className='title'>
 									{banner.title}
 								</Title>
 							)}
+
 							{banner.tagline && (
 								<Title key='tagline' className='tagline' level={2}>
 									{banner.tagline}
 								</Title>
 							)}
+
 							{banner.content && (
 								<div key='content' className='content'>
 									{banner.content}
 								</div>
 							)}
+
 							{banner.button && banner.button}
 						</QueueAnim>
 					</Space>
