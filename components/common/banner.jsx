@@ -28,29 +28,35 @@ const Banner = ({ banner, config }) => {
 				</TweenOne>
 
 				<div className='content-wrapper'>
-					<Space align='center' direction='vertical'>
-						<QueueAnim key='text' {...config.QueueAnim({})}>
-							{banner.title && (
-								<Title key='title' className='title'>
-									{banner.title}
-								</Title>
-							)}
+					<QueueAnim
+						component={Space}
+						componentProps={{
+							align: 'center',
+							direction: 'vertical',
+						}}
+						key='text'
+						{...config.QueueAnim({})}
+					>
+						{banner.title && (
+							<Title key='title' className='title'>
+								{banner.title}
+							</Title>
+						)}
 
-							{banner.tagline && (
-								<Title key='tagline' className='tagline' level={2}>
-									{banner.tagline}
-								</Title>
-							)}
+						{banner.tagline && (
+							<Title key='tagline' className='tagline' level={2}>
+								{banner.tagline}
+							</Title>
+						)}
 
-							{banner.content && (
-								<div key='content' className='content'>
-									{banner.content}
-								</div>
-							)}
+						{banner.content && (
+							<div key='content' className='content'>
+								{banner.content}
+							</div>
+						)}
 
-							{banner.button && banner.button}
-						</QueueAnim>
-					</Space>
+						{banner.button && banner.button}
+					</QueueAnim>
 				</div>
 			</div>
 		</div>
