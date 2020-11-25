@@ -16,13 +16,14 @@ const TabSection = ({ config }) => {
 						componentProps={{
 							justify: 'center',
 							align: 'middle',
+							gutter: [30, 10],
 						}}
 						key='queue'
 						{...config.QueueAnim({})}
 					>
-						<Col key='1' span={12}>
+						<Col key='1' sm={24} md={12}>
 							<iframe
-								width='560'
+								width='100%'
 								height='315'
 								src='https://www.youtube.com/embed/eCn_GuWyIkI'
 								frameBorder='0'
@@ -31,7 +32,7 @@ const TabSection = ({ config }) => {
 							></iframe>
 						</Col>
 
-						<Col key='2' span={12}>
+						<Col key='2' sm={24} md={12}>
 							<Row className='title-wrapper'>
 								<Col key='1' span={24}>
 									<Link href='#'>
@@ -77,13 +78,14 @@ const TabSection = ({ config }) => {
 						componentProps={{
 							justify: 'center',
 							align: 'middle',
+							gutter: [30, 10],
 						}}
 						key='queue'
 						{...config.QueueAnim({})}
 					>
-						<Col key='1' span={12}>
+						<Col key='1' sm={24} md={12}>
 							<iframe
-								width='560'
+								width='100%'
 								height='315'
 								src='https://www.youtube.com/embed/TQO9QFl5wfA'
 								frameBorder='0'
@@ -92,7 +94,7 @@ const TabSection = ({ config }) => {
 							></iframe>
 						</Col>
 
-						<Col key='2' span={12}>
+						<Col key='2' sm={24} md={12}>
 							<Row className='title-wrapper'>
 								<Col key='1' span={24}>
 									<Title level={4}>Common Winter Insurance Claims</Title>
