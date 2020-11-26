@@ -1,16 +1,25 @@
 import { useState, useEffect } from 'react';
-
-import { Layout, Breadcrumb } from 'antd';
-
+import { Layout } from 'antd';
 import Head from 'next/head';
-
 import { enquireScreen } from 'enquire-js';
 
-import Navbar from '../components/navbar';
+import Navbar from '../components/common/navbar';
+import Banner from '../components/common/banner';
+import Breadcrumb from '../components/common/breadcrumb';
+import FooterSocial from '../components/common/footer-social';
+import FooterLinks from '../components/common/footer-links';
+import FooterCopyright from '../components/common/footer-copyright';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({ title }) => {
+const LayoutCommon = ({
+	title,
+	banner,
+	breadcrumb,
+	config,
+	dataset,
+	children,
+}) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -24,23 +33,22 @@ const LayoutCommon = ({ title }) => {
 			<Head>
 				<title>{title}</title>
 			</Head>
+
 			<Header>
-				<Navbar isMobile={isMobile} />
+				<Navbar config={config} isMobile={isMobile} />
+				<Banner config={config} banner={banner} />
 			</Header>
-			<Content style={{ padding: '0 50px' }}>
-				<Breadcrumb style={{ margin: '16px 0' }}>
-					<Breadcrumb.Item>Home</Breadcrumb.Item>
-					<Breadcrumb.Item>List</Breadcrumb.Item>
-					<Breadcrumb.Item>App</Breadcrumb.Item>
-				</Breadcrumb>
-				<div className='site-layout-content'>
-					<h1 className='title'>
-						Welcome to <a href='https://nextjs.org'>Next.js!</a>
-					</h1>
-				</div>
+
+			<Content>
+				{breadcrumb && <Breadcrumb config={config} />}
+
+				<div className='site-layout-content'>{children}</div>
 			</Content>
-			<Footer className='text-center'>
-				Ant Design ©2018 Created by Ant UED
+
+			<Footer>
+				<FooterSocial config={config} dataset={dataset} />
+				<FooterLinks config={config} dataset={dataset} />
+				<FooterCopyright config={config} />
 			</Footer>
 		</Layout>
 	);

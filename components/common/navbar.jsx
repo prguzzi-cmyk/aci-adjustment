@@ -1,20 +1,15 @@
 import { useState } from 'react';
-
 import { Menu } from 'antd';
-
 import { Row, Col, Typography } from 'antd';
-
 import Image from 'next/image';
-
-import TweetOne from 'rc-tween-one';
-
+import TweenOne from 'rc-tween-one';
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
 
 const { Link } = Typography;
 
 const { SubMenu } = Menu;
 
-const Navbar = ({ isMobile }) => {
+const Navbar = ({ config, isMobile }) => {
 	const [phoneOpen, setPhoneOpen] = useState(undefined);
 
 	const moment = phoneOpen === undefined ? 300 : null;
@@ -22,9 +17,9 @@ const Navbar = ({ isMobile }) => {
 	return (
 		<Row className={`nav-container ${phoneOpen ? 'open' : ''}`}>
 			<Col flex={isMobile ? '1 1 100%' : '1 1 auto'}>
-				<TweetOne
+				<TweenOne
 					className={'logo-container'}
-					animation={{ x: 60, type: 'from', ease: 'easeOutQuad' }}
+					{...config.TweenOne({ coordinate: 'x', path: '-=30', delay: 200 })}
 				>
 					<Link href='/'>
 						<Image
@@ -36,7 +31,7 @@ const Navbar = ({ isMobile }) => {
 							quality={100}
 						/>
 					</Link>
-				</TweetOne>
+				</TweenOne>
 
 				{isMobile && (
 					<div className='nav-toggle' onClick={() => setPhoneOpen(!phoneOpen)}>
@@ -47,14 +42,14 @@ const Navbar = ({ isMobile }) => {
 				)}
 			</Col>
 
-			<Col flex={isMobile ? '0 1 100%' : '0 1 auto'}>
-				<TweetOne
+			<Col flex={isMobile ? '0 1 100%' : '0 1 auto'} style={{ zIndex: 1 }}>
+				<TweenOne
 					animation={
 						isMobile
 							? {
 									x: 0,
 									height: 0,
-									duartion: 300,
+									duration: 300,
 									onComplete: (e) => {
 										if (phoneOpen) {
 											e.target.style.height = 'auto';
@@ -104,7 +99,7 @@ const Navbar = ({ isMobile }) => {
 						</SubMenu>
 						<Menu.Item key='contact'>Contact Us</Menu.Item>
 					</Menu>
-				</TweetOne>
+				</TweenOne>
 			</Col>
 		</Row>
 	);

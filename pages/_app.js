@@ -1,5 +1,8 @@
 import Head from 'next/head';
 
+import config from '../utils/config';
+import dataset from '../utils/dataset';
+
 import '../styles/globals.less';
 import '../styles/utils.less';
 
@@ -12,7 +15,7 @@ function MyApp({ Component, pageProps }) {
 					content='width=device-width, initial-scale=1, shrink-to-fit=no'
 				/>
 			</Head>
-			<Component {...pageProps} />
+			<Component {...pageProps} config={config} dataset={dataset} />
 		</>
 	);
 }
