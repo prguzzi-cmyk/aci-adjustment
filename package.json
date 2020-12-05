@@ -5,6 +5,10 @@
 	"description": "Aci adjustment group web application.",
 	"author": "Navi Singh",
 	"license": "MIT",
+	"engines": {
+		"node": ">=12.18.2",
+		"npm": ">=6.14.9"
+	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
