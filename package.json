@@ -12,7 +12,8 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"start": "next start"
+		"start": "next start",
+		"deploy": "npm run build && npm run start"
 	},
 	"dependencies": {
 		"@ant-design/icons": "^4.2.2",
