@@ -1,6 +1,5 @@
 import { Button, Typography } from 'antd';
-
-import Layout from '../layouts/common';
+import Layout from '../layouts/home';
 
 import RankedSection from '../components/home/ranked-section';
 import ConsultationSection from '../components/home/consultation-section';
@@ -9,7 +8,7 @@ import TabSection from '../components/home/tab-section';
 import InspectionFormSection from '../components/home/inspection-form-section';
 import AwardSection from '../components/home/award-section';
 
-import '../styles/Home.module.less';
+import '../styles/modules/home.less';
 
 const { Link } = Typography;
 

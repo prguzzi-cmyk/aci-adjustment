@@ -95,21 +95,23 @@
 			}
 		}
 
-		/* Page banner */
-		.page-banner-wrapper {
+		/* Page banner Large*/
+		.page-banner-lg-wrapper {
 			width: 100%;
 			height: 80vh;
 			margin-top: @margin-2;
 			position: relative;
 			overflow: hidden;
 
-			.page-banner {
+			.page-banner-lg {
 				padding: 1px 0 0;
 				height: 100%;
 
 				.image-wrapper {
 					overflow: hidden;
 					position: absolute;
+					width: 100%;
+					height: 100%;
 
 					&::after {
 						content: '\A';
@@ -154,10 +156,66 @@
 				}
 			}
 		}
+
+		/* Page banner Small*/
+		.page-banner-sm-wrapper {
+			width: 100%;
+			height: 200px;
+			margin-top: @margin-2;
+			position: relative;
+			overflow: hidden;
+
+			.page-banner-sm {
+				padding: 1px 0 0;
+				height: 100%;
+
+				.image-wrapper {
+					overflow: hidden;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+
+					&::after {
+						content: '\A';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						background: rgba(0, 0, 0, 0.5);
+						transition: all 1s;
+						-webkit-transition: all 1s;
+					}
+				}
+
+				.content-wrapper {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+
+					.ant-space-vertical {
+						height: 100%;
+						justify-content: center;
+					}
+
+					.title {
+						color: @primary-color;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
 	}
 
 	/* Main content */
 	.ant-layout-content {
+		/* Breadcrumb */
+		.ant-breadcrumb {
+			padding: 16px 50px;
+		}
+
+		/* Page Content */
 		.site-layout-content {
 			min-height: 280px;
 		}

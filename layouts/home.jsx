@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { enquireScreen } from 'enquire-js';
 
 import Navbar from '../components/common/navbar';
-import Banner from '../components/common/banner';
+import Banner from '../components/common/banner-large';
 import Breadcrumb from '../components/common/breadcrumb';
 import FooterSocial from '../components/common/footer-social';
 import FooterLinks from '../components/common/footer-links';
@@ -12,7 +12,7 @@ import FooterCopyright from '../components/common/footer-copyright';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutCommon = ({
+const LayoutHome = ({
 	title,
 	banner,
 	breadcrumb,
@@ -54,4 +54,4 @@ const LayoutCommon = ({
 	);
 };
 
-export default LayoutCommon;
+export default LayoutHome;

@@ -1,15 +1,29 @@
+import Link from 'next/link';
 import { Breadcrumb } from 'antd';
-
 import { HomeOutlined } from '@ant-design/icons';
 
-const BreadCrumb = () => {
+const BreadCrumb = ({ items }) => {
 	return (
-		<Breadcrumb separator='>' style={{ margin: '16px 0' }}>
+		<Breadcrumb style={{ margin: '16px 0' }}>
 			<Breadcrumb.Item>
-				<HomeOutlined />
+				<Link href='/'>
+					<a>
+						<HomeOutlined /> Home
+					</a>
+				</Link>
 			</Breadcrumb.Item>
-			<Breadcrumb.Item>List</Breadcrumb.Item>
-			<Breadcrumb.Item>App</Breadcrumb.Item>
+
+			{items.map((item, index, array) => (
+				<Breadcrumb.Item>
+					{array.length - 1 === index ? (
+						item.text
+					) : (
+						<Link href={item.link}>
+							<a>{item.text}</a>
+						</Link>
+					)}
+				</Breadcrumb.Item>
+			))}
 		</Breadcrumb>
 	);
 };

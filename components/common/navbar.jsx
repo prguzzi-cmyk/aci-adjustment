@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Menu } from 'antd';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col } from 'antd';
 import Image from 'next/image';
+import Link from 'next/link';
 import TweenOne from 'rc-tween-one';
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
-
-const { Link } = Typography;
 
 const { SubMenu } = Menu;
 
@@ -22,14 +21,16 @@ const Navbar = ({ config, isMobile }) => {
 					{...config.TweenOne({ coordinate: 'x', path: '-=30', delay: 200 })}
 				>
 					<Link href='/'>
-						<Image
-							className='logo'
-							src='/images/logo.png'
-							alt='Logo'
-							width={113}
-							height={50}
-							quality={100}
-						/>
+						<a>
+							<Image
+								className='logo'
+								src='/images/logo.png'
+								alt='Logo'
+								width={113}
+								height={50}
+								quality={100}
+							/>
+						</a>
 					</Link>
 				</TweenOne>
 
@@ -70,9 +71,15 @@ const Navbar = ({ config, isMobile }) => {
 						overflowedIndicator={<MenuOutlined />}
 					>
 						<Menu.Item key='home' icon={<HomeTwoTone />}>
-							Home
+							<Link href='/'>
+								<a>Home</a>
+							</Link>
 						</Menu.Item>
-						<Menu.Item key='appointment'>Schedule Appointment</Menu.Item>
+						<Menu.Item key='appointment'>
+							<Link href='/schedule-appointment'>
+								<a>Schedule Appointment</a>
+							</Link>
+						</Menu.Item>
 						<SubMenu key='services' title='Our Services'>
 							<Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
 							<Menu.Item key='file-claim'>File a Claim</Menu.Item>

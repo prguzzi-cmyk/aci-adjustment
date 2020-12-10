@@ -7,8 +7,8 @@ const { Title } = Typography;
 
 const Banner = ({ banner, config }) => {
 	return (
-		<div className='page-banner-wrapper'>
-			<div className='page-banner'>
+		<div className='page-banner-lg-wrapper'>
+			<div className='page-banner-lg'>
 				<TweenOne
 					key='banner'
 					className='image-wrapper'
@@ -17,13 +17,14 @@ const Banner = ({ banner, config }) => {
 					<Image
 						className='image'
 						src={banner.image && banner.image.src ? banner.image.src : ''}
-						alt={banner.image && banner.image.alt ? banner.image.alt : 'Image'}
-						width={
-							banner.image && banner.image.width ? banner.image.width : 1500
+						alt={
+							banner.image && banner.image.alt
+								? banner.image.alt
+								: 'Banner Image'
 						}
-						height={
-							banner.image && banner.image.height ? banner.image.height : 600
-						}
+						layout='fill'
+						objectFit='cover'
+						quality={100}
 					/>
 				</TweenOne>
 
