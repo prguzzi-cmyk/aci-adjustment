@@ -18,10 +18,7 @@ export default function Home() {
 	const LayoutConfig = {
 		title: dataset.general.name,
 		banner: {
-			image: {
-				src: '/images/home-banner.jpg',
-				alt: 'Banner Image',
-			},
+			image: dataset.images.bannerHome,
 			title: 'GET A FREE INSPECTION TODAY!',
 			tagline: `${dataset.general.name} ${dataset.general.tagline}`,
 			content: dataset.general.description,

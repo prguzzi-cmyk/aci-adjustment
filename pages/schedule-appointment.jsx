@@ -1,7 +1,7 @@
 import { Typography } from 'antd';
 import Layout from '../layouts/default';
 
-import dataset from '../utils/datasets/router';
+import dataset from '../utils/datasets/bootstrap';
 
 import '../styles/modules/schedule-appointment.less';
 
@@ -9,12 +9,9 @@ const { Title, Text } = Typography;
 
 export default function ScheduleAppointment() {
 	const LayoutConfig = {
-		title: `Schedule Appointment`,
+		title: dataset.router.schAppointment.label,
 		banner: {
-			image: {
-				src: '/images/home-banner.jpg',
-				alt: 'Banner Image',
-			},
+			image: dataset.images.bannerDefault,
 			title: 'Schedule an appointment',
 		},
 		breadcrumb: [dataset.router.schAppointment],
