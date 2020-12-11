@@ -8,6 +8,10 @@ const Router = {
 			path: '/schedule-appointment',
 			label: 'Schedule Appointment',
 		},
+		services: {
+			path: '/services',
+			label: 'Our Services',
+		},
 	},
 };
 

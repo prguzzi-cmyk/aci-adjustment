@@ -5,7 +5,7 @@ import RankedSection from '../components/home/ranked-section';
 import ConsultationSection from '../components/home/consultation-section';
 import ServiceSection from '../components/home/service-section';
 import TabSection from '../components/home/tab-section';
-import InspectionFormSection from '../components/home/inspection-form-section';
+import InspectionFormSection from '../components/common/sections/inspection-form';
 import AwardSection from '../components/home/award-section';
 
 import dataset from '../utils/datasets/bootstrap';
