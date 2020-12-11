@@ -8,11 +8,13 @@ import TabSection from '../components/home/tab-section';
 import InspectionFormSection from '../components/home/inspection-form-section';
 import AwardSection from '../components/home/award-section';
 
+import dataset from '../utils/datasets/bootstrap';
+
 import '../styles/modules/home.less';
 
 const { Link } = Typography;
 
-export default function Home({ config, dataset }) {
+export default function Home() {
 	const LayoutConfig = {
 		title: dataset.general.name,
 		banner: {
@@ -31,18 +33,16 @@ export default function Home({ config, dataset }) {
 				</Button>
 			),
 		},
-		config,
-		dataset,
 	};
 
 	return (
 		<Layout {...LayoutConfig}>
-			<RankedSection config={config} />
-			<ConsultationSection config={config} dataset={dataset} />
-			<ServiceSection config={config} />
-			<TabSection config={config} />
-			<InspectionFormSection config={config} />
-			<AwardSection config={config} />
+			<RankedSection />
+			<ConsultationSection />
+			<ServiceSection />
+			<TabSection />
+			<InspectionFormSection />
+			<AwardSection />
 		</Layout>
 	);
 }

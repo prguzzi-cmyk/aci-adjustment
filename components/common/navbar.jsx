@@ -6,9 +6,11 @@ import Link from 'next/link';
 import TweenOne from 'rc-tween-one';
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
 
+import config from '../../utils/config';
+
 const { SubMenu } = Menu;
 
-const Navbar = ({ config, isMobile }) => {
+const Navbar = ({ isMobile }) => {
 	const [phoneOpen, setPhoneOpen] = useState(undefined);
 
 	const moment = phoneOpen === undefined ? 300 : null;

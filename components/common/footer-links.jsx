@@ -4,9 +4,12 @@ import { ShopOutlined, PhoneOutlined, MailOutlined } from '@ant-design/icons';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
+import config from '../../utils/config';
+import dataset from '../../utils/datasets/bootstrap';
+
 const { Title, Text, Link: TypoLink } = Typography;
 
-const FooterLinks = ({ config, dataset }) => {
+const FooterLinks = () => {
 	return (
 		<OverPack
 			componentProps={{

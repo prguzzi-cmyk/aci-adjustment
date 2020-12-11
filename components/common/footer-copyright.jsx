@@ -2,9 +2,11 @@ import { Row, Col, Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
+import config from '../../utils/config';
+
 const { Text } = Typography;
 
-const FooterCopyright = ({ config }) => {
+const FooterCopyright = () => {
 	return (
 		<OverPack
 			componentProps={{

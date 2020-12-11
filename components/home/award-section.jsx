@@ -3,9 +3,11 @@ import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Image from 'next/image';
 
+import config from '../../utils/config';
+
 const { Title, Text } = Typography;
 
-const AwardSection = ({ config }) => {
+const AwardSection = () => {
 	return (
 		<div className='award-container'>
 			<Title level={2} className='award-title'>

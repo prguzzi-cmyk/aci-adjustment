@@ -3,9 +3,11 @@ import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
+import config from '../../utils/config';
+
 const { Link, Title, Text } = Typography;
 
-const ServiceSection = ({ config }) => {
+const ServiceSection = () => {
 	const imgConfig = {
 		width: 217,
 		height: 217,

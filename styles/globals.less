@@ -218,7 +218,17 @@
 	.ant-layout-content {
 		/* Breadcrumb */
 		.ant-breadcrumb {
-			padding: 16px 50px;
+			padding: 30px 50px;
+
+			.ant-breadcrumb-link {
+				a {
+					color: rgba(0, 0, 0, 0.65);
+
+					&:hover {
+						color: @primary-color;
+					}
+				}
+			}
 		}
 
 		/* Page Content */

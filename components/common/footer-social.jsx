@@ -9,9 +9,12 @@ import {
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
+import config from '../../utils/config';
+import dataset from '../../utils/datasets/general';
+
 const { Link } = Typography;
 
-const FooterSocial = ({ config, dataset }) => {
+const FooterSocial = () => {
 	return (
 		<OverPack
 			componentProps={{

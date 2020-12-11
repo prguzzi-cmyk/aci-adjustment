@@ -2,6 +2,8 @@ import { Row, Col, Typography, Form, Input, Select, Button } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
+import config from '../../utils/config';
+
 const { Title, Text } = Typography;
 const { Option } = Select;
 
@@ -31,7 +33,7 @@ const tailFormItemLayout = {
 	},
 };
 
-const InspectionFormSection = ({ config }) => {
+const InspectionFormSection = () => {
 	const [form] = Form.useForm();
 
 	const onFinish = (values) => {

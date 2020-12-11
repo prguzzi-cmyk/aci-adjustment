@@ -1,4 +1,4 @@
-const dataset = {
+const General = {
 	general: {
 		name: 'ACI',
 		tagline: 'Adjustment Group',
@@ -17,4 +17,4 @@ const dataset = {
 	},
 };
 
-export default dataset;
+export default General;

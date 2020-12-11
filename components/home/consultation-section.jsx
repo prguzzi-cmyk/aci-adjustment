@@ -3,9 +3,12 @@ import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
+import config from '../../utils/config';
+import dataset from '../../utils/datasets/bootstrap';
+
 const { Link, Title, Text } = Typography;
 
-const ConsultationSection = ({ config, dataset }) => {
+const ConsultationSection = () => {
 	return (
 		<div className='consult-container'>
 			<Title level={2} className='consult-title'>

@@ -2,11 +2,12 @@ import { Tabs, Row, Col, Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
-const { TabPane } = Tabs;
+import config from '../../utils/config';
 
+const { TabPane } = Tabs;
 const { Link, Title } = Typography;
 
-const TabSection = ({ config }) => {
+const TabSection = () => {
 	return (
 		<Tabs className='tab-container' defaultActiveKey='1' centered animated>
 			<TabPane tab='ACI Adjustment Group' key='1' className='tabpane-adjuster'>

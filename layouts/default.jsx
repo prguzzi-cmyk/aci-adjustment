@@ -10,16 +10,11 @@ import FooterSocial from '../components/common/footer-social';
 import FooterLinks from '../components/common/footer-links';
 import FooterCopyright from '../components/common/footer-copyright';
 
+import dataset from '../utils/datasets/general';
+
 const { Header, Content, Footer } = Layout;
 
-const LayoutDefault = ({
-	title,
-	banner,
-	breadcrumb,
-	config,
-	dataset,
-	children,
-}) => {
+const LayoutDefault = ({ title, banner, breadcrumb, children }) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -35,20 +30,20 @@ const LayoutDefault = ({
 			</Head>
 
 			<Header>
-				<Navbar config={config} isMobile={isMobile} />
-				<Banner config={config} banner={banner} />
+				<Navbar isMobile={isMobile} />
+				<Banner banner={banner} />
 			</Header>
 
 			<Content>
-				{breadcrumb && <Breadcrumb config={config} items={breadcrumb} />}
+				{breadcrumb && <Breadcrumb items={breadcrumb} />}
 
 				<div className='site-layout-content'>{children}</div>
 			</Content>
 
 			<Footer>
-				<FooterSocial config={config} dataset={dataset} />
-				<FooterLinks config={config} dataset={dataset} />
-				<FooterCopyright config={config} />
+				<FooterSocial />
+				<FooterLinks />
+				<FooterCopyright />
 			</Footer>
 		</Layout>
 	);

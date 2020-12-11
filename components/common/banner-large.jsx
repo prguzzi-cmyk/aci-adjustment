@@ -3,9 +3,11 @@ import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
+import config from '../../utils/config';
+
 const { Title } = Typography;
 
-const Banner = ({ banner, config }) => {
+const Banner = ({ banner }) => {
 	return (
 		<div className='page-banner-lg-wrapper'>
 			<div className='page-banner-lg'>
