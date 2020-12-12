@@ -3,14 +3,17 @@ const Router = {
 		home: {
 			path: '/',
 			label: 'Home',
+			key: 'home',
 		},
 		schAppointment: {
 			path: '/schedule-appointment',
 			label: 'Schedule Appointment',
+			key: 'schedule-appointment',
 		},
 		services: {
-			path: '/services',
+			path: '/our-services',
 			label: 'Our Services',
+			key: 'our-services',
 		},
 	},
 };

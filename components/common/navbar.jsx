@@ -6,6 +6,8 @@ import Link from 'next/link';
 import TweenOne from 'rc-tween-one';
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
 
+import dataset from '../../utils/datasets/router';
+
 import config from '../../utils/config';
 
 const { SubMenu } = Menu;
@@ -72,17 +74,24 @@ const Navbar = ({ isMobile }) => {
 						defaultSelectedKeys={['home']}
 						overflowedIndicator={<MenuOutlined />}
 					>
-						<Menu.Item key='home' icon={<HomeTwoTone />}>
-							<Link href='/'>
-								<a>Home</a>
+						<Menu.Item key={dataset.router.home.key} icon={<HomeTwoTone />}>
+							<Link href={dataset.router.home.path}>
+								<a>{dataset.router.home.label}</a>
 							</Link>
 						</Menu.Item>
-						<Menu.Item key='appointment'>
-							<Link href='/schedule-appointment'>
-								<a>Schedule Appointment</a>
+
+						<Menu.Item key={dataset.router.schAppointment.key}>
+							<Link href={dataset.router.schAppointment.path}>
+								<a>{dataset.router.schAppointment.label}</a>
 							</Link>
 						</Menu.Item>
-						<SubMenu key='services' title='Our Services'>
+
+						<SubMenu key='services' title={dataset.router.services.label}>
+							<Menu.Item key={dataset.router.services.key}>
+								<Link href={dataset.router.services.path}>
+									<a>{dataset.router.services.label}</a>
+								</Link>
+							</Menu.Item>
 							<Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
 							<Menu.Item key='file-claim'>File a Claim</Menu.Item>
 							<Menu.Item key='policy-review'>Policy Review</Menu.Item>
