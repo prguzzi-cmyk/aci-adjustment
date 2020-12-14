@@ -15,6 +15,11 @@ const Router = {
 			label: 'Our Services',
 			key: 'our-services',
 		},
+		careers: {
+			path: '/careers',
+			label: 'Careers',
+			key: 'careers',
+		},
 	},
 };
 

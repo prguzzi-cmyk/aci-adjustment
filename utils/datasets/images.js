@@ -2,11 +2,15 @@ const Images = {
 	images: {
 		bannerHome: {
 			src: '/images/banners/home.jpg',
-			alt: 'Banner Image',
+			alt: 'Banner',
 		},
 		bannerDefault: {
 			src: '/images/banners/home.jpg',
-			alt: 'Banner Image',
+			alt: 'Banner',
+		},
+		careers: {
+			src: '/images/careers.jpg',
+			alt: 'Careers',
 		},
 	},
 };

@@ -96,6 +96,7 @@ const Navbar = ({ isMobile }) => {
 							<Menu.Item key='file-claim'>File a Claim</Menu.Item>
 							<Menu.Item key='policy-review'>Policy Review</Menu.Item>
 						</SubMenu>
+
 						<SubMenu key='faq' title='FAQ'>
 							<SubMenu key='ques-claim' title='Questions About your Claim'>
 								<Menu.Item key='claim-denied'>
@@ -110,11 +111,19 @@ const Navbar = ({ isMobile }) => {
 								<Menu.Item key='water'>Water Claims</Menu.Item>
 							</SubMenu>
 						</SubMenu>
-						<Menu.Item key='careers'>Careers</Menu.Item>
+
+						<Menu.Item key={dataset.router.careers.key}>
+							<Link href={dataset.router.careers.path}>
+								<a>{dataset.router.careers.label}</a>
+							</Link>
+						</Menu.Item>
+
 						<Menu.Item key='blog'>Blog</Menu.Item>
+
 						<SubMenu key='about' title='About Us'>
 							<Menu.Item key='testimonials'>Testimonials</Menu.Item>
 						</SubMenu>
+
 						<Menu.Item key='contact'>Contact Us</Menu.Item>
 					</Menu>
 				</TweenOne>
