@@ -12,6 +12,10 @@ const Images = {
 			src: '/images/careers.jpg',
 			alt: 'Careers',
 		},
+		clock: {
+			src: '/images/24by7.jpg',
+			alt: 'Clock 24/7',
+		},
 	},
 };
 

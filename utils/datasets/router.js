@@ -20,6 +20,11 @@ const Router = {
 			label: 'Careers',
 			key: 'careers',
 		},
+		contact: {
+			path: '/contact-us',
+			label: 'Contact Us',
+			key: 'contact-us',
+		},
 	},
 };
 
