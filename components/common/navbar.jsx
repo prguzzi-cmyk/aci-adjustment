@@ -92,9 +92,16 @@ const Navbar = ({ isMobile }) => {
 									<a>{dataset.router.services.label}</a>
 								</Link>
 							</Menu.Item>
+
 							<Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
+
 							<Menu.Item key='file-claim'>File a Claim</Menu.Item>
-							<Menu.Item key='policy-review'>Policy Review</Menu.Item>
+
+							<Menu.Item key={dataset.router.policyReview.key}>
+								<Link href={dataset.router.policyReview.path}>
+									<a>{dataset.router.policyReview.label}</a>
+								</Link>
+							</Menu.Item>
 						</SubMenu>
 
 						<SubMenu key='faq' title='FAQ'>

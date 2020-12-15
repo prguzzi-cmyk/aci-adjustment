@@ -15,6 +15,11 @@ const Router = {
 			label: 'Our Services',
 			key: 'our-services',
 		},
+		policyReview: {
+			path: '/policy-review',
+			label: 'Policy Review',
+			key: 'policy-review',
+		},
 		careers: {
 			path: '/careers',
 			label: 'Careers',
