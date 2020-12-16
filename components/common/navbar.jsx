@@ -105,11 +105,18 @@ const Navbar = ({ isMobile }) => {
 						</SubMenu>
 
 						<SubMenu key='faq' title='FAQ'>
+							<Menu.Item key={dataset.router.faq.key}>
+								<Link href={dataset.router.faq.path}>
+									<a>{dataset.router.faq.label}</a>
+								</Link>
+							</Menu.Item>
+
 							<SubMenu key='ques-claim' title='Questions About your Claim'>
 								<Menu.Item key='claim-denied'>
 									Home Owners insurance Claim Denied
 								</Menu.Item>
 							</SubMenu>
+
 							<SubMenu key='covered' title='Whats Covered?'>
 								<Menu.Item key='fire'>Fire</Menu.Item>
 								<Menu.Item key='oil-heater'>Oil Heater Puff Backs</Menu.Item>
