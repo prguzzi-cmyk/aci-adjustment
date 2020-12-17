@@ -86,7 +86,7 @@ const Navbar = ({ isMobile }) => {
 							</Link>
 						</Menu.Item>
 
-						<SubMenu key='services' title={dataset.router.services.label}>
+						<SubMenu key='whats-covered' title="What's Covered?">
 							<Menu.Item key={dataset.router.services.key}>
 								<Link href={dataset.router.services.path}>
 									<a>{dataset.router.services.label}</a>

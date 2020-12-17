@@ -331,3 +331,60 @@
 		}
 	}
 }
+
+/* Services Section */
+.services-container {
+	padding: @section-padding;
+	min-height: 599px;
+
+	.title {
+		text-align: center;
+		margin-bottom: 60px;
+
+		span {
+			color: @primary-color;
+		}
+	}
+
+	.content {
+		.ant-col {
+			&:hover {
+				background-color: #f0f0f0;
+				box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+					0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+				img {
+					transform: scale(1.1);
+				}
+			}
+
+			.block {
+				.img-wrapper {
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					align-items: center;
+					min-height: 110px;
+					margin-bottom: @margin-3;
+
+					div {
+						overflow: hidden;
+
+						img {
+							transition: all 0.36s ease-out;
+						}
+					}
+				}
+
+				.btn-wrapper {
+					text-align: center;
+
+					.app-btn-lg {
+						min-height: 65px;
+						min-width: 217px;
+					}
+				}
+			}
+		}
+	}
+}
