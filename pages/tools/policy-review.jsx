@@ -1,11 +1,11 @@
-import Layout from '../layouts/default';
+import Layout from '../../layouts/default';
 
-import dataset from '../utils/datasets/bootstrap';
+import dataset from '../../utils/datasets/bootstrap';
 
-import IntroSection from '../components/policy-review/intro';
-import FormSection from '../components/policy-review/form';
+import IntroSection from '../../components/policy-review/intro';
+import FormSection from '../../components/policy-review/form';
 
-import '../styles/modules/policy-review.less';
+import '../../styles/modules/policy-review.less';
 
 export default function PolicyReview() {
 	const LayoutConfig = {
