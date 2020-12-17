@@ -14,6 +14,11 @@ const General = {
 		label: 'Our Services',
 		key: 'our-services',
 	},
+	tools: {
+		path: '/tools',
+		label: 'Tools',
+		key: 'tools',
+	},
 	policyReview: {
 		path: '/policy-review',
 		label: 'Policy Review',
@@ -64,10 +69,68 @@ const Claims = {
 	},
 };
 
+const Damage = {
+	damageHail: {
+		path: `${Claims.claimStorm.path}/hail-damage`,
+		label: 'Hail Damage',
+		key: 'hail-damage',
+	},
+	damageIceDamming: {
+		path: `${Claims.claimStorm.path}/ice-damming`,
+		label: 'Ice Damming',
+		key: 'ice-damming',
+	},
+	damageMissingShingles: {
+		path: `${Claims.claimStorm.path}/missing-shingles`,
+		label: 'Missing Shingles',
+		key: 'missing-shingles',
+	},
+	damageRoofLeaks: {
+		path: `${Claims.claimStorm.path}/roof-leaks`,
+		label: 'Roof Leaks',
+		key: 'roof-leaks',
+	},
+	damageSiding: {
+		path: `${Claims.claimStorm.path}/siding-damage`,
+		label: 'Siding Damage',
+		key: 'siding-damage',
+	},
+	damageTreeDown: {
+		path: `${Claims.claimStorm.path}/tree-down`,
+		label: 'Tree Down',
+		key: 'tree-down',
+	},
+	damageSkylightLeaks: {
+		path: `${Claims.claimStorm.path}/window-skylight-leaks`,
+		label: 'Window & Skylight Leaks',
+		key: 'window-skylight-leaks',
+	},
+};
+
+const Tools = {
+	claimCalculator: {
+		path: `${General.tools.path}/claim-calculator`,
+		label: 'Claim Calculator',
+		key: 'claim-calculator',
+	},
+	fileClaim: {
+		path: `${General.tools.path}/file-claim`,
+		label: 'File a Claim',
+		key: 'file-claim',
+	},
+	policyReview: {
+		path: `${General.tools.path}/policy-review`,
+		label: 'Policy Review',
+		key: 'policy-review',
+	},
+};
+
 const Router = {
 	router: {
 		...General,
 		...Claims,
+		...Damage,
+		...Tools,
 	},
 };
 

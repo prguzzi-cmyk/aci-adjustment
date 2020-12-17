@@ -333,7 +333,8 @@
 }
 
 /* Services Section */
-.services-container {
+.services-container,
+.damage-container {
 	padding: @section-padding;
 	min-height: 599px;
 
@@ -380,11 +381,35 @@
 					text-align: center;
 
 					.app-btn-lg {
+						font-weight: 500;
 						min-height: 65px;
 						min-width: 217px;
 					}
 				}
 			}
+		}
+	}
+}
+
+/* Show full heading of card */
+.full-head {
+	.ant-card-head-title {
+		overflow: visible;
+		white-space: normal;
+	}
+}
+
+/* Ask Experts Form Section */
+.ask-experts-container {
+	padding: @section-padding;
+	min-height: 755px;
+
+	.title {
+		text-align: center;
+		margin-bottom: 60px;
+
+		span {
+			color: @primary-color;
 		}
 	}
 }
