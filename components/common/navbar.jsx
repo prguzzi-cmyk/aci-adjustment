@@ -93,15 +93,17 @@ const Navbar = ({ isMobile }) => {
 								</Link>
 							</Menu.Item>
 
-							<Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
+							<SubMenu key='tools' title='Tools'>
+								{/* <Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
 
-							<Menu.Item key='file-claim'>File a Claim</Menu.Item>
+							<Menu.Item key='file-claim'>File a Claim</Menu.Item> */}
 
-							<Menu.Item key={dataset.router.policyReview.key}>
-								<Link href={dataset.router.policyReview.path}>
-									<a>{dataset.router.policyReview.label}</a>
-								</Link>
-							</Menu.Item>
+								<Menu.Item key={dataset.router.policyReview.key}>
+									<Link href={dataset.router.policyReview.path}>
+										<a>{dataset.router.policyReview.label}</a>
+									</Link>
+								</Menu.Item>
+							</SubMenu>
 						</SubMenu>
 
 						<SubMenu key='faq' title='FAQ'>
@@ -111,19 +113,11 @@ const Navbar = ({ isMobile }) => {
 								</Link>
 							</Menu.Item>
 
-							<SubMenu key='ques-claim' title='Questions About your Claim'>
-								<Menu.Item key='claim-denied'>
-									Home Owners insurance Claim Denied
-								</Menu.Item>
-							</SubMenu>
+							<Menu.Item key='ques-claim'>Questions About your Claim</Menu.Item>
 
-							<SubMenu key='covered' title='Whats Covered?'>
-								<Menu.Item key='fire'>Fire</Menu.Item>
-								<Menu.Item key='oil-heater'>Oil Heater Puff Backs</Menu.Item>
-								<Menu.Item key='real-estate'>Real Estate</Menu.Item>
-								<Menu.Item key='storm'>Storm Claims</Menu.Item>
-								<Menu.Item key='water'>Water Claims</Menu.Item>
-							</SubMenu>
+							<Menu.Item key='claim-denied'>
+								Home Owners insurance Claim Denied
+							</Menu.Item>
 						</SubMenu>
 
 						<Menu.Item key={dataset.router.careers.key}>
