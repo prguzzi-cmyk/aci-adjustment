@@ -3,7 +3,7 @@ import Layout from '../layouts/home';
 
 import RankedSection from '../components/home/ranked-section';
 import ConsultationSection from '../components/home/consultation-section';
-import ServiceSection from '../components/home/service-section';
+import ServicesSection from '../components/common/sections/services-section';
 import TabSection from '../components/home/tab-section';
 import InspectionFormSection from '../components/common/sections/inspection-form';
 import AwardSection from '../components/home/award-section';
@@ -30,13 +30,14 @@ export default function Home() {
 				</Button>
 			),
 		},
+		className: dataset.router.home.key,
 	};
 
 	return (
 		<Layout {...LayoutConfig}>
 			<RankedSection />
 			<ConsultationSection />
-			<ServiceSection />
+			<ServicesSection />
 			<TabSection />
 			<InspectionFormSection />
 			<AwardSection />

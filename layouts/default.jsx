@@ -14,7 +14,13 @@ import dataset from '../utils/datasets/general';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutDefault = ({ title, banner, breadcrumb, children }) => {
+const LayoutDefault = ({
+	title,
+	banner,
+	breadcrumb,
+	className = '',
+	children,
+}) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -37,7 +43,7 @@ const LayoutDefault = ({ title, banner, breadcrumb, children }) => {
 			<Content>
 				{breadcrumb && <Breadcrumb items={breadcrumb} />}
 
-				<div className='site-layout-content'>{children}</div>
+				<div className={`site-layout-content ${className}`}>{children}</div>
 			</Content>
 
 			<Footer>

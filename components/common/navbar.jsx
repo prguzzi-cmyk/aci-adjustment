@@ -86,30 +86,38 @@ const Navbar = ({ isMobile }) => {
 							</Link>
 						</Menu.Item>
 
-						<SubMenu key='services' title={dataset.router.services.label}>
+						<SubMenu key='whats-covered' title="What's Covered?">
 							<Menu.Item key={dataset.router.services.key}>
 								<Link href={dataset.router.services.path}>
 									<a>{dataset.router.services.label}</a>
 								</Link>
 							</Menu.Item>
-							<Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
-							<Menu.Item key='file-claim'>File a Claim</Menu.Item>
-							<Menu.Item key='policy-review'>Policy Review</Menu.Item>
+
+							<SubMenu key='tools' title='Tools'>
+								{/* <Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
+
+							<Menu.Item key='file-claim'>File a Claim</Menu.Item> */}
+
+								<Menu.Item key={dataset.router.policyReview.key}>
+									<Link href={dataset.router.policyReview.path}>
+										<a>{dataset.router.policyReview.label}</a>
+									</Link>
+								</Menu.Item>
+							</SubMenu>
 						</SubMenu>
 
 						<SubMenu key='faq' title='FAQ'>
-							<SubMenu key='ques-claim' title='Questions About your Claim'>
-								<Menu.Item key='claim-denied'>
-									Home Owners insurance Claim Denied
-								</Menu.Item>
-							</SubMenu>
-							<SubMenu key='covered' title='Whats Covered?'>
-								<Menu.Item key='fire'>Fire</Menu.Item>
-								<Menu.Item key='oil-heater'>Oil Heater Puff Backs</Menu.Item>
-								<Menu.Item key='real-estate'>Real Estate</Menu.Item>
-								<Menu.Item key='storm'>Storm Claims</Menu.Item>
-								<Menu.Item key='water'>Water Claims</Menu.Item>
-							</SubMenu>
+							<Menu.Item key={dataset.router.faq.key}>
+								<Link href={dataset.router.faq.path}>
+									<a>{dataset.router.faq.label}</a>
+								</Link>
+							</Menu.Item>
+
+							<Menu.Item key='ques-claim'>Questions About your Claim</Menu.Item>
+
+							<Menu.Item key='claim-denied'>
+								Home Owners insurance Claim Denied
+							</Menu.Item>
 						</SubMenu>
 
 						<Menu.Item key={dataset.router.careers.key}>

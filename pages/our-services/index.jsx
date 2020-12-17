@@ -2,6 +2,7 @@ import Layout from '../../layouts/default';
 import dataset from '../../utils/datasets/bootstrap';
 
 import StepsSection from '../../components/our-services/steps-section';
+import ServicesSection from '../../components/common/sections/services-section';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
 
 import '../../styles/modules/our-services.less';
@@ -14,11 +15,13 @@ export default function OurServices() {
 			title: dataset.router.services.label,
 		},
 		breadcrumb: [dataset.router.services],
+		className: dataset.router.services.key,
 	};
 
 	return (
 		<Layout {...LayoutConfig}>
 			<StepsSection />
+			<ServicesSection />
 			<InspectionFormSection />
 		</Layout>
 	);
