@@ -58,6 +58,31 @@ const Claims = {
 	claimFire: {
 		src: '/images/claims/fire.png',
 		alt: 'Fire Claims',
+
+		preserveHome: {
+			src: '/images/claims/preserve-home.png',
+			alt: 'Preserve Home',
+		},
+		commercialFire: {
+			src: '/images/claims/commercial-fire.png',
+			alt: 'Commercial Fire',
+		},
+		explosion: {
+			src: '/images/claims/explosion.png',
+			alt: 'Explosion',
+		},
+		kitchenFires: {
+			src: '/images/claims/kitchen-fires.png',
+			alt: 'Kitchen Fires',
+		},
+		smokeDamage: {
+			src: '/images/claims/smoke-damage.png',
+			alt: 'Smoke Damage',
+		},
+		fireSafety: {
+			src: '/images/claims/fire-safety.png',
+			alt: 'Operation Fire Safety',
+		},
 	},
 	claimWater: {
 		src: '/images/claims/water.png',

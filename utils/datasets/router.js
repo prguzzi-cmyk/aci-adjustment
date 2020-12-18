@@ -105,6 +105,26 @@ const Damage = {
 		label: 'Window & Skylight Leaks',
 		key: 'window-skylight-leaks',
 	},
+	damageCommercial: {
+		path: `${Claims.claimFire.path}/commercial-fire`,
+		label: 'Commercial Fire',
+		key: 'commercial-fire',
+	},
+	damageExplosion: {
+		path: `${Claims.claimFire.path}/explosion`,
+		label: 'Explosion',
+		key: 'explosion',
+	},
+	damageKitchen: {
+		path: `${Claims.claimFire.path}/kitchen-fires`,
+		label: 'kitchen Fires',
+		key: 'kitchen-fires',
+	},
+	damageSmoke: {
+		path: `${Claims.claimFire.path}/smoke-damage`,
+		label: 'Smoke Damage',
+		key: 'smoke-damage',
+	},
 };
 
 const Tools = {
