@@ -2,7 +2,7 @@ import Layout from '../../layouts/default';
 import dataset from '../../utils/datasets/bootstrap';
 
 import StepsSection from '../../components/our-services/steps-section';
-import ServicesSection from '../../components/common/sections/services-section';
+import ServicesSection from '../../components/common/sections/services';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
 
 import '../../styles/modules/our-services.less';
