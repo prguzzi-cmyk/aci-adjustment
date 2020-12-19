@@ -10,18 +10,20 @@ const IntroSection = () => {
 	return (
 		<div className='intro-container'>
 			<Title level={2} className='title'>
-				Frequently Asked Questions
+				Questions?
 			</Title>
 
 			<OverPack {...config.OverPack({ playScale: config.PlayScale.bottom })}>
 				<QueueAnim
+					key='intro-content-queue'
 					component={Row}
 					componentProps={{
-						gutter: [0, 25],
+						justify: 'middle',
+						align: 'center',
 					}}
 					{...config.QueueAnim({})}
 				>
-					<Col key='1' offset={4} md={16}>
+					<Col key='1' md={16}>
 						Do you have a question about your claim? You'll find all of your
 						claim answers on ACI Adjustment Group's FAQ page! Do you have damage
 						and want to find out more about the claim process? You'll find all
