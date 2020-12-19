@@ -63,9 +63,9 @@ const Claims = {
 		key: 'commercial-claims',
 	},
 	claimCommon: {
-		path: `${General.services.path}/other-common-claims`,
+		path: `${General.services.path}/common-claims`,
 		label: 'Other Common Claims',
-		key: 'other-common-claims',
+		key: 'common-claims',
 	},
 };
 
@@ -104,6 +104,116 @@ const Damage = {
 		path: `${Claims.claimStorm.path}/window-skylight-leaks`,
 		label: 'Window & Skylight Leaks',
 		key: 'window-skylight-leaks',
+	},
+	damageCommercial: {
+		path: `${Claims.claimFire.path}/commercial-fire`,
+		label: 'Commercial Fire',
+		key: 'commercial-fire',
+	},
+	damageExplosion: {
+		path: `${Claims.claimFire.path}/explosion`,
+		label: 'Explosion',
+		key: 'explosion',
+	},
+	damageKitchen: {
+		path: `${Claims.claimFire.path}/kitchen-fires`,
+		label: 'kitchen Fires',
+		key: 'kitchen-fires',
+	},
+	damageSmoke: {
+		path: `${Claims.claimFire.path}/smoke-damage`,
+		label: 'Smoke Damage',
+		key: 'smoke-damage',
+	},
+	damageAcUnitLeak: {
+		path: `${Claims.claimWater.path}/ac-unit-leaks`,
+		label: 'A/C Unit Leaks',
+		key: 'ac-unit-leaks',
+	},
+	damageAppliancesLeak: {
+		path: `${Claims.claimWater.path}/appliances-leaks`,
+		label: 'Appliances Leaks',
+		key: 'appliances-leaks',
+	},
+	damageBathLeak: {
+		path: `${Claims.claimWater.path}/bathtub-shower-leaks`,
+		label: 'Bathtub & Shower Leaks',
+		key: 'bathtub-shower-leaks',
+	},
+	damageSumpLeak: {
+		path: `${Claims.claimWater.path}/sump-pump-leaks`,
+		label: 'Flood & Sump Pump Leaks',
+		key: 'sump-pump-leaks',
+	},
+	damageMold: {
+		path: `${Claims.claimWater.path}/mold`,
+		label: 'Mold',
+		key: 'mold',
+	},
+	damageToiletLeak: {
+		path: `${Claims.claimWater.path}/toilet-leaks-overflows`,
+		label: 'Toilet Leaks & Overflows',
+		key: 'toilet-leaks-overflows',
+	},
+	damageApartment: {
+		path: `${Claims.claimCommercial.path}/apartment-buildings-condominiums`,
+		label: 'Apartment Buildings & Condominiums',
+		key: 'apartment-buildings-condominiums',
+	},
+	damageGovernment: {
+		path: `${Claims.claimCommercial.path}/government-buildings`,
+		label: 'Government Buildings',
+		key: 'government-buildings',
+	},
+	damageIndustrial: {
+		path: `${Claims.claimCommercial.path}/industrial-properties`,
+		label: 'Industrial Properties',
+		key: 'industrial-properties',
+	},
+	damageCommercial: {
+		path: `${Claims.claimCommercial.path}/commercial-office-buildings`,
+		label: 'Commercial Office Buildings',
+		key: 'commercial-office-buildings',
+	},
+	damageShopping: {
+		path: `${Claims.claimCommercial.path}/shopping-centers-malls`,
+		label: 'Shopping Centers & Malls',
+		key: 'shopping-centers-malls',
+	},
+	damageSmallBusiness: {
+		path: `${Claims.claimCommercial.path}/small-businesses`,
+		label: 'Small Businesses',
+		key: 'small-businesses',
+	},
+	damageUniversity: {
+		path: `${Claims.claimCommercial.path}/universities-school-buildings`,
+		label: 'Universities & School Buildings',
+		key: 'universities-school-buildings',
+	},
+	damageLossBusiness: {
+		path: `${Claims.claimCommercial.path}/loss-of-business`,
+		label: 'Loss of Business',
+		key: 'loss-of-business',
+	},
+	damageCollapse: {
+		path: `${Claims.claimCommon.path}/collapse`,
+		label: 'Collapse',
+		key: 'collapse',
+	},
+	damageOilHeater: {
+		path: `${Claims.claimCommon.path}/oil-heater-puff-back`,
+		label: 'Oil Heater Puff Back',
+		key: 'oil-heater-puff-back',
+	},
+	damageTheft: {
+		path: `${Claims.claimCommon.path}/theft-vandalism`,
+		label: 'Theft & Vandalism',
+		key: 'theft-vandalism',
+	},
+	damageFlooring: {
+		path: `${Claims.claimCommon.path}/damaged-flooring`,
+		label: 'Damaged Flooring',
+		key: 'damaged-flooring',
 	},
 };
 

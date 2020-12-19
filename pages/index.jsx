@@ -1,12 +1,13 @@
 import { Button, Typography } from 'antd';
 import Layout from '../layouts/home';
 
-import RankedSection from '../components/home/ranked-section';
-import ConsultationSection from '../components/home/consultation-section';
-import ServicesSection from '../components/common/sections/services-section';
-import TabSection from '../components/home/tab-section';
+import IntroSection from '../components/home/intro';
+import RankedSection from '../components/home/ranked';
+import ConsultationSection from '../components/home/consultation';
+import ServicesSection from '../components/common/sections/services';
+import TabSection from '../components/home/tab';
 import InspectionFormSection from '../components/common/sections/inspection-form';
-import AwardSection from '../components/home/award-section';
+import AwardSection from '../components/home/award';
 
 import dataset from '../utils/datasets/bootstrap';
 
@@ -35,6 +36,7 @@ export default function Home() {
 
 	return (
 		<Layout {...LayoutConfig}>
+			<IntroSection />
 			<RankedSection />
 			<ConsultationSection />
 			<ServicesSection />

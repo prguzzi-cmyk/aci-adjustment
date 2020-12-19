@@ -1,18 +1,25 @@
 @import '../theme.less';
 
-/* Appointment Section */
-.appointment-container {
-	padding: @section-padding;
-	background-color: @section-background;
-	min-height: 350px;
+.schedule-appointment {
+	/* Schedule Appointment Intro Section */
+	.intro-container {
+		padding: @section-padding;
+		background-color: @section-background;
+		min-height: 503px;
 
-	.title {
-		text-align: center;
-		color: @primary-color;
-	}
+		.title {
+			text-align: center;
 
-	.content {
-		text-align: center;
-		margin-top: 100px;
+			span {
+				color: @primary-color;
+			}
+		}
+
+		.content {
+			.appointment-btn {
+				text-align: center;
+				margin-top: 50px;
+			}
+		}
 	}
 }

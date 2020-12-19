@@ -1,0 +1,65 @@
+@import '../../theme.less';
+
+.common-claims {
+	/* Common Claims Intro Section */
+	.intro-container {
+		padding: @section-padding;
+		background-color: @section-background;
+		min-height: 733px;
+
+		.title {
+			text-align: center;
+			margin-bottom: 60px;
+
+			span {
+				color: @primary-color;
+			}
+		}
+
+		.content {
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+
+	/* Common Claims FAQ Section */
+	.faq-container {
+		padding: @section-padding;
+		min-height: 1097px;
+
+		.title {
+			text-align: center;
+			margin-bottom: 60px;
+
+			span {
+				color: @primary-color;
+			}
+		}
+
+		.content {
+			.ant-card {
+				background-color: transparent;
+				margin-bottom: @margin-4;
+			}
+		}
+	}
+
+	/* Damage Section */
+	.damage-container {
+		background-color: @section-background;
+		min-height: 649px;
+
+		.content {
+			.ant-col {
+				.block {
+					.btn-wrapper {
+						.app-btn-lg {
+							min-width: 267px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
