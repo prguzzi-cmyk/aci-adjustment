@@ -125,6 +125,36 @@ const Damage = {
 		label: 'Smoke Damage',
 		key: 'smoke-damage',
 	},
+	damageAcUnitLeak: {
+		path: `${Claims.claimWater.path}/ac-unit-leaks`,
+		label: 'A/C Unit Leaks',
+		key: 'ac-unit-leaks',
+	},
+	damageAppliancesLeak: {
+		path: `${Claims.claimWater.path}/appliances-leaks`,
+		label: 'Appliances Leaks',
+		key: 'appliances-leaks',
+	},
+	damageBathLeak: {
+		path: `${Claims.claimWater.path}/bathtub-shower-leaks`,
+		label: 'Bathtub & Shower Leaks',
+		key: 'bathtub-shower-leaks',
+	},
+	damageSumpLeak: {
+		path: `${Claims.claimWater.path}/sump-pump-leaks`,
+		label: 'Flood & Sump Pump Leaks',
+		key: 'sump-pump-leaks',
+	},
+	damageMold: {
+		path: `${Claims.claimWater.path}/mold`,
+		label: 'Mold',
+		key: 'mold',
+	},
+	damageToiletLeak: {
+		path: `${Claims.claimWater.path}/toilet-leaks-overflows`,
+		label: 'Toilet Leaks & Overflows',
+		key: 'toilet-leaks-overflows',
+	},
 };
 
 const Tools = {

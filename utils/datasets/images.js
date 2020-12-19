@@ -87,6 +87,35 @@ const Claims = {
 	claimWater: {
 		src: '/images/claims/water.png',
 		alt: 'Water Claims',
+
+		pipeLeak: {
+			src: '/images/claims/pipe-leak.png',
+			alt: 'Water Pipe Leak',
+		},
+		acUnitLeak: {
+			src: '/images/claims/ac-unit-leak.png',
+			alt: 'A/C Unit Leak',
+		},
+		appliancesLeak: {
+			src: '/images/claims/appliances-leak.png',
+			alt: 'Appliances Leak',
+		},
+		bathLeak: {
+			src: '/images/claims/bathtub-leak.png',
+			alt: 'Bathtub Leak',
+		},
+		sumpLeak: {
+			src: '/images/claims/sump-leak.png',
+			alt: 'Sump Pump Leak',
+		},
+		mold: {
+			src: '/images/claims/mold.png',
+			alt: 'Mold',
+		},
+		toiletLeak: {
+			src: '/images/claims/toilet-leak.png',
+			alt: 'Toilet Leaks &amp; Overflows',
+		},
 	},
 	claimCommercial: {
 		src: '/images/claims/commercial.png',
