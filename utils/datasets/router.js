@@ -63,9 +63,9 @@ const Claims = {
 		key: 'commercial-claims',
 	},
 	claimCommon: {
-		path: `${General.services.path}/other-common-claims`,
+		path: `${General.services.path}/common-claims`,
 		label: 'Other Common Claims',
-		key: 'other-common-claims',
+		key: 'common-claims',
 	},
 };
 
@@ -194,6 +194,26 @@ const Damage = {
 		path: `${Claims.claimCommercial.path}/loss-of-business`,
 		label: 'Loss of Business',
 		key: 'loss-of-business',
+	},
+	damageCollapse: {
+		path: `${Claims.claimCommon.path}/collapse`,
+		label: 'Collapse',
+		key: 'collapse',
+	},
+	damageOilHeater: {
+		path: `${Claims.claimCommon.path}/oil-heater-puff-back`,
+		label: 'Oil Heater Puff Back',
+		key: 'oil-heater-puff-back',
+	},
+	damageTheft: {
+		path: `${Claims.claimCommon.path}/theft-vandalism`,
+		label: 'Theft & Vandalism',
+		key: 'theft-vandalism',
+	},
+	damageFlooring: {
+		path: `${Claims.claimCommon.path}/damaged-flooring`,
+		label: 'Damaged Flooring',
+		key: 'damaged-flooring',
 	},
 };
 

@@ -157,6 +157,23 @@ const Claims = {
 	claimCommon: {
 		src: '/images/claims/flood.png',
 		alt: 'Other Common Claims',
+
+		collapse: {
+			src: '/images/claims/collapse.png',
+			alt: 'Collapse',
+		},
+		oilHeater: {
+			src: '/images/claims/oil-heater.png',
+			alt: 'Oil Heater Puff Back',
+		},
+		theft: {
+			src: '/images/claims/theft-vandalism.png',
+			alt: 'Theft & Vandalism',
+		},
+		damageFlooring: {
+			src: '/images/claims/damaged-flooring.png',
+			alt: 'Damaged Flooring',
+		},
 	},
 };
 
