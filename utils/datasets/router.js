@@ -155,6 +155,46 @@ const Damage = {
 		label: 'Toilet Leaks & Overflows',
 		key: 'toilet-leaks-overflows',
 	},
+	damageApartment: {
+		path: `${Claims.claimCommercial.path}/apartment-buildings-condominiums`,
+		label: 'Apartment Buildings & Condominiums',
+		key: 'apartment-buildings-condominiums',
+	},
+	damageGovernment: {
+		path: `${Claims.claimCommercial.path}/government-buildings`,
+		label: 'Government Buildings',
+		key: 'government-buildings',
+	},
+	damageIndustrial: {
+		path: `${Claims.claimCommercial.path}/industrial-properties`,
+		label: 'Industrial Properties',
+		key: 'industrial-properties',
+	},
+	damageCommercial: {
+		path: `${Claims.claimCommercial.path}/commercial-office-buildings`,
+		label: 'Commercial Office Buildings',
+		key: 'commercial-office-buildings',
+	},
+	damageShopping: {
+		path: `${Claims.claimCommercial.path}/shopping-centers-malls`,
+		label: 'Shopping Centers & Malls',
+		key: 'shopping-centers-malls',
+	},
+	damageSmallBusiness: {
+		path: `${Claims.claimCommercial.path}/small-businesses`,
+		label: 'Small Businesses',
+		key: 'small-businesses',
+	},
+	damageUniversity: {
+		path: `${Claims.claimCommercial.path}/universities-school-buildings`,
+		label: 'Universities & School Buildings',
+		key: 'universities-school-buildings',
+	},
+	damageLossBusiness: {
+		path: `${Claims.claimCommercial.path}/loss-of-business`,
+		label: 'Loss of Business',
+		key: 'loss-of-business',
+	},
 };
 
 const Tools = {

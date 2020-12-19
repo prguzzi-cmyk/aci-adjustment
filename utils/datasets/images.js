@@ -114,12 +114,45 @@ const Claims = {
 		},
 		toiletLeak: {
 			src: '/images/claims/toilet-leak.png',
-			alt: 'Toilet Leaks &amp; Overflows',
+			alt: 'Toilet Leaks & Overflows',
 		},
 	},
 	claimCommercial: {
 		src: '/images/claims/commercial.png',
 		alt: 'Commercial Claims',
+
+		apartment: {
+			src: '/images/claims/apartment-building.jpg',
+			alt: 'Apartment Buildings & Condominiums',
+		},
+		government: {
+			src: '/images/claims/government-building.jpg',
+			alt: 'Government Buildings',
+		},
+		industrial: {
+			src: '/images/claims/industrial-property.jpg',
+			alt: 'Industrial Properties',
+		},
+		commercialOffice: {
+			src: '/images/claims/commercial-office.jpg',
+			alt: 'Commercial Office Buildings',
+		},
+		shoppingCenter: {
+			src: '/images/claims/shopping-center.jpg',
+			alt: 'Shopping Centers & Malls',
+		},
+		smallBusinesses: {
+			src: '/images/claims/small-business.jpg',
+			alt: 'Small Businesses',
+		},
+		universities: {
+			src: '/images/claims/university.jpg',
+			alt: 'Universities & School Buildings',
+		},
+		lossBusiness: {
+			src: '/images/claims/loss-business.jpg',
+			alt: 'Loss of Business',
+		},
 	},
 	claimCommon: {
 		src: '/images/claims/flood.png',
