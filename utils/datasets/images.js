@@ -181,10 +181,30 @@ const Claims = {
 	},
 };
 
+const Awards = {
+	awardsWharton: {
+		src: '/images/awards/wharton.png',
+		alt: 'UPenn Wharton',
+	},
+	awardsInc500: {
+		src: '/images/awards/inc-500.jpg',
+		alt: 'Inc. 500',
+	},
+	awardsIaua: {
+		src: '/images/awards/iaua.jpg',
+		alt: 'Insurance Agents United Assoc.',
+	},
+	awardsUpa: {
+		src: '/images/awards/upa.png',
+		alt: 'United Public Adjusters',
+	},
+};
+
 const Images = {
 	images: {
 		...General,
 		...Claims,
+		...Awards,
 	},
 };
 

@@ -128,7 +128,13 @@ const Navbar = ({ isMobile }) => {
 
 						<Menu.Item key='blog'>Blog</Menu.Item>
 
-						<SubMenu key='about' title='About Us'>
+						<SubMenu key='who-are-we' title='Who are we?'>
+							<Menu.Item key={dataset.router.aboutUs.key}>
+								<Link href={dataset.router.aboutUs.path}>
+									<a>{dataset.router.aboutUs.label}</a>
+								</Link>
+							</Menu.Item>
+
 							<Menu.Item key='testimonials'>Testimonials</Menu.Item>
 						</SubMenu>
 
