@@ -113,10 +113,16 @@ const Navbar = ({ isMobile }) => {
 								</Link>
 							</Menu.Item>
 
-							<Menu.Item key='ques-claim'>Questions About your Claim</Menu.Item>
+							<Menu.Item key={dataset.router.faqClaimQuestions.key}>
+								<Link href={dataset.router.faqClaimQuestions.path}>
+									<a>Questions About your Claim</a>
+								</Link>
+							</Menu.Item>
 
-							<Menu.Item key='claim-denied'>
-								Home Owners insurance Claim Denied
+							<Menu.Item key={dataset.router.faqClaimDenied.key}>
+								<Link href={dataset.router.faqClaimDenied.path}>
+									<a>Home Owners insurance Claim Denied</a>
+								</Link>
 							</Menu.Item>
 						</SubMenu>
 
@@ -126,9 +132,19 @@ const Navbar = ({ isMobile }) => {
 							</Link>
 						</Menu.Item>
 
-						<Menu.Item key='blog'>Blog</Menu.Item>
+						<Menu.Item key={dataset.router.blog.key}>
+							<Link href={dataset.router.blog.path}>
+								<a>{dataset.router.blog.label}</a>
+							</Link>
+						</Menu.Item>
 
-						<SubMenu key='about' title='About Us'>
+						<SubMenu key='who-are-we' title='Who are we?'>
+							<Menu.Item key={dataset.router.aboutUs.key}>
+								<Link href={dataset.router.aboutUs.path}>
+									<a>{dataset.router.aboutUs.label}</a>
+								</Link>
+							</Menu.Item>
+
 							<Menu.Item key='testimonials'>Testimonials</Menu.Item>
 						</SubMenu>
 

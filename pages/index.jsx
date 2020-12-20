@@ -7,7 +7,7 @@ import ConsultationSection from '../components/home/consultation';
 import ServicesSection from '../components/common/sections/services';
 import TabSection from '../components/home/tab';
 import InspectionFormSection from '../components/common/sections/inspection-form';
-import AwardSection from '../components/home/award';
+import AwardsSection from '../components/common/sections/awards';
 
 import dataset from '../utils/datasets/bootstrap';
 
@@ -42,7 +42,7 @@ export default function Home() {
 			<ServicesSection />
 			<TabSection />
 			<InspectionFormSection />
-			<AwardSection />
+			<AwardsSection />
 		</Layout>
 	);
 }

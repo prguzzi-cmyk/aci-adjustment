@@ -413,3 +413,38 @@
 		}
 	}
 }
+
+/* Awards Section */
+.award-container {
+	padding: @section-padding;
+	min-height: 645px;
+
+	.title {
+		text-align: center;
+		margin-bottom: 60px;
+
+		span {
+			color: @primary-color;
+		}
+	}
+
+	.content {
+		.ant-card-bordered {
+			.ant-card-cover {
+				min-height: 150px;
+
+				img {
+					min-width: 50% !important;
+					min-height: 125px !important;
+				}
+			}
+
+			.ant-card-body {
+				.ant-typography {
+					margin-top: @margin-3;
+					min-height: 75px;
+				}
+			}
+		}
+	}
+}

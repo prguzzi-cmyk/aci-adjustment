@@ -34,6 +34,16 @@ const General = {
 		label: 'Careers',
 		key: 'careers',
 	},
+	blog: {
+		path: '/blog',
+		label: 'Blog',
+		key: 'blog',
+	},
+	aboutUs: {
+		path: '/about-us',
+		label: 'About Us',
+		key: 'about-us',
+	},
 	contact: {
 		path: '/contact-us',
 		label: 'Contact Us',
@@ -235,12 +245,26 @@ const Tools = {
 	},
 };
 
+const Faqs = {
+	faqClaimQuestions: {
+		path: `${General.faq.path}/claim-questions`,
+		label: 'Claim Questions',
+		key: 'claim-questions',
+	},
+	faqClaimDenied: {
+		path: `${General.faq.path}/claim-denied`,
+		label: 'Claim Denied',
+		key: 'claim-denied',
+	},
+};
+
 const Router = {
 	router: {
 		...General,
 		...Claims,
 		...Damage,
 		...Tools,
+		...Faqs,
 	},
 };
 
