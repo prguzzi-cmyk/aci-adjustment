@@ -200,11 +200,27 @@ const Awards = {
 	},
 };
 
+const Posts = {
+	postHail: {
+		src: '/images/posts/hail.png',
+		alt: 'Hail Damage',
+	},
+	postPreserveHome: {
+		src: '/images/posts/preserve-home.png',
+		alt: 'Preserve Home',
+	},
+	postPipeLeak: {
+		src: '/images/posts/pipe-leak.png',
+		alt: 'Water Pipe Leak',
+	},
+};
+
 const Images = {
 	images: {
 		...General,
 		...Claims,
 		...Awards,
+		...Posts,
 	},
 };
 

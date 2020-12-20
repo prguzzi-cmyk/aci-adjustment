@@ -132,7 +132,11 @@ const Navbar = ({ isMobile }) => {
 							</Link>
 						</Menu.Item>
 
-						<Menu.Item key='blog'>Blog</Menu.Item>
+						<Menu.Item key={dataset.router.blog.key}>
+							<Link href={dataset.router.blog.path}>
+								<a>{dataset.router.blog.label}</a>
+							</Link>
+						</Menu.Item>
 
 						<SubMenu key='who-are-we' title='Who are we?'>
 							<Menu.Item key={dataset.router.aboutUs.key}>

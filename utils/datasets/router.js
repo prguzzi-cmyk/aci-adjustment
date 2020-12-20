@@ -34,6 +34,11 @@ const General = {
 		label: 'Careers',
 		key: 'careers',
 	},
+	blog: {
+		path: '/blog',
+		label: 'Blog',
+		key: 'blog',
+	},
 	aboutUs: {
 		path: '/about-us',
 		label: 'About Us',
