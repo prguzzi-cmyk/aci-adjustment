@@ -1,11 +1,11 @@
-import Layout from '../layouts/default';
+import Layout from '../../layouts/default';
 
-import dataset from '../utils/datasets/bootstrap';
+import dataset from '../../utils/datasets/bootstrap';
 
-import IntroSection from '../components/faq/intro';
-import HireSection from '../components/faq/hire';
+import IntroSection from '../../components/faq/intro';
+import HireSection from '../../components/faq/hire';
 
-import '../styles/modules/faq.less';
+import '../../styles/modules/faq/faq.less';
 
 export default function FAQ() {
 	const LayoutConfig = {
@@ -15,6 +15,7 @@ export default function FAQ() {
 			title: dataset.router.faq.label,
 		},
 		breadcrumb: [dataset.router.faq],
+		className: dataset.router.faq.key,
 	};
 
 	return (

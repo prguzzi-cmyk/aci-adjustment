@@ -1,0 +1,49 @@
+@import '../../theme.less';
+
+.claim-denied {
+	/* Claim Denied Intro Section */
+	.intro-container {
+		padding: @section-padding;
+		background-color: @section-background;
+		min-height: 1329px;
+
+		.title {
+			text-align: center;
+			margin-bottom: 60px;
+
+			span {
+				color: @primary-color;
+			}
+		}
+
+		.content {
+			ol {
+				li {
+					margin-bottom: @margin-3;
+				}
+			}
+		}
+	}
+
+	/* Claim Denied FAQ Section */
+	.faq-container {
+		padding: @section-padding;
+		min-height: 1458px;
+
+		.title {
+			text-align: center;
+			margin-bottom: 60px;
+
+			span {
+				color: @primary-color;
+			}
+		}
+
+		.content {
+			.ant-card {
+				background-color: transparent;
+				margin-bottom: @margin-4;
+			}
+		}
+	}
+}

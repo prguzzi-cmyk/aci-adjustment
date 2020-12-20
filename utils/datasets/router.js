@@ -240,12 +240,26 @@ const Tools = {
 	},
 };
 
+const Faqs = {
+	faqClaimQuestions: {
+		path: `${General.faq.path}/claim-questions`,
+		label: 'Claim Questions',
+		key: 'claim-questions',
+	},
+	faqClaimDenied: {
+		path: `${General.faq.path}/claim-denied`,
+		label: 'Claim Denied',
+		key: 'claim-denied',
+	},
+};
+
 const Router = {
 	router: {
 		...General,
 		...Claims,
 		...Damage,
 		...Tools,
+		...Faqs,
 	},
 };
 
