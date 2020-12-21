@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu } from 'antd';
 import { Row, Col } from 'antd';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import TweenOne from 'rc-tween-one';
@@ -14,8 +15,14 @@ const { SubMenu } = Menu;
 
 const Navbar = ({ isMobile }) => {
 	const [phoneOpen, setPhoneOpen] = useState(undefined);
-
 	const moment = phoneOpen === undefined ? 300 : null;
+	const router = useRouter();
+
+	var selectedKey = dataset.router.home.key;
+
+	if (router.pathname !== '/') {
+		selectedKey = /[^/]*$/.exec(router.pathname)[0];
+	}
 
 	return (
 		<Row className={`nav-container ${phoneOpen ? 'open' : ''}`}>
@@ -71,7 +78,7 @@ const Navbar = ({ isMobile }) => {
 						className={`navbar ${isMobile ? 'mobile-nav' : ''}`}
 						theme='light'
 						mode={isMobile ? 'inline' : 'horizontal'}
-						defaultSelectedKeys={['home']}
+						defaultSelectedKeys={[selectedKey]}
 						overflowedIndicator={<MenuOutlined />}
 					>
 						<Menu.Item key={dataset.router.home.key} icon={<HomeTwoTone />}>
@@ -145,7 +152,7 @@ const Navbar = ({ isMobile }) => {
 								</Link>
 							</Menu.Item>
 
-							<Menu.Item key='testimonials'>Testimonials</Menu.Item>
+							{/* <Menu.Item key='testimonials'>Testimonials</Menu.Item> */}
 						</SubMenu>
 
 						<Menu.Item key={dataset.router.contact.key}>

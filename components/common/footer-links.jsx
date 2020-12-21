@@ -18,11 +18,11 @@ const FooterLinks = () => {
 			{...config.OverPack({})}
 		>
 			<QueueAnim
+				key='footer-links-queue'
 				component={Row}
 				componentProps={{
 					gutter: [60, 24],
 				}}
-				key='queue'
 				{...config.QueueAnim({})}
 			>
 				<Col key='1' md={8}>
@@ -30,12 +30,12 @@ const FooterLinks = () => {
 						Information
 					</Title>
 
-					<Link href='/blog'>
-						<a className='footer-link'>Blog</a>
+					<Link href={dataset.router.blog.path}>
+						<a className='footer-link'>{dataset.router.blog.label}</a>
 					</Link>
 
-					<Link href='/testimonials'>
-						<a className='footer-link'>Testimonials</a>
+					<Link href={dataset.router.faq.path}>
+						<a className='footer-link'>{dataset.router.faq.label}</a>
 					</Link>
 				</Col>
 
@@ -44,12 +44,12 @@ const FooterLinks = () => {
 						Resources
 					</Title>
 
-					<Link href='/schedule-appointment'>
-						<a className='footer-link'>Schedule Appointment</a>
+					<Link href={dataset.router.schAppointment.path}>
+						<a className='footer-link'>{dataset.router.schAppointment.label}</a>
 					</Link>
 
-					<Link href='/file-claim'>
-						<a className='footer-link'>File a Claim</a>
+					<Link href={dataset.router.policyReview.path}>
+						<a className='footer-link'>{dataset.router.policyReview.label}</a>
 					</Link>
 				</Col>
 
