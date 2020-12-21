@@ -1,9 +1,7 @@
 import { Row, Col, Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import Image from 'next/image';
 
-import dataset from '../../../utils/datasets/bootstrap';
 import config from '../../../utils/config';
 
 const { Title, Text, Paragraph } = Typography;
@@ -12,78 +10,49 @@ const IntroSection = () => {
 	return (
 		<div className='intro-container'>
 			<Title level={2} className='title'>
-				<Text>Frozen Pipe</Text> Solutions
+				<Text>Commercial Property</Text> Claims
 			</Title>
 
 			<OverPack
 				component={Row}
 				componentProps={{
 					className: 'content',
-					gutter: [20, 20],
+					justify: 'middle',
+					align: 'center',
 				}}
 				{...config.OverPack({ playScale: config.PlayScale.bottom })}
 			>
 				<QueueAnim
-					key='intro-image-queue'
-					component={Col}
-					componentProps={{
-						md: 9,
-					}}
-					{...config.QueueAnim({ type: 'left' })}
-				>
-					<Image
-						key='pipe-leak'
-						src={dataset.images.claimWater.pipeLeak.src}
-						alt={dataset.images.claimWater.pipeLeak.alt}
-						width={450}
-						height={450}
-					/>
-				</QueueAnim>
-
-				<QueueAnim
 					key='intro-content-queue'
 					component={Col}
 					componentProps={{
-						md: 15,
+						md: 22,
 					}}
-					{...config.QueueAnim({ type: 'right' })}
+					{...config.QueueAnim({})}
 				>
-					<Title key='1' level={5}>
-						5 Solid Tips for Frozen Solid Pipes
-					</Title>
+					<Paragraph key='1'>
+						ACI Adjustment Group specializes in large-scale residential and
+						commercial losses. We understand that as the owner, association
+						manager, or member of the board of directors, you may be responsible
+						for filing and managing an insurance claim that may involve dozens
+						of residents. Handling an insurance claim for a large residential or
+						commercial property on your own can be incredibly overwhelming and
+						can often lead to less than a fair claim settlement. Are you
+						familiar with the fine print regarding your insurance policy's
+						complex guidelines and its time-sensitive procedures? If not, it is
+						in the best interest of you and your organization to hire ACI
+						Adjustment Group to handle your claim.
+					</Paragraph>
 
 					<Paragraph key='2'>
-						<Text>Call your Public Adjuster immediately!</Text> - You will need
-						a professional to document your damages with pictures, estimates and
-						a report in order to maximize your settlement. ACI Adjustment Group
-						has a 24-hour Emergency Service Team.
-					</Paragraph>
-
-					<Paragraph key='3'>
-						<Text>Heat your pipes!</Text> - If you do not have an electric
-						heating pad, use a hair dryer or a heated towel in conjunction with
-						a space heater to melt the ice.
-					</Paragraph>
-
-					<Paragraph key='4'>
-						<Text>Prevent mold!</Text> - Use a dehumidifier to prevent as much
-						mold growth as you can until your Public Adjuster arrives. Your
-						adjuster may recommend professional services to prevent and/or clean
-						any mold.
-					</Paragraph>
-
-					<Paragraph key='5'>
-						<Text>Separate damaged contents!</Text> - Separate any damaged
-						contents and document the damages. Televisions, computers,
-						furniture, rugs, clothing and many other household items are covered
-						by your insurance policy
-					</Paragraph>
-
-					<Paragraph key='6'>
-						<Text>Let your Public Adjuster do the talking!</Text> - As you know,
-						insurance companies don’t always play fair. Your Public Adjuster
-						will be familiar with the typical tricks and games the insurance
-						companies use to deny and under-pay claims.
+						Your insurance company will send seasoned adjusters to your property
+						on their behalf to assess your loss. When this occurs, realize that
+						the insurance company's adjuster serves the best interest of the
+						insurance company. In order to combat a low-ball settlement, partial
+						denial, or even complete denial, you will need assistance. Along
+						with a team of appraisers and attorneys, ACI will send out
+						experienced public adjusters to ensure you receive a fair claims
+						settlement.
 					</Paragraph>
 				</QueueAnim>
 			</OverPack>

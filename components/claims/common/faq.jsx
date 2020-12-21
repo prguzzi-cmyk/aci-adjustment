@@ -33,43 +33,43 @@ const FaqSection = () => {
 				>
 					<Card
 						key='1'
-						title='Is water damage covered in my insurance policy?'
+						title='Is an oil heater puff back covered in my insurance policy?'
 						bordered={false}
 					>
-						Water damage is covered in most policies if it occurred suddenly
-						from plumbing or weather.
+						Oil heater puff backs are covered under the "smoke" section of most
+						policies.
 					</Card>
 
 					<Card
 						key='2'
-						title='When is water damage not covered?'
+						title='When is an oil heater puff back not covered?'
 						bordered={false}
 					>
-						Flood, ground water and maintenance issues are not covered under
-						homeowners insurance.
+						An ongoing issue that has not been serviced for an extended period
+						of time will usually not get covered by your insurance company.
 					</Card>
 
-					<Card
-						key='3'
-						title='Am I covered if my sump-pump fails?'
-						bordered={false}
-					>
-						You are only covered for sump pump failure if you have a Sump Pump
-						Endorsement for your policy. You may call your insurance company to
-						add this coverage endorsement.
+					<Card key='3' title='Am I covered for re-painting?' bordered={false}>
+						Most insurance companies will try to get away with just clean-up
+						restoration, but ACI Adjustment Group's team negotiates for
+						repainting any affected rooms in the home.
 					</Card>
 
 					<Card
 						key='4'
-						title='Am I covered for mold remediation?'
+						title='Am I covered for furniture and clothing?'
 						bordered={false}
 					>
-						You are covered for mold if the mold resulted from a covered loss.
-						For example, if your pipes burst and mold grows as a result of the
-						water damage, you're covered for mold remediation.
+						Your insurance company should at least cover you for professional
+						cleaning of furniture and clothing, however some items may need
+						replacement if damaged beyond repair
 					</Card>
 
-					<Card key='5' title='How do I start a water claim?' bordered={false}>
+					<Card
+						key='5'
+						title='How do I start a other common claim?'
+						bordered={false}
+					>
 						You can start a claim online by clicking{' '}
 						<Link href={dataset.router.fileClaim.path}>
 							<a>HERE</a>
