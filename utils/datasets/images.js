@@ -26,10 +26,6 @@ const Claims = {
 		src: '/images/claims/storm.png',
 		alt: 'Storm Claims',
 
-		dontFight: {
-			src: '/images/claims/dont-fight.png',
-			alt: "Don't fight your insurance company alone",
-		},
 		hail: {
 			src: '/images/claims/hail.png',
 			alt: 'Hail Damage',
@@ -63,10 +59,6 @@ const Claims = {
 		src: '/images/claims/fire.png',
 		alt: 'Fire Claims',
 
-		preserveHome: {
-			src: '/images/claims/preserve-home.png',
-			alt: 'Preserve Home',
-		},
 		commercialFire: {
 			src: '/images/claims/commercial-fire.png',
 			alt: 'Commercial Fire',
@@ -92,10 +84,6 @@ const Claims = {
 		src: '/images/claims/water.png',
 		alt: 'Water Claims',
 
-		pipeLeak: {
-			src: '/images/claims/pipe-leak.png',
-			alt: 'Water Pipe Leak',
-		},
 		acUnitLeak: {
 			src: '/images/claims/ac-unit-leak.png',
 			alt: 'A/C Unit Leak',
