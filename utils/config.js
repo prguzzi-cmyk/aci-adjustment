@@ -67,4 +67,10 @@ const TweenOne = ({
 	}
 };
 
-export default { PlayScale, OverPack, QueueAnim, TweenOne };
+const MessageDuration = {
+	shorter: 3,
+	normal: 5,
+	longer: 8,
+};
+
+export default { PlayScale, OverPack, QueueAnim, TweenOne, MessageDuration };

@@ -1,6 +1,17 @@
-import { Row, Col, Typography, Form, Input, Select, Button } from 'antd';
+import React, { useState } from 'react';
+import {
+	Row,
+	Col,
+	Typography,
+	Form,
+	Input,
+	Select,
+	Button,
+	message,
+} from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import Recaptcha from 'react-google-recaptcha';
 
 import config from '../../../utils/config';
 
@@ -34,10 +45,44 @@ const tailFormItemLayout = {
 };
 
 const InspectionFormSection = () => {
+	const recaptchaRef = React.createRef();
 	const [form] = Form.useForm();
+	const [loading, setLoading] = useState(false);
 
-	const onFinish = (values) => {
-		console.log('Received values of form: ', values);
+	const checkRecaptcha = () => {
+		const recaptchaValue = recaptchaRef.current.getValue();
+		
+		if (recaptchaValue === '') {
+			return Promise.reject('Please solve recaptcha!');
+		} else {
+			return Promise.resolve();
+		}
+	};
+
+	const onFinish = async (values) => {
+		values.captcha = recaptchaRef.current.getValue();
+
+		setLoading(true);
+
+		const res = await fetch('/api/inspection', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(values),
+		});
+		const jRes = await res.json();
+
+		if (jRes.success === true) {
+			message.success(
+				'Your inspection query has been submitted!',
+				config.MessageDuration.normal
+			);
+		} else {
+			message.error(jRes.message, config.MessageDuration.normal);
+		}
+
+		setLoading(false);
 	};
 
 	const prefixSelector = (
@@ -71,7 +116,7 @@ const InspectionFormSection = () => {
 					{...config.QueueAnim({})}
 				>
 					<Form.Item
-						name='first-name'
+						name='firstName'
 						key='first-name'
 						label='First Name'
 						hasFeedback
@@ -87,7 +132,7 @@ const InspectionFormSection = () => {
 					</Form.Item>
 
 					<Form.Item
-						name='last-name'
+						name='lastName'
 						key='last-name'
 						label='Last Name'
 						hasFeedback
@@ -143,7 +188,7 @@ const InspectionFormSection = () => {
 						style={{ marginBottom: 0 }}
 					>
 						<Form.Item
-							name='line-1'
+							name='address1'
 							hasFeedback
 							rules={[
 								{ required: true, message: 'Please input your address!' },
@@ -154,7 +199,7 @@ const InspectionFormSection = () => {
 						</Form.Item>
 
 						<Form.Item
-							name='line-2'
+							name='address2'
 							style={{
 								display: 'inline-block',
 								width: '50%',
@@ -198,7 +243,7 @@ const InspectionFormSection = () => {
 					</Form.Item>
 
 					<Form.Item
-						name='zip-code'
+						name='zipCode'
 						key='zip-code'
 						label='Zip Code'
 						hasFeedback
@@ -214,7 +259,7 @@ const InspectionFormSection = () => {
 					</Form.Item>
 
 					<Form.Item
-						name='claim-type'
+						name='claimType'
 						key='claim-type'
 						label='Type of Claim'
 						hasFeedback
@@ -231,7 +276,7 @@ const InspectionFormSection = () => {
 					</Form.Item>
 
 					<Form.Item
-						name='damage-type'
+						name='damageType'
 						key='damage-type'
 						label='Type of Damage'
 						hasFeedback
@@ -292,16 +337,15 @@ const InspectionFormSection = () => {
 									noStyle
 									rules={[
 										{
-											required: true,
-											message: 'Please input the captcha you got!',
+											validator: checkRecaptcha,
 										},
 									]}
 								>
-									<Input />
+									<Recaptcha
+										ref={recaptchaRef}
+										sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+									/>
 								</Form.Item>
-							</Col>
-							<Col span={12}>
-								<Button>Get captcha</Button>
 							</Col>
 						</Row>
 					</Form.Item>
@@ -312,6 +356,7 @@ const InspectionFormSection = () => {
 							shape='circle'
 							className='app-btn static'
 							htmlType='submit'
+							loading={loading}
 						>
 							Submit
 						</Button>
