@@ -3,7 +3,7 @@ const General = {
 		name: 'ACI',
 		tagline: 'Adjustment Group',
 		description: 'Public Adjusters',
-		email: 'office@aciadjustment.com',
+		email: 'claims@aciadjustment.com',
 		phone: '18008094302',
 		phoneFormatted: '1-800-809-4302',
 		fax: '18552245291',
@@ -12,7 +12,7 @@ const General = {
 		pincode: '18974',
 	},
 	emails: {
-		claim: 'claims@aciadjustment.com',
+		claim: { email: 'claims@aciadjustment.com', label: 'Claims' },
 	},
 	socialLinks: {
 		facebook: 'https://www.facebook.com/ACIAdjustmentGroup',

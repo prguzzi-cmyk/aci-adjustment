@@ -114,8 +114,8 @@ const FaqSection = () => {
 						<Text>Fax</Text> the invoices to{' '}
 						<Text>{dataset.general.faxFormatted}</Text>. You can{' '}
 						<Text>Email</Text> the invoices to our claim processing manager at{' '}
-						<Link href={`mailto:${dataset.emails.claim}`}>
-							<a>{dataset.emails.claim}</a>
+						<Link href={`mailto:${dataset.emails.claim.email}`}>
+							<a>{dataset.emails.claim.email}</a>
 						</Link>
 						{}. Or you can mail the invoice to the address below:
 						<br />
