@@ -4,6 +4,11 @@ const General = {
 		label: 'Home',
 		key: 'home',
 	},
+	notFound: {
+		path: '',
+		label: 'Page not found',
+		key: 'page-not-found',
+	},
 	schAppointment: {
 		path: '/schedule-appointment',
 		label: 'Schedule Appointment',
