@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+import { GTM_ID } from '../lib/gtm';
+
 class AppDocument extends Document {
 	render() {
 		return (
@@ -47,6 +49,25 @@ class AppDocument extends Document {
 						type='image/png'
 						sizes='192x192'
 						href='icons/icon-192x192.png'
+					/>
+
+					{/* Global site tag (gtag.js) - Google Analytics */}
+					<script
+						async
+						src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
+					/>
+
+					<script
+						dangerouslySetInnerHTML={{
+							__html: `
+								window.dataLayer = window.dataLayer || [];
+								function gtag(){dataLayer.push(arguments);}
+								gtag('js', new Date());
+								gtag('config', '${GTM_ID}', {
+								page_path: window.location.pathname,
+								});
+							`,
+						}}
 					/>
 				</Head>
 				<body>

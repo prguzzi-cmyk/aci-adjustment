@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import GoogleTagManager from '../components/common/google-tag-manager';
+
 import '../styles/globals.less';
 import '../styles/utils.less';
 
@@ -12,7 +14,10 @@ function MyApp({ Component, pageProps }) {
 					content='width=device-width, initial-scale=1, shrink-to-fit=no'
 				/>
 			</Head>
-			<Component {...pageProps} />
+
+			<GoogleTagManager>
+				<Component {...pageProps} />
+			</GoogleTagManager>
 		</>
 	);
 }
