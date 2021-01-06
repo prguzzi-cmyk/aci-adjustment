@@ -12,7 +12,13 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
-const mailer = async ({ receivers, subject, body, replyTo = '' }) => {
+const mailer = async ({
+	receivers,
+	subject,
+	body,
+	attachments = [],
+	replyTo = '',
+}) => {
 	if (receivers === '' || receivers === undefined) {
 		return { success: false, message: 'Mail receivers required!' };
 	}
@@ -31,6 +37,7 @@ const mailer = async ({ receivers, subject, body, replyTo = '' }) => {
 		replyTo: replyTo,
 		subject: subject, // Subject line
 		html: body, // html body
+		attachments: attachments, // Attachments for email
 	});
 
 	if (info.messageId) {

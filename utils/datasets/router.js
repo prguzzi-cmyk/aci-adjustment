@@ -239,9 +239,9 @@ const Tools = {
 		key: 'claim-calculator',
 	},
 	fileClaim: {
-		path: `${General.tools.path}/file-claim`,
+		path: `${General.tools.path}/file-a-claim`,
 		label: 'File a Claim',
-		key: 'file-claim',
+		key: 'file-a-claim',
 	},
 	policyReview: {
 		path: `${General.tools.path}/policy-review`,
