@@ -7,6 +7,10 @@ const General = {
 		src: '/images/banners/home.jpg',
 		alt: 'Banner',
 	},
+	fileClaim: {
+		src: '/images/file-claim.jpeg',
+		alt: 'File a Claim',
+	},
 	policyReview: {
 		src: '/images/policy-review.jpg',
 		alt: 'Policy Review',

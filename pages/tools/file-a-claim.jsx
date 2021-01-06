@@ -2,10 +2,10 @@ import Layout from '../../layouts/default';
 
 import dataset from '../../utils/datasets/bootstrap';
 
-import IntroSection from '../../components/file-a-claim/intro';
+import IntroSection from '../../components/tools/file-a-claim/intro';
 import FormSection from '../../components/common/sections/file-a-claim-form';
 
-import '../../styles/modules/file-a-claim.less';
+import '../../styles/modules/tools/file-a-claim.less';
 
 export default function FileClaim() {
 	const LayoutConfig = {
