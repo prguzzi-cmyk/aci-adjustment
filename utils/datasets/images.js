@@ -1,11 +1,31 @@
 const General = {
 	bannerHome: {
 		src: '/images/banners/home.jpg',
-		alt: 'Banner',
+		alt: 'Home Banner Image',
 	},
 	bannerDefault: {
 		src: '/images/banners/home.jpg',
-		alt: 'Banner',
+		alt: 'Default Banner',
+	},
+	bannerCareer: {
+		src: '/images/banners/career.jpg',
+		alt: 'Career Banner Image',
+	},
+	bannerPolicyReview: {
+		src: '/images/banners/policy-review.jpg',
+		alt: 'Policy Review Banner Image',
+	},
+	bannerSchAppoint: {
+		src: '/images/banners/schedule-appointment.jpg',
+		alt: 'Schedule Appointment Banner Image',
+	},
+	bannerOurServices: {
+		src: '/images/banners/our-services.jpg',
+		alt: 'Our Services Banner Image',
+	},
+	bannerContactUs: {
+		src: '/images/banners/contact-us.jpg',
+		alt: 'Contact Us Banner Image',
 	},
 	fileClaim: {
 		src: '/images/file-claim.jpeg',

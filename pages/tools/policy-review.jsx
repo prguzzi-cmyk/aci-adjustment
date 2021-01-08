@@ -13,7 +13,7 @@ export default function PolicyReview() {
 		description:
 			'Fill out the information below to request a full policy review by a licensed Public Adjuster in Pennsylvania. We will get in touch with you shortly',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerPolicyReview,
 			title: 'Request a Policy Review',
 		},
 		breadcrumb: [dataset.router.tools, dataset.router.policyReview],

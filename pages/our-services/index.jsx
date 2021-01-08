@@ -13,7 +13,7 @@ export default function OurServices() {
 		description:
 			'Your advocate for insurance claim for all kind of natural and accidental disasters in Pennsylvania. We will help you for a free damage evaluation and get your claim from the companies.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerOurServices,
 			title: dataset.router.services.label,
 		},
 		breadcrumb: [dataset.router.services],
