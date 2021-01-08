@@ -1,0 +1,36 @@
+@import '../../theme.less';
+
+.tools {
+	/* Tools Intro Section */
+	.intro-container {
+		padding: @section-padding;
+		background-color: @section-background;
+		min-height: 551px;
+
+		.title {
+			text-align: center;
+			margin-bottom: 60px;
+
+			span {
+				color: @primary-color;
+			}
+		}
+
+		.content {
+			.ant-card-bordered {
+				.ant-card-cover {
+					min-height: 200px;
+				}
+
+				.ant-card-body {
+					text-align: center;
+
+					.ant-typography {
+						margin-top: @margin-3;
+						min-height: 75px;
+					}
+				}
+			}
+		}
+	}
+}

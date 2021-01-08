@@ -13,36 +13,15 @@ import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Recaptcha from 'react-google-recaptcha';
 
-import config from '../../../utils/config';
+import config, {
+	FormItemLayout,
+	TailFormItemLayout,
+	FormFeedback,
+} from '../../../utils/config';
+import dataset from '../../../utils/datasets/general';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
-
-const formItemLayout = {
-	labelCol: {
-		xs: { span: 24 },
-		sm: { span: 8 },
-		md: { span: 8 },
-	},
-	wrapperCol: {
-		xs: { span: 24 },
-		sm: { span: 12 },
-		md: { span: 12 },
-	},
-};
-
-const tailFormItemLayout = {
-	wrapperCol: {
-		xs: {
-			span: 24,
-			offset: 0,
-		},
-		sm: {
-			span: 16,
-			offset: 8,
-		},
-	},
-};
 
 const InspectionFormSection = () => {
 	const recaptchaRef = React.createRef();
@@ -51,9 +30,9 @@ const InspectionFormSection = () => {
 
 	const checkRecaptcha = () => {
 		const recaptchaValue = recaptchaRef.current.getValue();
-		
+
 		if (recaptchaValue === '') {
-			return Promise.reject('Please solve recaptcha!');
+			return Promise.reject(FormFeedback.REQ_CAPTCHA);
 		} else {
 			return Promise.resolve();
 		}
@@ -103,7 +82,7 @@ const InspectionFormSection = () => {
 				<QueueAnim
 					component={Form}
 					componentProps={{
-						...formItemLayout,
+						...FormItemLayout,
 						form: form,
 						name: 'inspection',
 						onFinish: onFinish,
@@ -123,7 +102,7 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your first name!',
+								message: FormFeedback.REQ_FIRST_NAME,
 								whitespace: true,
 							},
 						]}
@@ -139,7 +118,7 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your last name!',
+								message: FormFeedback.REQ_LAST_NAME,
 								whitespace: true,
 							},
 						]}
@@ -155,11 +134,11 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								type: 'email',
-								message: 'The input is not valid E-mail!',
+								message: FormFeedback.INVALID_EMAIL,
 							},
 							{
 								required: true,
-								message: 'Please input your E-mail!',
+								message: FormFeedback.REQ_EMAIL,
 							},
 						]}
 					>
@@ -174,7 +153,7 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your phone number!',
+								message: FormFeedback.REQ_PHONE,
 							},
 						]}
 					>
@@ -185,14 +164,13 @@ const InspectionFormSection = () => {
 						label='Address'
 						key='address'
 						required
+						tooltip={FormFeedback.TIP_ADD_MAIL}
 						style={{ marginBottom: 0 }}
 					>
 						<Form.Item
 							name='address1'
 							hasFeedback
-							rules={[
-								{ required: true, message: 'Please input your address!' },
-							]}
+							rules={[{ required: true, message: FormFeedback.REQ_ADD }]}
 							style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
 						>
 							<Input placeholder='Line 1' />
@@ -218,7 +196,7 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your city!',
+								message: FormFeedback.REQ_CITY,
 								whitespace: true,
 							},
 						]}
@@ -234,7 +212,7 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your state!',
+								message: FormFeedback.REQ_STATE,
 								whitespace: true,
 							},
 						]}
@@ -250,7 +228,7 @@ const InspectionFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your zip code!',
+								message: FormFeedback.REQ_ZIP,
 								whitespace: true,
 							},
 						]}
@@ -263,15 +241,12 @@ const InspectionFormSection = () => {
 						key='claim-type'
 						label='Type of Claim'
 						hasFeedback
-						rules={[{ required: true, message: 'Type of Claim is required' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_CLAIM_TYPE }]}
 					>
 						<Select>
-							<Select.Option value='New Claim'>New Claim</Select.Option>
-							<Select.Option value='Existing Claim'>
-								Existing Claim
-							</Select.Option>
-							<Select.Option value='Denied Claim'>Denied Claim</Select.Option>
-							<Select.Option value='Re-Open Claim'>Re-Open Claim</Select.Option>
+							{dataset.claimTypes.map((item) => (
+								<Select.Option value={item.value}>{item.key}</Select.Option>
+							))}
 						</Select>
 					</Form.Item>
 
@@ -279,48 +254,14 @@ const InspectionFormSection = () => {
 						name='damageType'
 						key='damage-type'
 						label='Type of Damage'
+						tooltip={FormFeedback.TIP_DAMAGE_TYPE}
 						hasFeedback
-						rules={[{ required: true, message: 'Type of Damage is required' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_DAMAGE_TYPE }]}
 					>
 						<Select>
-							<Select.Option value='Air Conditioner Leak'>
-								Air Conditioner Leak
-							</Select.Option>
-							<Select.Option value='Appliance Leak'>
-								Appliance Leak
-							</Select.Option>
-							<Select.Option value='Collapse'>Collapse</Select.Option>
-							<Select.Option value='Explosion'>Explosion</Select.Option>
-							<Select.Option value='Fire'>Fire</Select.Option>
-							<Select.Option value='Flood'>Flood</Select.Option>
-							<Select.Option value='Flooring Damage'>
-								Flooring Damage
-							</Select.Option>
-							<Select.Option value='Hail Damage'>Hail Damage</Select.Option>
-							<Select.Option value='Oil Heater Puff Back'>
-								Oil Heater Puff Back
-							</Select.Option>
-							<Select.Option value='Plumbing Leak'>Plumbing Leak</Select.Option>
-							<Select.Option value='Roof Leak'>Roof Leak</Select.Option>
-							<Select.Option value='Shingles Missing'>
-								Shingles Missing
-							</Select.Option>
-							<Select.Option value='Siding Damage'>Siding Damage</Select.Option>
-							<Select.Option value='Smoke/Soot Damage'>
-								Smoke/Soot Damage
-							</Select.Option>
-							<Select.Option value='Sump Pump Overflow'>
-								Sump Pump Overflow
-							</Select.Option>
-							<Select.Option value='Theft'>Theft</Select.Option>
-							<Select.Option value='Toilet Overflow'>
-								Toilet Overflow
-							</Select.Option>
-							<Select.Option value='Vandalism'>Vandalism</Select.Option>
-							<Select.Option value='Water Heater Leak'>
-								Water Heater Leak
-							</Select.Option>
-							<Select.Option value='Window Leak'>Window Leak</Select.Option>
+							{dataset.damageTypes.map((item) => (
+								<Select.Option value={item.value}>{item.key}</Select.Option>
+							))}
 						</Select>
 					</Form.Item>
 
@@ -328,7 +269,7 @@ const InspectionFormSection = () => {
 						label='Captcha'
 						key='captcha'
 						hasFeedback
-						extra='We must make sure that your are a human.'
+						extra={FormFeedback.EXT_CAPTCHA}
 					>
 						<Row gutter={8}>
 							<Col span={12}>
@@ -350,7 +291,7 @@ const InspectionFormSection = () => {
 						</Row>
 					</Form.Item>
 
-					<Form.Item key='submit' {...tailFormItemLayout}>
+					<Form.Item key='submit' {...TailFormItemLayout}>
 						<Button
 							type='primary'
 							shape='circle'

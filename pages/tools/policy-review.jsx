@@ -2,10 +2,10 @@ import Layout from '../../layouts/default';
 
 import dataset from '../../utils/datasets/bootstrap';
 
-import IntroSection from '../../components/policy-review/intro';
-import FormSection from '../../components/policy-review/form';
+import IntroSection from '../../components/tools/policy-review/intro';
+import FormSection from '../../components/tools/policy-review/form';
 
-import '../../styles/modules/policy-review.less';
+import '../../styles/modules/tools/policy-review.less';
 
 export default function PolicyReview() {
 	const LayoutConfig = {
@@ -14,7 +14,7 @@ export default function PolicyReview() {
 			image: dataset.images.bannerDefault,
 			title: 'Request a Policy Review',
 		},
-		breadcrumb: [dataset.router.policyReview],
+		breadcrumb: [dataset.router.tools, dataset.router.policyReview],
 		className: dataset.router.policyReview.key,
 	};
 

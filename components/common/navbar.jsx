@@ -101,9 +101,13 @@ const Navbar = ({ isMobile }) => {
 							</Menu.Item>
 
 							<SubMenu key='tools' title='Tools'>
-								{/* <Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>
+								{/* <Menu.Item key='claim-calc'>Claim Calculator</Menu.Item>*/}
 
-							<Menu.Item key='file-claim'>File a Claim</Menu.Item> */}
+								<Menu.Item key={dataset.router.fileClaim.key}>
+									<Link href={dataset.router.fileClaim.path}>
+										<a>{dataset.router.fileClaim.label}</a>
+									</Link>
+								</Menu.Item>
 
 								<Menu.Item key={dataset.router.policyReview.key}>
 									<Link href={dataset.router.policyReview.path}>
