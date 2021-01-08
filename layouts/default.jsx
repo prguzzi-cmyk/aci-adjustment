@@ -10,6 +10,8 @@ import FooterSocial from '../components/common/footer-social';
 import FooterLinks from '../components/common/footer-links';
 import FooterCopyright from '../components/common/footer-copyright';
 
+import dataset from '../utils/datasets/general';
+
 const { Header, Content, Footer } = Layout;
 
 const LayoutDefault = ({
@@ -31,8 +33,11 @@ const LayoutDefault = ({
 	return (
 		<Layout className='container'>
 			<Head>
-				<title>{title}</title>
-				<meta name='title' content={title} />
+				<title>{`${title} | ${dataset.general.name} ${dataset.general.tagline}`}</title>
+				<meta
+					name='title'
+					content={`${title} | ${dataset.general.name} ${dataset.general.tagline}`}
+				/>
 				<meta name='description' content={description} />
 			</Head>
 

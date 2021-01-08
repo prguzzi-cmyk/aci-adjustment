@@ -9,7 +9,9 @@ import '../../styles/modules/faq/faq.less';
 
 export default function FAQ() {
 	const LayoutConfig = {
-		title: dataset.router.faq.label,
+		title: 'Frequently Asked Questions',
+		description:
+			'Here is the list of frequently asked questions that we receive about insurance claims, its process, hiring a public adjuster, and more.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.faq.label,

@@ -9,7 +9,9 @@ import '../../styles/modules/our-services.less';
 
 export default function OurServices() {
 	const LayoutConfig = {
-		title: dataset.router.services.label,
+		title: 'Claims Services For Property Disasters',
+		description:
+			'Your advocate for insurance claim for all kind of natural and accidental disasters in Pennsylvania. We will help you for a free damage evaluation and get your claim from the companies.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.services.label,

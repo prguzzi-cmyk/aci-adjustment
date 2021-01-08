@@ -10,7 +10,9 @@ import '../../styles/modules/blog.less';
 
 export default function Blog({ posts }) {
 	const LayoutConfig = {
-		title: dataset.router.blog.label,
+		title: 'Stay connected with Latest News',
+		description:
+			'Stay connected with ACI Adjustment Group for latest news and blogs with insurance industry. Our duty is to inform users with honest intent for the betterment of home and business owners.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.blog.label,

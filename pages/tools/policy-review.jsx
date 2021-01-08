@@ -9,7 +9,9 @@ import '../../styles/modules/tools/policy-review.less';
 
 export default function PolicyReview() {
 	const LayoutConfig = {
-		title: dataset.router.policyReview.label,
+		title: 'Policy Review',
+		description:
+			'Fill out the information below to request a full policy review by a licensed Public Adjuster in Pennsylvania. We will get in touch with you shortly',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: 'Request a Policy Review',
