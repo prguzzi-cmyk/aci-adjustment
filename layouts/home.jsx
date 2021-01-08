@@ -11,7 +11,13 @@ import FooterCopyright from '../components/common/footer-copyright';
 
 const { Header, Content, Footer } = Layout;
 
-const LayoutHome = ({ title, banner, className = '', children }) => {
+const LayoutHome = ({
+	title,
+	description = '',
+	banner,
+	className = '',
+	children,
+}) => {
 	const [isMobile, setIsMobile] = useState();
 
 	useEffect(() => {
@@ -24,6 +30,8 @@ const LayoutHome = ({ title, banner, className = '', children }) => {
 		<Layout className='container'>
 			<Head>
 				<title>{title}</title>
+				<meta name='title' content={title} />
+				<meta name='description' content={description} />
 			</Head>
 
 			<Header>

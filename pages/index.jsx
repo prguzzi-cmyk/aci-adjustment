@@ -17,7 +17,10 @@ const { Link } = Typography;
 
 export default function Home() {
 	const LayoutConfig = {
-		title: dataset.general.name,
+		title:
+			'Licensed Public Adjusters in Pennsylvania | Get A Free Inspection Today',
+		description:
+			'Call ACI Adjustment and get a free inspection today in Pennsylvania. Top rated licensed Public Adjusters in Pennsylvania. Get your loss assessment today. Settle for Residential & Commercial Claims.',
 		banner: {
 			image: dataset.images.bannerHome,
 			title: 'GET A FREE INSPECTION TODAY!',

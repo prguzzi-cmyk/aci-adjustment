@@ -7,11 +7,6 @@ class AppDocument extends Document {
 		return (
 			<Html lang='en'>
 				<Head>
-					<meta
-						name='description'
-						content='ACI Adjustment Group - Pennsylvania&#039;s #1 Public Adjuster!'
-					/>
-
 					<meta name='mobile-web-app-capable' content='yes' />
 					<meta name='apple-mobile-web-app-capable' content='yes' />
 					<meta name='application-name' content='aci' />
@@ -59,14 +54,7 @@ class AppDocument extends Document {
 
 					<script
 						dangerouslySetInnerHTML={{
-							__html: `
-								window.dataLayer = window.dataLayer || [];
-								function gtag(){dataLayer.push(arguments);}
-								gtag('js', new Date());
-								gtag('config', '${GTM_ID}', {
-								page_path: window.location.pathname,
-								});
-							`,
+							__html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GTM_ID}', {page_path: window.location.pathname,});`,
 						}}
 					/>
 				</Head>
