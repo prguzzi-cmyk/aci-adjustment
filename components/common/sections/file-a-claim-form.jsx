@@ -17,36 +17,15 @@ import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Recaptcha from 'react-google-recaptcha';
 
-import config from '../../../utils/config';
+import config, {
+	FormItemLayout,
+	TailFormItemLayout,
+	FormFeedback,
+} from '../../../utils/config';
+import dataset from '../../../utils/datasets/general';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
-
-const formItemLayout = {
-	labelCol: {
-		xs: { span: 24 },
-		sm: { span: 8 },
-		md: { span: 8 },
-	},
-	wrapperCol: {
-		xs: { span: 24 },
-		sm: { span: 12 },
-		md: { span: 12 },
-	},
-};
-
-const tailFormItemLayout = {
-	wrapperCol: {
-		xs: {
-			span: 24,
-			offset: 0,
-		},
-		sm: {
-			span: 16,
-			offset: 8,
-		},
-	},
-};
 
 const FileClaimSection = () => {
 	const recaptchaRef = React.createRef();
@@ -121,7 +100,7 @@ const FileClaimSection = () => {
 		const recaptchaValue = recaptchaRef.current.getValue();
 
 		if (recaptchaValue === '') {
-			return Promise.reject('Please solve recaptcha!');
+			return Promise.reject(FormFeedback.REQ_CAPTCHA);
 		} else {
 			return Promise.resolve();
 		}
@@ -133,7 +112,7 @@ const FileClaimSection = () => {
 		setLoading(true);
 
 		const data = new FormData();
-		const ignoreKeys = ['receiptFiles', 'captcha'];
+		const ignoreKeys = ['captcha', 'declarationsPage', 'receiptFiles'];
 
 		for (const key in values) {
 			if (Object.hasOwnProperty.call(values, key)) {
@@ -190,7 +169,7 @@ const FileClaimSection = () => {
 					key='file-claim'
 					component={Form}
 					componentProps={{
-						...formItemLayout,
+						...FormItemLayout,
 						form: form,
 						name: 'file-claim',
 						onFinish: onFinish,
@@ -215,7 +194,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your first name!',
+								message: FormFeedback.REQ_FIRST_NAME,
 								whitespace: true,
 							},
 						]}
@@ -231,7 +210,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your last name!',
+								message: FormFeedback.REQ_LAST_NAME,
 								whitespace: true,
 							},
 						]}
@@ -247,11 +226,11 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								type: 'email',
-								message: 'The input is not valid E-mail!',
+								message: FormFeedback.INVALID_EMAIL,
 							},
 							{
 								required: true,
-								message: 'Please input your E-mail!',
+								message: FormFeedback.REQ_EMAIL,
 							},
 						]}
 					>
@@ -266,7 +245,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your phone number!',
+								message: FormFeedback.REQ_PHONE,
 							},
 						]}
 					>
@@ -281,15 +260,13 @@ const FileClaimSection = () => {
 						label='Address'
 						key='loss-address'
 						required
-						tooltip='This is the address where the damage occurred'
+						tooltip={FormFeedback.TIP_ADD_DAMAGE}
 						style={{ marginBottom: 0 }}
 					>
 						<Form.Item
 							name='lossAddress1'
 							hasFeedback
-							rules={[
-								{ required: true, message: 'Please input your loss address!' },
-							]}
+							rules={[{ required: true, message: FormFeedback.REQ_ADD }]}
 							style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
 						>
 							<Input placeholder='Line 1' />
@@ -315,7 +292,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your loss city!',
+								message: FormFeedback.REQ_CITY,
 								whitespace: true,
 							},
 						]}
@@ -331,7 +308,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your loss state!',
+								message: FormFeedback.REQ_STATE,
 								whitespace: true,
 							},
 						]}
@@ -347,7 +324,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your loss zip code!',
+								message: FormFeedback.REQ_ZIP,
 								whitespace: true,
 							},
 						]}
@@ -363,15 +340,13 @@ const FileClaimSection = () => {
 						label='Address'
 						key='mail-address'
 						required
-						tooltip='This is the address where you would like to receive mail correspondence regarding your claim.'
+						tooltip={FormFeedback.TIP_ADD_MAIL}
 						style={{ marginBottom: 0 }}
 					>
 						<Form.Item
 							name='mailAddress1'
 							hasFeedback
-							rules={[
-								{ required: true, message: 'Please input your mail address!' },
-							]}
+							rules={[{ required: true, message: FormFeedback.REQ_ADD }]}
 							style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
 						>
 							<Input placeholder='Line 1' />
@@ -397,7 +372,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your mail city!',
+								message: FormFeedback.REQ_CITY,
 								whitespace: true,
 							},
 						]}
@@ -413,7 +388,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your mail state!',
+								message: FormFeedback.REQ_STATE,
 								whitespace: true,
 							},
 						]}
@@ -429,7 +404,7 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your mail zip code!',
+								message: FormFeedback.REQ_ZIP,
 								whitespace: true,
 							},
 						]}
@@ -446,15 +421,12 @@ const FileClaimSection = () => {
 						key='claim-type'
 						label='Type of Claim'
 						hasFeedback
-						rules={[{ required: true, message: 'Type of Claim is required' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_CLAIM_TYPE }]}
 					>
 						<Select>
-							<Select.Option value='New Claim'>New Claim</Select.Option>
-							<Select.Option value='Existing Claim'>
-								Existing Claim
-							</Select.Option>
-							<Select.Option value='Denied Claim'>Denied Claim</Select.Option>
-							<Select.Option value='Re-Open Claim'>Re-Open Claim</Select.Option>
+							{dataset.claimTypes.map((item) => (
+								<Select.Option value={item.value}>{item.key}</Select.Option>
+							))}
 						</Select>
 					</Form.Item>
 
@@ -462,49 +434,14 @@ const FileClaimSection = () => {
 						name='damageType'
 						key='damage-type'
 						label='Type of Damage'
-						tooltip='What caused the damage to your home? Your claim may fall under more than one category, and that is fine. Please select the category that best describes your claim.'
+						tooltip={FormFeedback.TIP_DAMAGE_TYPE}
 						hasFeedback
-						rules={[{ required: true, message: 'Type of Damage is required' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_DAMAGE_TYPE }]}
 					>
 						<Select>
-							<Select.Option value='Air Conditioner Leak'>
-								Air Conditioner Leak
-							</Select.Option>
-							<Select.Option value='Appliance Leak'>
-								Appliance Leak
-							</Select.Option>
-							<Select.Option value='Collapse'>Collapse</Select.Option>
-							<Select.Option value='Explosion'>Explosion</Select.Option>
-							<Select.Option value='Fire'>Fire</Select.Option>
-							<Select.Option value='Flood'>Flood</Select.Option>
-							<Select.Option value='Flooring Damage'>
-								Flooring Damage
-							</Select.Option>
-							<Select.Option value='Hail Damage'>Hail Damage</Select.Option>
-							<Select.Option value='Oil Heater Puff Back'>
-								Oil Heater Puff Back
-							</Select.Option>
-							<Select.Option value='Plumbing Leak'>Plumbing Leak</Select.Option>
-							<Select.Option value='Roof Leak'>Roof Leak</Select.Option>
-							<Select.Option value='Shingles Missing'>
-								Shingles Missing
-							</Select.Option>
-							<Select.Option value='Siding Damage'>Siding Damage</Select.Option>
-							<Select.Option value='Smoke/Soot Damage'>
-								Smoke/Soot Damage
-							</Select.Option>
-							<Select.Option value='Sump Pump Overflow'>
-								Sump Pump Overflow
-							</Select.Option>
-							<Select.Option value='Theft'>Theft</Select.Option>
-							<Select.Option value='Toilet Overflow'>
-								Toilet Overflow
-							</Select.Option>
-							<Select.Option value='Vandalism'>Vandalism</Select.Option>
-							<Select.Option value='Water Heater Leak'>
-								Water Heater Leak
-							</Select.Option>
-							<Select.Option value='Window Leak'>Window Leak</Select.Option>
+							{dataset.damageTypes.map((item) => (
+								<Select.Option value={item.value}>{item.key}</Select.Option>
+							))}
 						</Select>
 					</Form.Item>
 
@@ -513,15 +450,13 @@ const FileClaimSection = () => {
 						key='policy-type'
 						label='Policy Type'
 						hasFeedback
-						tooltip='What type of policy do you have?  If you are a homeowner, you would select "Homeowners."  If you own a business, but do not own the property, select "Businessowners." If you own a commercial property, select "Commercial."'
-						rules={[{ required: true, message: 'Type of Policy is required' }]}
+						tooltip={FormFeedback.TIP_POLICY_TYPE}
+						rules={[{ required: true, message: FormFeedback.REQ_POLICY_TYPE }]}
 					>
 						<Select>
-							<Select.Option value='Businessowners'>
-								Businessowners
-							</Select.Option>
-							<Select.Option value='Commercial'>Commercial</Select.Option>
-							<Select.Option value='Homeowners'>Homeowners</Select.Option>
+							{dataset.policyTypes.map((item) => (
+								<Select.Option value={item.value}>{item.key}</Select.Option>
+							))}
 						</Select>
 					</Form.Item>
 
@@ -530,11 +465,11 @@ const FileClaimSection = () => {
 						key='policy-number'
 						label='Policy Number'
 						hasFeedback
-						tooltip='Your policy number will be on your Declarations Page (also call "renewal" or "continuation").  We need your policy number to report your claim.'
+						tooltip={FormFeedback.TIP_POLICY_NUM}
 						rules={[
 							{
 								required: true,
-								message: 'Please input your policy number!',
+								message: FormFeedback.REQ_POLICY_NUM,
 								whitespace: true,
 							},
 						]}
@@ -545,8 +480,8 @@ const FileClaimSection = () => {
 					<Form.Item
 						name='declarationsPage'
 						key='declarations-page'
-						label='Declarations Page (Upload .PDF or .JPG File)'
-						tooltip='Your Declarations Page is the first page on your policy "renewal" or "continuation" that you receive in the mail each year.  It contains your policy number, dates of coverage, amounts of coverage, and other basic information.  As your Public Adjuster, we handle all communication for you, and we will need your Declarations Page to report your claim.  If you do not have it at this time you can still file a claim as long as you have your policy number.'
+						label='Declarations Page (.PDF or .JPG)'
+						tooltip={FormFeedback.TIP_DEC_PAGE}
 						hasFeedback
 					>
 						<Upload {...declarationsPageProps}>
@@ -562,11 +497,11 @@ const FileClaimSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your loss date!',
+								message: FormFeedback.REQ_LOSS_DATE,
 							},
 						]}
 					>
-						<DatePicker />
+						<DatePicker format={dataset.general.dateFormat} />
 					</Form.Item>
 
 					<Form.Item
@@ -574,14 +509,14 @@ const FileClaimSection = () => {
 						key='total-loss'
 						label='Is this a total loss?'
 						hasFeedback
-						rules={[{ required: true, message: 'Please select an option!' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_OPT }]}
 					>
 						<Radio.Group onChange={onTotalLossChange} value={totalLoss}>
-							<Radio className='radio-input' value='yes'>
+							<Radio className='radio-input' value='Yes'>
 								Yes
 							</Radio>
 
-							<Radio className='radio-input' value='no'>
+							<Radio className='radio-input' value='No'>
 								No
 							</Radio>
 						</Radio.Group>
@@ -592,14 +527,14 @@ const FileClaimSection = () => {
 						key='repairs'
 						label='Did you begin any repairs?'
 						hasFeedback
-						rules={[{ required: true, message: 'Please select an option!' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_OPT }]}
 					>
 						<Radio.Group onChange={onRepairsChange} value={repairs}>
-							<Radio className='radio-input' value='yes'>
+							<Radio className='radio-input' value='Yes'>
 								Yes
 							</Radio>
 
-							<Radio className='radio-input' value='no'>
+							<Radio className='radio-input' value='No'>
 								No
 							</Radio>
 						</Radio.Group>
@@ -641,14 +576,14 @@ const FileClaimSection = () => {
 						key='receipts'
 						label='Do you have receipts for repairs?'
 						hasFeedback
-						rules={[{ required: true, message: 'Please select an option!' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_OPT }]}
 					>
 						<Radio.Group onChange={onReceiptsChange} value={receipts}>
-							<Radio className='radio-input' value='yes'>
+							<Radio className='radio-input' value='Yes'>
 								Yes
 							</Radio>
 
-							<Radio className='radio-input' value='no'>
+							<Radio className='radio-input' value='No'>
 								No
 							</Radio>
 						</Radio.Group>
@@ -669,7 +604,7 @@ const FileClaimSection = () => {
 						label='Captcha'
 						key='captcha'
 						hasFeedback
-						extra='We must make sure that your are a human.'
+						extra={FormFeedback.EXT_CAPTCHA}
 					>
 						<Row gutter={8}>
 							<Col span={12}>
@@ -691,7 +626,7 @@ const FileClaimSection = () => {
 						</Row>
 					</Form.Item>
 
-					<Form.Item key='submit' {...tailFormItemLayout}>
+					<Form.Item key='submit' {...TailFormItemLayout}>
 						<Button
 							type='primary'
 							shape='circle'
