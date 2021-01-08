@@ -9,7 +9,9 @@ import '../../styles/modules/faq/claim-denied.less';
 
 export default function ClaimDenied() {
 	const LayoutConfig = {
-		title: dataset.router.faqClaimDenied.label,
+		title: 'Why did my insurance claim get denied?',
+		description:
+			'Review all the reasons for Why did my insurance claim get denied. Here’s what happens when most homeowners file a claim with their insurance company. Have a depth knowledge of process.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.faqClaimDenied.label,

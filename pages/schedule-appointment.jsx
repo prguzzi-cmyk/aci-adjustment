@@ -27,9 +27,11 @@ export default function ScheduleAppointment() {
 	}, []);
 
 	const LayoutConfig = {
-		title: dataset.router.schAppointment.label,
+		title: 'Schedule an Appointment',
+		description:
+			'Book your appoint today with ACI Adjustment Group. We want to make sure the process will be convenient for you. So, schedule an appointment with us to find the perfect meeting time.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerSchAppoint,
 			title: 'Schedule an appointment',
 		},
 		breadcrumb: [dataset.router.schAppointment],

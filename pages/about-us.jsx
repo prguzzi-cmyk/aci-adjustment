@@ -12,7 +12,9 @@ import '../styles/modules/about-us.less';
 
 export default function AboutUs() {
 	const LayoutConfig = {
-		title: dataset.router.aboutUs.label,
+		title: 'Top Rated Public Adjusters',
+		description:
+			'ACI Adjustment Group embodies the values of honesty, integrity, and above all else the experience and satisfaction of our customers. Initial Resident and Non-Resident Public Adjuster.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.aboutUs.label,

@@ -1,4 +1,5 @@
 import { Row, Col, Typography, Button } from 'antd';
+import Link from 'next/link';
 import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
@@ -6,7 +7,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import config from '../../utils/config';
 import dataset from '../../utils/datasets/bootstrap';
 
-const { Link, Title, Text } = Typography;
+const { Title, Text } = Typography;
 
 const ConsultationSection = () => {
 	return (
@@ -14,7 +15,7 @@ const ConsultationSection = () => {
 			<Title level={2} className='consult-title'>
 				Call{' '}
 				<Link href={`tel:${dataset.general.phone}`}>
-					{dataset.general.phoneFormatted}
+					<a>{dataset.general.phoneFormatted}</a>
 				</Link>{' '}
 				for a<Text> FREE</Text> consultation!
 			</Title>
@@ -47,8 +48,8 @@ const ConsultationSection = () => {
 
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
-									<Link href='#' strong>
-										Request a FREE Inspection!
+									<Link href='/'>
+										<a>Request a FREE Inspection!</a>
 									</Link>
 								</Button>
 							</div>
@@ -73,8 +74,8 @@ const ConsultationSection = () => {
 
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
-									<Link href='#' strong>
-										File a Claim Online Now!
+									<Link href={dataset.router.fileClaim.path}>
+										<a>File a Claim Online Now!</a>
 									</Link>
 								</Button>
 							</div>
@@ -99,8 +100,8 @@ const ConsultationSection = () => {
 
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
-									<Link href='#' strong>
-										ACI Claim Calculator
+									<Link href='/'>
+										<a>ACI Claim Calculator</a>
 									</Link>
 								</Button>
 							</div>
@@ -125,8 +126,8 @@ const ConsultationSection = () => {
 
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
-									<Link href='#' strong>
-										Insurance Claim FAQ's
+									<Link href={dataset.router.faqClaimQuestions.path}>
+										<a>Insurance Claim FAQ's</a>
 									</Link>
 								</Button>
 							</div>

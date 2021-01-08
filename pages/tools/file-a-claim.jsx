@@ -9,7 +9,9 @@ import '../../styles/modules/tools/file-a-claim.less';
 
 export default function FileClaim() {
 	const LayoutConfig = {
-		title: dataset.router.fileClaim.label,
+		title: 'File Your Claim Today',
+		description:
+			'File your claim with the help of ACI Adjustment Group in Pennsylvania. Customer friendly services with all the documentation. We make the process as easy as 1, 2, 3! Contact us for details.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.fileClaim.label,

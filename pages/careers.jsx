@@ -9,9 +9,11 @@ import '../styles/modules/careers.less';
 
 export default function Careers() {
 	const LayoutConfig = {
-		title: dataset.router.careers.label,
+		title: 'Work with US',
+		description:
+			'Work with ACI Adjustment Group. Do you have a passion for helping people in need? We are the people to work with. Share your resume.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerCareer,
 			title: 'Start your new career today!',
 		},
 		breadcrumb: [dataset.router.careers],

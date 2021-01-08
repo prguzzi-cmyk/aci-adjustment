@@ -8,7 +8,9 @@ import '../../styles/modules/faq/claim-questions.less';
 
 export default function ClaimQuestions() {
 	const LayoutConfig = {
-		title: dataset.router.faqClaimQuestions.label,
+		title: 'Questions About Your Claim',
+		description:
+			'The detailed information about the claim process from ACI Adjustment Group Pennsylvania. Please review the list of articles and questions.',
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.faqClaimQuestions.label,
