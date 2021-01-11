@@ -80,6 +80,7 @@ const InspectionFormSection = () => {
 
 			<OverPack {...config.OverPack({})}>
 				<QueueAnim
+					key='inspection-form-queue'
 					component={Form}
 					componentProps={{
 						...FormItemLayout,
@@ -91,7 +92,6 @@ const InspectionFormSection = () => {
 						},
 						scrollToFirstError: true,
 					}}
-					key='queue'
 					{...config.QueueAnim({})}
 				>
 					<Form.Item

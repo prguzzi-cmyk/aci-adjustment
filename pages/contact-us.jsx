@@ -3,7 +3,7 @@ import Layout from '../layouts/default';
 import dataset from '../utils/datasets/bootstrap';
 
 import IntroSection from '../components/contact-us/intro';
-import ContactFormSection from '../components/contact-us/contact-form';
+import ContactFormSection from '../components/contact-us/form';
 import MapSection from '../components/contact-us/map';
 
 import '../styles/modules/contact-us.less';

@@ -1,46 +1,78 @@
-import { Row, Col, Typography, Form, Input, Button } from 'antd';
+import React, { useState } from 'react';
+import {
+	Row,
+	Col,
+	Typography,
+	Form,
+	Input,
+	Select,
+	Button,
+	message,
+} from 'antd';
 import { PhoneFilled, MailFilled, ShopFilled } from '@ant-design/icons';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import Recaptcha from 'react-google-recaptcha';
 
+import config, {
+	FormItemLayout,
+	TailFormItemLayout,
+	FormFeedback,
+} from '../../utils/config';
 import dataset from '../../utils/datasets/general';
-import config from '../../utils/config';
 
 const { Title, Text, Paragraph } = Typography;
+const { Option } = Select;
 const { TextArea } = Input;
 
-const formItemLayout = {
-	labelCol: {
-		xs: { span: 24 },
-		sm: { span: 8 },
-		md: { span: 8 },
-	},
-	wrapperCol: {
-		xs: { span: 24 },
-		sm: { span: 12 },
-		md: { span: 12 },
-	},
-};
-
-const tailFormItemLayout = {
-	wrapperCol: {
-		xs: {
-			span: 24,
-			offset: 0,
-		},
-		sm: {
-			span: 16,
-			offset: 8,
-		},
-	},
-};
-
 const CareerFormSection = () => {
+	const recaptchaRef = React.createRef();
 	const [form] = Form.useForm();
+	const [loading, setLoading] = useState(false);
 
-	const onFinish = (values) => {
-		console.log('Received values of form: ', values);
+	const checkRecaptcha = () => {
+		const recaptchaValue = recaptchaRef.current.getValue();
+
+		if (recaptchaValue === '') {
+			return Promise.reject(FormFeedback.REQ_CAPTCHA);
+		} else {
+			return Promise.resolve();
+		}
 	};
+
+	const onFinish = async (values) => {
+		values.captcha = recaptchaRef.current.getValue();
+
+		setLoading(true);
+
+		const res = await fetch('/api/contact-us', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(values),
+		});
+		const jRes = await res.json();
+
+		if (jRes.success === true) {
+			message.success(
+				'Your query has been submitted!',
+				config.MessageDuration.normal
+			);
+		} else {
+			message.error(jRes.message, config.MessageDuration.normal);
+		}
+
+		setLoading(false);
+	};
+
+	const prefixSelector = (
+		<Form.Item name='prefix' noStyle>
+			<Select style={{ width: 70 }}>
+				<Option value='1'>+1</Option>
+			</Select>
+		</Form.Item>
+	);
 
 	return (
 		<div className='form-container'>
@@ -49,18 +81,18 @@ const CareerFormSection = () => {
 			</Title>
 
 			<OverPack
+				key='contact-form-queue'
 				component={Form}
 				componentProps={{
-					...formItemLayout,
+					...FormItemLayout,
 					form: form,
-					name: 'inspection',
+					name: 'contact-form',
 					onFinish: onFinish,
 					initialValues: {
 						prefix: '1',
 					},
 					scrollToFirstError: true,
 				}}
-				key='queue'
 				{...config.OverPack({})}
 			>
 				<QueueAnim
@@ -139,11 +171,11 @@ const CareerFormSection = () => {
 							rules={[
 								{
 									type: 'email',
-									message: 'The input is not valid E-mail!',
+									message: FormFeedback.INVALID_EMAIL,
 								},
 								{
 									required: true,
-									message: 'Please input your E-mail!',
+									message: FormFeedback.REQ_EMAIL,
 								},
 							]}
 						>
@@ -158,11 +190,11 @@ const CareerFormSection = () => {
 							rules={[
 								{
 									required: true,
-									message: 'Please input your phone number!',
+									message: FormFeedback.REQ_PHONE,
 								},
 							]}
 						>
-							<Input />
+							<Input addonBefore={prefixSelector} style={{ width: '100%' }} />
 						</Form.Item>
 
 						<Form.Item
@@ -195,7 +227,7 @@ const CareerFormSection = () => {
 							label='Captcha'
 							key='captcha'
 							hasFeedback
-							extra='We must make sure that your are a human.'
+							extra={FormFeedback.EXT_CAPTCHA}
 						>
 							<Row gutter={8}>
 								<Col span={12}>
@@ -204,26 +236,26 @@ const CareerFormSection = () => {
 										noStyle
 										rules={[
 											{
-												required: true,
-												message: 'Please input the captcha you got!',
+												validator: checkRecaptcha,
 											},
 										]}
 									>
-										<Input />
+										<Recaptcha
+											ref={recaptchaRef}
+											sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+										/>
 									</Form.Item>
-								</Col>
-								<Col span={12}>
-									<Button>Get captcha</Button>
 								</Col>
 							</Row>
 						</Form.Item>
 
-						<Form.Item key='submit' {...tailFormItemLayout}>
+						<Form.Item key='submit' {...TailFormItemLayout}>
 							<Button
 								type='primary'
 								shape='circle'
 								className='app-btn static'
 								htmlType='submit'
+								loading={loading}
 							>
 								Submit
 							</Button>
