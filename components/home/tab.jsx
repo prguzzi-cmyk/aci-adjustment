@@ -1,6 +1,7 @@
 import { Tabs, Row, Col, Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import YouTube from 'react-youtube';
 
 import config from '../../utils/config';
 
@@ -8,6 +9,11 @@ const { TabPane } = Tabs;
 const { Link, Title } = Typography;
 
 const TabSection = () => {
+	const playerOpts = {
+		width: '610',
+		height: '390',
+	};
+
 	return (
 		<Tabs className='tab-container' defaultActiveKey='1' centered animated>
 			<TabPane tab='ACI Adjustment Group' key='1' className='tabpane-adjuster'>
@@ -23,14 +29,7 @@ const TabSection = () => {
 						{...config.QueueAnim({})}
 					>
 						<Col key='1' sm={24} md={12}>
-							<iframe
-								width='100%'
-								height='315'
-								src='https://www.youtube.com/embed/eCn_GuWyIkI'
-								frameBorder='0'
-								allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-								allowFullScreen
-							></iframe>
+							<YouTube videoId='eCn_GuWyIkI' opts={playerOpts} />
 						</Col>
 
 						<Col key='2' sm={24} md={12}>
@@ -85,14 +84,7 @@ const TabSection = () => {
 						{...config.QueueAnim({})}
 					>
 						<Col key='1' sm={24} md={12}>
-							<iframe
-								width='100%'
-								height='315'
-								src='https://www.youtube.com/embed/TQO9QFl5wfA'
-								frameBorder='0'
-								allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-								allowFullScreen
-							></iframe>
+							<YouTube videoId='TQO9QFl5wfA' opts={playerOpts} />
 						</Col>
 
 						<Col key='2' sm={24} md={12}>
