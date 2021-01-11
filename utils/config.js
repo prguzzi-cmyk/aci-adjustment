@@ -108,6 +108,7 @@ export const FormFeedback = {
 	REQ_CITY: 'Please input your city!',
 	REQ_STATE: 'Please input your state!',
 	REQ_ZIP: 'Please input your zip code!',
+	REQ_COUNTRY: 'Please input your country!',
 	REQ_CLAIM_TYPE: 'Type of Claim is required',
 	REQ_DAMAGE_TYPE: 'Type of Damage is required',
 	REQ_POLICY_TYPE: 'Type of Policy is required',
