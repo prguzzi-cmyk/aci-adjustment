@@ -244,8 +244,10 @@ const InspectionFormSection = () => {
 						rules={[{ required: true, message: FormFeedback.REQ_CLAIM_TYPE }]}
 					>
 						<Select>
-							{dataset.claimTypes.map((item) => (
-								<Select.Option value={item.value}>{item.key}</Select.Option>
+							{dataset.claimTypes.map((item, index) => (
+								<Select.Option key={index} value={item.value}>
+									{item.key}
+								</Select.Option>
 							))}
 						</Select>
 					</Form.Item>
@@ -259,8 +261,10 @@ const InspectionFormSection = () => {
 						rules={[{ required: true, message: FormFeedback.REQ_DAMAGE_TYPE }]}
 					>
 						<Select>
-							{dataset.damageTypes.map((item) => (
-								<Select.Option value={item.value}>{item.key}</Select.Option>
+							{dataset.damageTypes.map((item, index) => (
+								<Select.Option key={index} value={item.value}>
+									{item.key}
+								</Select.Option>
 							))}
 						</Select>
 					</Form.Item>
