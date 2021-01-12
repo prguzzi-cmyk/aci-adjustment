@@ -22,7 +22,10 @@ export default async (req, res) => {
 		? formatAttachments(data.files.resume, 'Resume')
 		: [];
 
+	const emailFrom = `"${dataset.emails.career.label}" <${dataset.emails.claim.email}>`;
+
 	const emailResAdmin = await mailer({
+		from: emailFrom,
 		receivers: dataset.emails.career.email,
 		replyTo: data.fields.email,
 		subject: `${data.fields.firstName} ${data.fields.lastName} has submitted Career Form`,
@@ -34,6 +37,7 @@ export default async (req, res) => {
 	});
 
 	const emailRes = await mailer({
+		from: emailFrom,
 		receivers: data.fields.email,
 		replyTo: dataset.emails.career.email,
 		subject: `Your details has been submitted!`,
