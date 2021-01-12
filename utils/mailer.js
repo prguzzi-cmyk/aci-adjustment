@@ -44,6 +44,7 @@ transporter.use(
 );
 
 const mailer = async ({
+	from = `"${dataset.emails.claim.label}" <${dataset.emails.claim.email}>`,
 	receivers,
 	subject,
 	template,
@@ -64,7 +65,7 @@ const mailer = async ({
 	}
 
 	const info = await transporter.sendMail({
-		from: `"${dataset.emails.claim.label}" <${dataset.emails.claim.email}>`, // sender address
+		from: from, // sender address
 		to: receivers, // list of receivers
 		replyTo: replyTo,
 		subject: subject, // Subject line

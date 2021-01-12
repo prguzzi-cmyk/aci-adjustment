@@ -14,6 +14,7 @@ const General = {
 	},
 	emails: {
 		claim: { email: 'claims@aciadjustment.com', label: 'Claims' },
+		career: { email: 'careers@aciadjustment.com', label: 'Careers' },
 	},
 	socialLinks: {
 		facebook: 'https://www.facebook.com/ACIAdjustmentGroup',

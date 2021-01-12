@@ -3,7 +3,7 @@ import Layout from '../layouts/default';
 import dataset from '../utils/datasets/bootstrap';
 
 import IntroSection from '../components/careers/intro';
-import CareerFormSection from '../components/careers/career-form';
+import CareerFormSection from '../components/careers/form';
 
 import '../styles/modules/careers.less';
 
@@ -17,6 +17,7 @@ export default function Careers() {
 			title: 'Start your new career today!',
 		},
 		breadcrumb: [dataset.router.careers],
+		className: dataset.router.careers.key,
 	};
 
 	return (

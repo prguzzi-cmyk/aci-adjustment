@@ -4,6 +4,8 @@ const lessToJS = require('less-vars-to-js');
 const fs = require('fs');
 const path = require('path');
 
+const redirects = require('./utils/redirects');
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 });
@@ -42,7 +44,14 @@ const lessConfig = {
 	},
 };
 
+const nextConfig = {
+	async redirects() {
+		return redirects;
+	},
+};
+
 module.exports = withPlugins([
 	[withBundleAnalyzer({})],
+	nextConfig,
 	[withLess, lessConfig],
 ]);

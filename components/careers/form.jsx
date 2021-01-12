@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
 	Row,
 	Col,
@@ -14,39 +14,18 @@ import {
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { UploadOutlined } from '@ant-design/icons';
+import Recaptcha from 'react-google-recaptcha';
 
+import config, {
+	FormItemLayout,
+	TailFormItemLayout,
+	FormFeedback,
+} from '../../utils/config';
 import dataset from '../../utils/datasets/general';
-import config from '../../utils/config';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
 const { TextArea } = Input;
-
-const formItemLayout = {
-	labelCol: {
-		xs: { span: 24 },
-		sm: { span: 8 },
-		md: { span: 8 },
-	},
-	wrapperCol: {
-		xs: { span: 24 },
-		sm: { span: 12 },
-		md: { span: 12 },
-	},
-};
-
-const tailFormItemLayout = {
-	wrapperCol: {
-		xs: {
-			span: 24,
-			offset: 0,
-		},
-		sm: {
-			span: 16,
-			offset: 8,
-		},
-	},
-};
 
 const radioStyle = {
 	display: 'block',
@@ -54,35 +33,87 @@ const radioStyle = {
 	lineHeight: '30px',
 };
 
-const resumeProps = {
-	name: 'resume',
-	action: '',
-	headers: {
-		authorization: 'authorization-text',
-	},
-	onChange(info) {
-		if (info.file.status !== 'uploading') {
-			console.log(info.file, info.fileList);
-		}
-
-		if (info.file.status === 'done') {
-			message.success(`${info.file.name} file uploaded successfully`);
-		} else if (info.file.status === 'error') {
-			message.error(`${info.file.name} file upload failed.`);
-		}
-	},
-};
-
 const CareerFormSection = () => {
+	const recaptchaRef = React.createRef();
 	const [form] = Form.useForm();
+	const [loading, setLoading] = useState(false);
 	const [license, setLicense] = useState();
-
-	const onFinish = (values) => {
-		console.log('Received values of form: ', values);
-	};
+	const [resume, setResume] = useState([]);
+	const fileTypes = ['image/jpeg', 'application/pdf', 'text/plain'];
 
 	const onLicenseChange = (e) => {
 		setLicense(e.target.value);
+	};
+
+	const resumeProps = {
+		fileList: resume,
+		onRemove: (file) => {
+			setResume([]);
+		},
+		beforeUpload: (file) => {
+			if (fileTypes.indexOf(file.type) === -1) {
+				message.error(`${file.name} is not allowed!`);
+				return false;
+			}
+
+			if (resume.length === 1) {
+				message.error(`Maximum 1 file is allowed!`);
+				return false;
+			}
+
+			setResume([...resume, file]);
+			return false;
+		},
+	};
+
+	const checkRecaptcha = () => {
+		const recaptchaValue = recaptchaRef.current.getValue();
+
+		if (recaptchaValue === '') {
+			return Promise.reject(FormFeedback.REQ_CAPTCHA);
+		} else {
+			return Promise.resolve();
+		}
+	};
+
+	const onFinish = async (values) => {
+		const captcha = recaptchaRef.current.getValue();
+
+		setLoading(true);
+
+		const data = new FormData();
+		const ignoreKeys = ['captcha', 'resume'];
+
+		for (const key in values) {
+			if (Object.hasOwnProperty.call(values, key)) {
+				if (ignoreKeys.indexOf(key) === -1) {
+					data.append(key, values[key]);
+				}
+			}
+		}
+
+		data.append('captcha', captcha);
+
+		if (resume.length > 0) {
+			data.append('resume', resume[0]);
+		}
+
+		const res = await fetch('/api/careers', {
+			method: 'POST',
+			body: data,
+		});
+		const jRes = await res.json();
+
+		if (jRes.success === true) {
+			message.success(
+				'Your details has been submitted!',
+				config.MessageDuration.normal
+			);
+		} else {
+			message.error(jRes.message, config.MessageDuration.normal);
+		}
+
+		setLoading(false);
 	};
 
 	const prefixSelector = (
@@ -108,29 +139,29 @@ const CareerFormSection = () => {
 
 			<OverPack {...config.OverPack({})}>
 				<QueueAnim
+					key='careers-form-queue'
 					component={Form}
 					componentProps={{
-						...formItemLayout,
+						...FormItemLayout,
 						form: form,
-						name: 'inspection',
+						name: 'careers-form',
 						onFinish: onFinish,
 						initialValues: {
 							prefix: '1',
 						},
 						scrollToFirstError: true,
 					}}
-					key='queue'
 					{...config.QueueAnim({})}
 				>
 					<Form.Item
-						name='first-name'
+						name='firstName'
 						key='first-name'
 						label='First Name'
 						hasFeedback
 						rules={[
 							{
 								required: true,
-								message: 'Please input your first name!',
+								message: FormFeedback.REQ_FIRST_NAME,
 								whitespace: true,
 							},
 						]}
@@ -139,14 +170,14 @@ const CareerFormSection = () => {
 					</Form.Item>
 
 					<Form.Item
-						name='last-name'
+						name='lastName'
 						key='last-name'
 						label='Last Name'
 						hasFeedback
 						rules={[
 							{
 								required: true,
-								message: 'Please input your last name!',
+								message: FormFeedback.REQ_LAST_NAME,
 								whitespace: true,
 							},
 						]}
@@ -162,11 +193,11 @@ const CareerFormSection = () => {
 						rules={[
 							{
 								type: 'email',
-								message: 'The input is not valid E-mail!',
+								message: FormFeedback.INVALID_EMAIL,
 							},
 							{
 								required: true,
-								message: 'Please input your E-mail!',
+								message: FormFeedback.REQ_EMAIL,
 							},
 						]}
 					>
@@ -181,7 +212,7 @@ const CareerFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your phone number!',
+								message: FormFeedback.REQ_PHONE,
 							},
 						]}
 					>
@@ -195,18 +226,16 @@ const CareerFormSection = () => {
 						style={{ marginBottom: 0 }}
 					>
 						<Form.Item
-							name='line-1'
+							name='address1'
 							hasFeedback
-							rules={[
-								{ required: true, message: 'Please input your address!' },
-							]}
+							rules={[{ required: true, message: FormFeedback.REQ_ADD }]}
 							style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
 						>
 							<Input placeholder='Line 1' />
 						</Form.Item>
 
 						<Form.Item
-							name='line-2'
+							name='address2'
 							style={{
 								display: 'inline-block',
 								width: '50%',
@@ -225,7 +254,7 @@ const CareerFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your city!',
+								message: FormFeedback.REQ_CITY,
 								whitespace: true,
 							},
 						]}
@@ -241,7 +270,7 @@ const CareerFormSection = () => {
 						rules={[
 							{
 								required: true,
-								message: 'Please input your state!',
+								message: FormFeedback.REQ_STATE,
 								whitespace: true,
 							},
 						]}
@@ -250,14 +279,14 @@ const CareerFormSection = () => {
 					</Form.Item>
 
 					<Form.Item
-						name='zip-code'
+						name='zipCode'
 						key='zip-code'
 						label='Zip Code'
 						hasFeedback
 						rules={[
 							{
 								required: true,
-								message: 'Please input your zip code!',
+								message: FormFeedback.REQ_ZIP,
 								whitespace: true,
 							},
 						]}
@@ -270,18 +299,18 @@ const CareerFormSection = () => {
 						key='license'
 						label='Do you have a Public Adjuster License?'
 						hasFeedback
-						rules={[{ required: true, message: 'Please select an option!' }]}
+						rules={[{ required: true, message: FormFeedback.REQ_OPT }]}
 					>
 						<Radio.Group onChange={onLicenseChange} value={license}>
-							<Radio style={radioStyle} value='yes'>
+							<Radio style={radioStyle} value='Yes'>
 								Yes
 							</Radio>
 
-							<Radio style={radioStyle} value='no'>
+							<Radio style={radioStyle} value='No'>
 								No
 							</Radio>
 
-							<Radio style={radioStyle} value='in-process'>
+							<Radio style={radioStyle} value='In-process'>
 								In process of receiving license
 							</Radio>
 						</Radio.Group>
@@ -300,7 +329,7 @@ const CareerFormSection = () => {
 					<Form.Item
 						name='resume'
 						key='resume'
-						label='Upload Resume'
+						label='Upload Resume (.pdf, .jpg, .txt)'
 						hasFeedback
 						rules={[{ required: true, message: 'Please upload your resume!' }]}
 					>
@@ -313,7 +342,7 @@ const CareerFormSection = () => {
 						label='Captcha'
 						key='captcha'
 						hasFeedback
-						extra='We must make sure that your are a human.'
+						extra={FormFeedback.EXT_CAPTCHA}
 					>
 						<Row gutter={8}>
 							<Col span={12}>
@@ -322,26 +351,26 @@ const CareerFormSection = () => {
 									noStyle
 									rules={[
 										{
-											required: true,
-											message: 'Please input the captcha you got!',
+											validator: checkRecaptcha,
 										},
 									]}
 								>
-									<Input />
+									<Recaptcha
+										ref={recaptchaRef}
+										sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+									/>
 								</Form.Item>
-							</Col>
-							<Col span={12}>
-								<Button>Get captcha</Button>
 							</Col>
 						</Row>
 					</Form.Item>
 
-					<Form.Item key='submit' {...tailFormItemLayout}>
+					<Form.Item key='submit' {...TailFormItemLayout}>
 						<Button
 							type='primary'
 							shape='circle'
 							className='app-btn static'
 							htmlType='submit'
+							loading={loading}
 						>
 							Submit
 						</Button>
