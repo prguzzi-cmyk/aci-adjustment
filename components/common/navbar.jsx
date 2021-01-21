@@ -156,6 +156,12 @@ const Navbar = ({ isMobile }) => {
 								</Link>
 							</Menu.Item>
 
+							<Menu.Item key={dataset.router.communities.key}>
+								<Link href={dataset.router.communities.path}>
+									<a>Areas We Cover</a>
+								</Link>
+							</Menu.Item>
+
 							{/* <Menu.Item key='testimonials'>Testimonials</Menu.Item> */}
 						</SubMenu>
 

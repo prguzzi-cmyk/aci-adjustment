@@ -7,6 +7,13 @@ const General = {
 		src: '/images/banners/home.jpg',
 		alt: 'Default Banner',
 	},
+	bannerCommunDir: {
+		src: '/images/banners/communities/',
+	},
+	bannerCommunDefault: {
+		src: '/images/banners/communities/default.jpg',
+		alt: 'Community Banner',
+	},
 	bannerCareer: {
 		src: '/images/banners/career.jpg',
 		alt: 'Career Banner Image',

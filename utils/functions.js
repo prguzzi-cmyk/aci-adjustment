@@ -23,3 +23,9 @@ export const validateCaptcha = async (captcha) => {
 
 	return await googleRes.json();
 };
+
+export const uCase = (string) => {
+	if (string === undefined || string === '') return;
+
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};

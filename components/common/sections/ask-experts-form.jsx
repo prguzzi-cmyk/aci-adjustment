@@ -166,7 +166,7 @@ const AskExpertsSection = ({ title = '' }) => {
 						key='question'
 						label='Question'
 						hasFeedback
-						rules={[{ required: true, message: 'Question is requied!' }]}
+						rules={[{ required: true, message: 'Question is required!' }]}
 					>
 						<TextArea rows={4} />
 					</Form.Item>
