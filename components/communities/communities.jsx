@@ -24,7 +24,7 @@ const CommunitiesSection = ({ county, communities }) => {
 						className: 'content',
 						gutter: [16, 24],
 					}}
-					{...config.QueueAnim({ type: 'left' })}
+					{...config.QueueAnim({})}
 				>
 					{communities.map((ele, index) => {
 						return (
