@@ -24,15 +24,24 @@ export default function Community({ community }) {
 		};
 	}
 
+	const CommunityLable = community.Community.S;
+
+	const pageHeading = CommunityLable
+		? `Public Adjuster ${CommunityLable}`
+		: `Oops, we couldn't find the page...`;
+
 	const LayoutConfig = {
-		title: community.Community.S,
+		title: CommunityLable,
 		description: `Leading public adjuster in ${
-			community.Community.S ? community.Community.S : dataset.general.pincode
+			CommunityLable ? CommunityLable : dataset.general.pincode
 		}, get your claims and settlements. Have property claim issues? We are here to provide you best solutions for claims and adjustment. Get more money for your settlements and claim.`,
+		banner: {
+			title: pageHeading,
+		},
 		breadcrumb: [
 			dataset.router.communities,
 			{
-				label: community.Community.S ? community.Community.S : 'Page Not Found',
+				label: CommunityLable ? CommunityLable : 'Page Not Found',
 			},
 		],
 		className: dataset.router.communities.key,

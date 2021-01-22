@@ -4,15 +4,20 @@ import Head from 'next/head';
 import { enquireScreen } from 'enquire-js';
 
 import Navbar from '../components/common/navbar';
-import Banner from '../components/common/banner-image';
+import Banner from '../components/common/banner-medium';
 import Breadcrumb from '../components/common/breadcrumb';
+import AskExperts from '../components/common/sections/ask-experts-form';
 import FooterSocial from '../components/common/footer-social';
 import FooterLinks from '../components/common/footer-links';
 import FooterCopyright from '../components/common/footer-copyright';
 
 import dataset from '../utils/datasets/general';
+import {
+	FormItemLayoutSidebar,
+	TailFormItemLayoutSidebar,
+} from '../utils/config';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 
 const LayoutCommunity = ({
 	title,
@@ -30,6 +35,12 @@ const LayoutCommunity = ({
 		});
 	}, []);
 
+	const sidebarConfig = {
+		CustomFormItemLayout: FormItemLayoutSidebar,
+		CustomTailFormItemLayout: TailFormItemLayoutSidebar,
+		isMobile,
+	};
+
 	return (
 		<Layout className='container'>
 			<Head>
@@ -46,11 +57,17 @@ const LayoutCommunity = ({
 				<Banner banner={banner} />
 			</Header>
 
-			<Content>
-				{breadcrumb && <Breadcrumb items={breadcrumb} />}
+			<Layout className={className} hasSider={true}>
+				<Content>
+					{breadcrumb && <Breadcrumb items={breadcrumb} />}
 
-				<div className={`site-layout-content ${className}`}>{children}</div>
-			</Content>
+					<div className={`site-layout-content`}>{children}</div>
+				</Content>
+
+				<Sider width={isMobile ? 320 : 500} breakpoint='lg' collapsedWidth={0}>
+					<AskExperts title='Claim' {...sidebarConfig} />
+				</Sider>
+			</Layout>
 
 			<Footer>
 				<FooterSocial />

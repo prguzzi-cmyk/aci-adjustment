@@ -16,7 +16,7 @@ const QueueAnim = ({
 	leaveReverse = true,
 	interval = 100,
 	delay = 0,
-	duration = 500,
+	duration = 300,
 	ease = ['easeInCubic', 'easeOutCubic'],
 }) => {
 	return {
@@ -148,6 +148,26 @@ export const FormItemLayout = {
 	},
 };
 
+/* Form Items Layout for Sidebar*/
+export const FormItemLayoutSidebar = {
+	labelCol: {
+		xs: { span: 24 },
+		sm: { span: 24 },
+		md: { span: 24 },
+		lg: { span: 24 },
+		xl: { span: 24 },
+		xxl: { span: 24 },
+	},
+	wrapperCol: {
+		xs: { span: 24 },
+		sm: { span: 24 },
+		md: { span: 24 },
+		lg: { span: 24 },
+		xl: { span: 24 },
+		xxl: { span: 24 },
+	},
+};
+
 /* Tail Form Item Layout */
 export const TailFormItemLayout = {
 	wrapperCol: {
@@ -158,6 +178,36 @@ export const TailFormItemLayout = {
 		sm: {
 			span: 16,
 			offset: 8,
+		},
+	},
+};
+
+/* Tail Form Item Layout for Sidebar */
+export const TailFormItemLayoutSidebar = {
+	wrapperCol: {
+		xs: {
+			span: 24,
+			offset: 0,
+		},
+		sm: {
+			span: 24,
+			offset: 0,
+		},
+		md: {
+			span: 24,
+			offset: 0,
+		},
+		lg: {
+			span: 24,
+			offset: 0,
+		},
+		xl: {
+			span: 24,
+			offset: 0,
+		},
+		xxl: {
+			span: 24,
+			offset: 0,
 		},
 	},
 };

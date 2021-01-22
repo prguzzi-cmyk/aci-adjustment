@@ -14,8 +14,8 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Recaptcha from 'react-google-recaptcha';
 
 import config, {
-	FormItemLayout,
-	TailFormItemLayout,
+	FormItemLayout as DefFormItemLayout,
+	TailFormItemLayout as DefTailFormItemLayout,
 	FormFeedback,
 } from '../../../utils/config';
 
@@ -23,10 +23,21 @@ const { Title, Text } = Typography;
 const { Option } = Select;
 const { TextArea } = Input;
 
-const AskExpertsSection = ({ title = '' }) => {
+const AskExpertsSection = ({
+	title = '',
+	CustomFormItemLayout,
+	CustomTailFormItemLayout,
+	isMobile,
+}) => {
 	const recaptchaRef = React.createRef();
 	const [form] = Form.useForm();
 	const [loading, setLoading] = useState(false);
+	const FormItemLayout = CustomFormItemLayout
+		? CustomFormItemLayout
+		: DefFormItemLayout;
+	const TailFormItemLayout = CustomTailFormItemLayout
+		? CustomTailFormItemLayout
+		: DefTailFormItemLayout;
 
 	const checkRecaptcha = () => {
 		const recaptchaValue = recaptchaRef.current.getValue();
@@ -73,7 +84,11 @@ const AskExpertsSection = ({ title = '' }) => {
 	);
 
 	return (
-		<div className='ask-experts-container'>
+		<div
+			className={`ask-experts-container ${
+				CustomFormItemLayout ? 'sidebar' : ''
+			}`}
+		>
 			<Title level={2} className='title'>
 				Do you have a question about <Text>{title}</Text>? Ask one of our
 				experts
@@ -191,6 +206,9 @@ const AskExpertsSection = ({ title = '' }) => {
 									<Recaptcha
 										ref={recaptchaRef}
 										sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+										size={
+											CustomFormItemLayout && isMobile ? 'compact' : 'normal'
+										}
 									/>
 								</Form.Item>
 							</Col>

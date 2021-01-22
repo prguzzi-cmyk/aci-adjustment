@@ -163,6 +163,56 @@
 			}
 		}
 
+		/* Page banner Medium*/
+		.page-banner-md-wrapper {
+			width: 100%;
+			height: 45vh;
+			margin-top: @margin-2;
+			position: relative;
+			overflow: hidden;
+
+			.page-banner-md {
+				padding: 1px 0 0;
+				height: 100%;
+
+				.image-wrapper {
+					overflow: hidden;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+
+					&::after {
+						content: '\A';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						background: rgba(0, 0, 0, 0.8);
+						transition: all 1s;
+						-webkit-transition: all 1s;
+					}
+				}
+
+				.content-wrapper {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+
+					.ant-space-vertical {
+						height: 100%;
+						justify-content: center;
+					}
+
+					.title {
+						color: @primary-color;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+
 		/* Page banner Small*/
 		.page-banner-sm-wrapper {
 			width: 100%;
@@ -212,39 +262,6 @@
 				}
 			}
 		}
-
-		/* Page banner Image*/
-		.page-banner-image-wrapper {
-			width: 100%;
-			height: 80vh;
-			margin-top: @margin-2;
-			position: relative;
-			overflow: hidden;
-
-			.page-banner-image {
-				padding: 1px 0 0;
-				height: 100%;
-
-				.image-wrapper {
-					overflow: hidden;
-					position: absolute;
-					width: 100%;
-					height: 100%;
-
-					&::after {
-						content: '\A';
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						top: 0;
-						left: 0;
-						background: rgba(0, 0, 0, 0.2);
-						transition: all 1s;
-						-webkit-transition: all 1s;
-					}
-				}
-			}
-		}
 	}
 
 	/* Main content */
@@ -270,6 +287,17 @@
 		}
 	}
 
+	/* Layout Sidebar */
+	.ant-layout-sider {
+		background-color: @section-background;
+
+		.ant-layout-sider-zero-width-trigger {
+			background: @section-background-dark-1;
+			color: @white;
+			right: 0px;
+		}
+	}
+
 	/* Footer */
 	.ant-layout-footer {
 		text-align: left;
@@ -282,13 +310,21 @@
 			text-align: right;
 			min-height: 66.63px;
 
-			.anticon {
-				font-size: 35px;
-				margin-left: @margin-1;
-				color: @text-color-light;
+			.ant-col {
+				padding: 15px 0px;
 
-				&:hover {
-					color: @white;
+				.anticon {
+					font-size: 35px;
+					margin-left: @margin-1;
+					color: @text-color-light;
+
+					&:hover {
+						color: @white;
+					}
+				}
+
+				a:first-child .anticon {
+					margin-left: 0;
 				}
 			}
 		}

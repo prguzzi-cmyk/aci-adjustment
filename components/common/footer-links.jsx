@@ -25,7 +25,7 @@ const FooterLinks = () => {
 				}}
 				{...config.QueueAnim({})}
 			>
-				<Col key='1' md={8}>
+				<Col key='1' xs={24} md={8}>
 					<Title level={4} className='footer-title'>
 						Information
 					</Title>
@@ -39,7 +39,7 @@ const FooterLinks = () => {
 					</Link>
 				</Col>
 
-				<Col key='2' md={8}>
+				<Col key='2' xs={24} md={8}>
 					<Title level={4} className='footer-title'>
 						Resources
 					</Title>
@@ -53,7 +53,7 @@ const FooterLinks = () => {
 					</Link>
 				</Col>
 
-				<Col key='3' md={8}>
+				<Col key='3' xs={24} md={8}>
 					<Title level={4} className='footer-title'>
 						Contact Us
 					</Title>

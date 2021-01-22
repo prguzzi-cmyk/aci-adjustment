@@ -8,14 +8,9 @@ const { Title, Text, Paragraph } = Typography;
 
 const IntroSection = ({ community }) => {
 	return (
-		<div className='intro-container'>
+		<div className='comm-intro-container'>
 			<Title level={2} className='title'>
-				{community.Community.S
-					? [
-							<Text key='1'>Do not miss out</Text>,
-							' on what you’re entitled to!',
-					  ]
-					: [<Text key='1'>Oops</Text>, ", we couldn't find the page..."]}
+				<Text>Do not miss out</Text> on what you’re entitled to!
 			</Title>
 
 			<OverPack {...config.OverPack({ playScale: config.PlayScale.bottom })}>
