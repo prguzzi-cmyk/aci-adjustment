@@ -6,10 +6,12 @@ import { enquireScreen } from 'enquire-js';
 import Navbar from '../components/common/navbar';
 import Banner from '../components/common/banner-medium';
 import Breadcrumb from '../components/common/breadcrumb';
-import AskExperts from '../components/common/sections/ask-experts-form';
 import FooterSocial from '../components/common/footer-social';
 import FooterLinks from '../components/common/footer-links';
 import FooterCopyright from '../components/common/footer-copyright';
+
+import AskExperts from '../components/common/sections/ask-experts-form';
+import WidgetServices from '../components/common/widgets/services';
 
 import dataset from '../utils/datasets/general';
 import {
@@ -66,6 +68,7 @@ const LayoutCommunity = ({
 
 				<Sider width={isMobile ? 320 : 500} breakpoint='lg' collapsedWidth={0}>
 					<AskExperts title='Claim' {...sidebarConfig} />
+					<WidgetServices />
 				</Sider>
 			</Layout>
 
