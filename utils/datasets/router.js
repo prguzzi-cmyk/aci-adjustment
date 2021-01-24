@@ -89,7 +89,7 @@ const Claims = {
 	},
 };
 
-const Damage = {
+const DamageStorm = {
 	damageHail: {
 		path: `${Claims.claimStorm.path}/hail-damage`,
 		label: 'Hail Damage',
@@ -125,6 +125,9 @@ const Damage = {
 		label: 'Window & Skylight Leaks',
 		key: 'window-skylight-leaks',
 	},
+};
+
+const DamageFire = {
 	damageCommercial: {
 		path: `${Claims.claimFire.path}/commercial-fire`,
 		label: 'Commercial Fire',
@@ -145,6 +148,9 @@ const Damage = {
 		label: 'Smoke Damage',
 		key: 'smoke-damage',
 	},
+};
+
+const DamageWater = {
 	damageAcUnitLeak: {
 		path: `${Claims.claimWater.path}/ac-unit-leaks`,
 		label: 'A/C Unit Leaks',
@@ -175,6 +181,9 @@ const Damage = {
 		label: 'Toilet Leaks & Overflows',
 		key: 'toilet-leaks-overflows',
 	},
+};
+
+const DamageCommercial = {
 	damageApartment: {
 		path: `${Claims.claimCommercial.path}/apartment-buildings-condominiums`,
 		label: 'Apartment Buildings & Condominiums',
@@ -215,6 +224,9 @@ const Damage = {
 		label: 'Loss of Business',
 		key: 'loss-of-business',
 	},
+};
+
+const DamageCommon = {
 	damageCollapse: {
 		path: `${Claims.claimCommon.path}/collapse`,
 		label: 'Collapse',
@@ -272,10 +284,19 @@ const Router = {
 	router: {
 		...General,
 		...Claims,
-		...Damage,
+		...DamageStorm,
+		...DamageFire,
+		...DamageWater,
+		...DamageCommercial,
+		...DamageCommon,
 		...Tools,
 		...Faqs,
 	},
+	routerDamageStorm: DamageStorm,
+	routerDamageFire: DamageFire,
+	routerDamageWater: DamageWater,
+	routerDamageCommercial: DamageCommercial,
+	routerDamageCommon: DamageCommon,
 };
 
 module.exports = Router;

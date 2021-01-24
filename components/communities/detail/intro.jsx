@@ -1,8 +1,10 @@
+import Link from 'next/link';
 import { Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import config from '../../../utils/config';
+import dataset from '../../../utils/datasets/bootstrap';
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -10,6 +12,12 @@ const IntroSection = ({ community }) => {
 	return (
 		<div className='comm-intro-container'>
 			<Title level={2} className='title'>
+				Call&nbsp;
+				<Link href={`tel:${dataset.general.phone}`}>
+					<a>{dataset.general.phoneFormatted}</a>
+				</Link>
+				&nbsp;for a <Text>FREE</Text> consultation!
+				<br />
 				<Text>Do not miss out</Text> on what you’re entitled to!
 			</Title>
 
