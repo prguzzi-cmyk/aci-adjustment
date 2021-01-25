@@ -11,8 +11,8 @@ const { Title, Text } = Typography;
 
 const ServicesSection = () => {
 	const imgConfig = {
-		width: 217,
-		height: 217,
+		width: 1200,
+		height: 1200,
 	};
 
 	return (
@@ -24,15 +24,15 @@ const ServicesSection = () => {
 
 			<OverPack {...config.OverPack({})}>
 				<QueueAnim
+					key='services-queue'
 					component={Row}
 					componentProps={{
 						className: 'content',
 						gutter: [40, 40],
 					}}
-					key='queue'
 					{...config.QueueAnim({ type: 'right' })}
 				>
-					<Col key='1' flex='2'>
+					<Col key='1' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -53,7 +53,7 @@ const ServicesSection = () => {
 						</div>
 					</Col>
 
-					<Col key='2' flex='2'>
+					<Col key='2' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -74,7 +74,7 @@ const ServicesSection = () => {
 						</div>
 					</Col>
 
-					<Col key='3' flex='2'>
+					<Col key='3' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -95,7 +95,7 @@ const ServicesSection = () => {
 						</div>
 					</Col>
 
-					<Col key='4' flex='2'>
+					<Col key='4' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -116,7 +116,7 @@ const ServicesSection = () => {
 						</div>
 					</Col>
 
-					<Col key='5' flex='2'>
+					<Col key='5' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image

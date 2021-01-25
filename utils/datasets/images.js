@@ -62,7 +62,7 @@ const General = {
 
 const Claims = {
 	claimStorm: {
-		src: '/images/claims/storm.png',
+		src: '/images/claims/storm.jpg',
 		alt: 'Storm Claims',
 
 		hail: {
@@ -95,7 +95,7 @@ const Claims = {
 		},
 	},
 	claimFire: {
-		src: '/images/claims/fire.png',
+		src: '/images/claims/fire.jpg',
 		alt: 'Fire Claims',
 
 		commercialFire: {
@@ -120,7 +120,7 @@ const Claims = {
 		},
 	},
 	claimWater: {
-		src: '/images/claims/water.png',
+		src: '/images/claims/water.jpg',
 		alt: 'Water Claims',
 
 		acUnitLeak: {
@@ -149,7 +149,7 @@ const Claims = {
 		},
 	},
 	claimCommercial: {
-		src: '/images/claims/commercial.png',
+		src: '/images/claims/commercial.jpg',
 		alt: 'Commercial Claims',
 
 		apartment: {
@@ -186,7 +186,7 @@ const Claims = {
 		},
 	},
 	claimCommon: {
-		src: '/images/claims/flood.png',
+		src: '/images/claims/other.jpg',
 		alt: 'Other Common Claims',
 
 		collapse: {
