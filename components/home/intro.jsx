@@ -30,7 +30,7 @@ const IntroSection = () => {
 					}}
 					{...config.QueueAnim({})}
 				>
-					<Text key='intro-text'>
+					<Text key='intro-text' className='text-xs-justify'>
 						Our mission at ACI Adjustment Group is to protect the policyholder.
 						Many home and business owners are unaware that they have thousands
 						of dollars that are rightfully due to them. Millions of dollars are
