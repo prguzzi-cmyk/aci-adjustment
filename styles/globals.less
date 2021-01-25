@@ -451,8 +451,8 @@
 
 					.app-btn-lg {
 						font-weight: 500;
+						width: 100%;
 						min-height: 65px;
-						min-width: 217px;
 					}
 				}
 			}
@@ -562,5 +562,13 @@
 		span {
 			color: @primary-color;
 		}
+	}
+}
+
+/* Media Query for Extra Small device */
+@media (max-width: 575px) {
+	// Align text to jsutify.
+	.text-xs-justify {
+		text-align: justify;
 	}
 }

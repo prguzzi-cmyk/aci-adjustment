@@ -24,11 +24,6 @@ const General = {
 		label: 'Tools',
 		key: 'tools',
 	},
-	policyReview: {
-		path: '/policy-review',
-		label: 'Policy Review',
-		key: 'policy-review',
-	},
 	faq: {
 		path: '/faq',
 		label: 'Frequently Asked Questions',

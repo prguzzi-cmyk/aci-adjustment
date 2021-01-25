@@ -10,7 +10,7 @@ const { Link, Title } = Typography;
 
 const TabSection = () => {
 	const playerOpts = {
-		width: '610',
+		width: '100%',
 		height: '390',
 	};
 
@@ -19,13 +19,13 @@ const TabSection = () => {
 			<TabPane tab='ACI Adjustment Group' key='1' className='tabpane-adjuster'>
 				<OverPack {...config.OverPack({})}>
 					<QueueAnim
+						key='home-tab-1-queue'
 						component={Row}
 						componentProps={{
 							justify: 'center',
 							align: 'middle',
 							gutter: [30, 10],
 						}}
-						key='queue'
 						{...config.QueueAnim({})}
 					>
 						<Col key='1' sm={24} md={12}>
@@ -74,13 +74,13 @@ const TabSection = () => {
 			<TabPane tab='Winter Insurance Claims' key='2' className='tabpane-winter'>
 				<OverPack {...config.OverPack({})}>
 					<QueueAnim
+						key='home-tab-2-queue'
 						component={Row}
 						componentProps={{
 							justify: 'center',
 							align: 'middle',
 							gutter: [30, 10],
 						}}
-						key='queue'
 						{...config.QueueAnim({})}
 					>
 						<Col key='1' sm={24} md={12}>

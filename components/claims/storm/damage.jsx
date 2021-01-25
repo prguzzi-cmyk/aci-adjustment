@@ -23,17 +23,15 @@ const DamageSection = () => {
 
 			<OverPack {...config.OverPack({})}>
 				<QueueAnim
+					key='damage-queue'
 					component={Row}
 					componentProps={{
 						className: 'content',
-						justify: 'center',
-						align: 'middle',
 						gutter: [40, 40],
 					}}
-					key='queue'
 					{...config.QueueAnim({ type: 'right' })}
 				>
-					<Col key='1' span='6'>
+					<Col key='1' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -54,7 +52,7 @@ const DamageSection = () => {
 						</div>
 					</Col>
 
-					<Col key='2' span='6'>
+					<Col key='2' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -75,7 +73,7 @@ const DamageSection = () => {
 						</div>
 					</Col>
 
-					<Col key='3' span='6'>
+					<Col key='3' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -96,7 +94,7 @@ const DamageSection = () => {
 						</div>
 					</Col>
 
-					<Col key='4' span='6'>
+					<Col key='4' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -117,7 +115,7 @@ const DamageSection = () => {
 						</div>
 					</Col>
 
-					<Col key='5' span='6'>
+					<Col key='5' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -138,7 +136,7 @@ const DamageSection = () => {
 						</div>
 					</Col>
 
-					<Col key='6' span='6'>
+					<Col key='6' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image
@@ -159,7 +157,7 @@ const DamageSection = () => {
 						</div>
 					</Col>
 
-					<Col key='7' span='6'>
+					<Col key='7' flex='1'>
 						<div className='block'>
 							<div className='img-wrapper'>
 								<Image

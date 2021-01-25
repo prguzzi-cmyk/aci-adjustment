@@ -47,7 +47,7 @@ const RankedSection = () => {
 					}}
 					{...config.QueueAnim({ type: 'right' })}
 				>
-					<Text key='text' className='rank-text'>
+					<Text key='text' className='rank-text text-xs-justify'>
 						ACI Adjustment Group was ranked #1 by the UPA (United Public
 						Adjusters for Customer Service &amp; Satisfaction this year for the
 						5th year in a row!!!
