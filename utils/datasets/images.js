@@ -34,13 +34,21 @@ const General = {
 		src: '/images/banners/contact-us.jpg',
 		alt: 'Contact Us Banner Image',
 	},
+	inspection: {
+		src: '/images/inspection.jpg',
+		alt: 'Free Inspection',
+	},
 	fileClaim: {
-		src: '/images/file-claim.jpeg',
+		src: '/images/file-claim.jpg',
 		alt: 'File a Claim',
 	},
 	policyReview: {
 		src: '/images/policy-review.jpg',
 		alt: 'Policy Review',
+	},
+	faq: {
+		src: '/images/faq.jpg',
+		alt: 'Insurance Claim FAQ',
 	},
 	careers: {
 		src: '/images/careers.jpg',

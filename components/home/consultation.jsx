@@ -34,10 +34,10 @@ const ConsultationSection = () => {
 						<div className='consult-block'>
 							<div className='img-wrapper'>
 								<Image
-									src='/images/inspection.png'
-									alt='Free Inspection'
-									width={140}
-									height={109}
+									src={dataset.images.inspection.src}
+									alt={dataset.images.inspection.alt}
+									width={460}
+									height={292}
 								/>
 							</div>
 
@@ -48,7 +48,7 @@ const ConsultationSection = () => {
 
 							<div className='btn-wrapper'>
 								<Button type='primary' className='app-btn-lg'>
-									<Link href='/'>
+									<Link href={`#inspection-container`}>
 										<a>Request a FREE Inspection!</a>
 									</Link>
 								</Button>
@@ -60,10 +60,37 @@ const ConsultationSection = () => {
 						<div className='consult-block'>
 							<div className='img-wrapper'>
 								<Image
-									src='/images/claim.png'
-									alt='File Claim'
-									width={140}
-									height={109}
+									src={dataset.images.policyReview.src}
+									alt={dataset.images.policyReview.alt}
+									width={460}
+									height={292}
+								/>
+							</div>
+
+							<Text className='consult-text'>
+								Fill out the information to request a FREE policy review. Our
+								ACI Public Adjuster will even offer a FREE property inspection
+								and consultation.
+							</Text>
+
+							<div className='btn-wrapper'>
+								<Button type='primary' className='app-btn-lg'>
+									<Link href={dataset.router.policyReview.path}>
+										<a>Request a FREE Policy Review</a>
+									</Link>
+								</Button>
+							</div>
+						</div>
+					</Col>
+
+					<Col key='3' md={6}>
+						<div className='consult-block'>
+							<div className='img-wrapper'>
+								<Image
+									src={dataset.images.fileClaim.src}
+									alt={dataset.images.fileClaim.alt}
+									width={460}
+									height={292}
 								/>
 							</div>
 
@@ -82,40 +109,14 @@ const ConsultationSection = () => {
 						</div>
 					</Col>
 
-					<Col key='3' md={6}>
-						<div className='consult-block'>
-							<div className='img-wrapper'>
-								<Image
-									src='/images/claim-calculator.png'
-									alt='Claim Calculator'
-									width={200}
-									height={50}
-								/>
-							</div>
-
-							<Text className='consult-text'>
-								Find out what your damage is worth in 15 minutes or less! Click
-								the button below to use our state-of-the-art Claim Calculator
-							</Text>
-
-							<div className='btn-wrapper'>
-								<Button type='primary' className='app-btn-lg'>
-									<Link href='/'>
-										<a>ACI Claim Calculator</a>
-									</Link>
-								</Button>
-							</div>
-						</div>
-					</Col>
-
 					<Col key='4' md={6}>
 						<div className='consult-block'>
 							<div className='img-wrapper'>
 								<Image
-									src='/images/faq.jpg'
-									alt='FAQ'
-									width={140}
-									height={109}
+									src={dataset.images.faq.src}
+									alt={dataset.images.faq.alt}
+									width={460}
+									height={292}
 								/>
 							</div>
 
