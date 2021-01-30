@@ -148,6 +148,20 @@ export const FormItemLayout = {
 	},
 };
 
+/* Form Items Layout for two items per line */
+export const FormItemLayoutTwo = {
+	labelCol: {
+		xs: { span: 24 },
+		sm: { span: 6 },
+		md: { span: 6 },
+	},
+	wrapperCol: {
+		xs: { span: 24 },
+		sm: { span: 14 },
+		md: { span: 14 },
+	},
+};
+
 /* Form Items Layout for Sidebar*/
 export const FormItemLayoutSidebar = {
 	labelCol: {
