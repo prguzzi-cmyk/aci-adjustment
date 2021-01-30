@@ -1,15 +1,14 @@
 import Layout from '../../layouts/default';
 
-import dynamoDb from '../../lib/dynamo-db';
+import { getStates, getCounties, getCommunities } from '../../lib/dynamo-db';
 
 import CommunitiesSection from '../../components/communities/communities';
 
 import dataset from '../../utils/datasets/bootstrap';
-import { uCase } from '../../utils/functions';
 
 import '../../styles/modules/communities.less';
 
-export default function Communities({ county, communities }) {
+export default function Communities({ states, counties, communities }) {
 	const LayoutConfig = {
 		title: 'Communities',
 		description: 'Communities we cover',
@@ -23,33 +22,24 @@ export default function Communities({ county, communities }) {
 
 	return (
 		<Layout {...LayoutConfig}>
-			<CommunitiesSection county={county} communities={communities} />
+			<CommunitiesSection
+				states={states}
+				counties={counties}
+				communities={communities}
+			/>
 		</Layout>
 	);
 }
 
 export async function getStaticProps() {
-	// const counties = await dynamoDb.query({
-	// 	TableName: process.env.TBL_COMMUNITY,
-	// 	IndexName: process.env.IND_STATE,
-	// 	KeyConditionExpression: 'StateSlug = :state',
-	// 	ExpressionAttributeValues: {
-	// 		':state': { S: 'pennsylvania' },
-	// 	},
-	// });
-
-	const communities = await dynamoDb.query({
-		TableName: process.env.TBL_COMMUNITY,
-		IndexName: process.env.IND_COUNTY,
-		KeyConditionExpression: 'CountySlug = :county',
-		ExpressionAttributeValues: {
-			':county': { S: process.env.DEF_COUNTY },
-		},
-	});
+	const states = await getStates();
+	const counties = await getCounties(process.env.DEF_STATE);
+	const communities = await getCommunities(process.env.DEF_COUNTY);
 
 	return {
 		props: {
-			county: uCase(process.env.DEF_COUNTY),
+			states: states.Items,
+			counties: counties.Items,
 			communities: communities.Items,
 		},
 	};
