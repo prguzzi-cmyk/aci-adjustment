@@ -17,7 +17,7 @@
 	},
 	"dependencies": {
 		"@ant-design/icons": "^4.4.0",
-		"@aws-sdk/client-dynamodb": "^3.3.0",
+		"@aws-sdk/client-dynamodb": "^3.4.1",
 		"@next/bundle-analyzer": "^10.0.1",
 		"@zeit/next-less": "^1.0.1",
 		"antd": "^4.8.0",
