@@ -17,7 +17,12 @@ import '../../styles/modules/communities.less';
 export default function Community({ community }) {
 	const router = useRouter();
 
-	if (!community) {
+	if (
+		!community ||
+		community === null ||
+		community === undefined ||
+		community == ''
+	) {
 		community = {
 			Community: { S: '' },
 			CommunitySlug: { S: router.query.slug },
