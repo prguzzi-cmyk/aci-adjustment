@@ -67,6 +67,7 @@ export default function Community({ community }) {
 }
 
 export async function getStaticPaths() {
+	console.log('helllllllllllllllllllllllllllllll');
 	console.log(process.env.DEF_COUNTY);
 	const paths = await getDefCommunities();
 
