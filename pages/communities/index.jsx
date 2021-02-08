@@ -33,8 +33,10 @@ export default function Communities({ states, counties, communities }) {
 
 export async function getStaticProps() {
 	const states = await getStates();
-	const counties = await getCounties(process.env.DEF_STATE);
-	const communities = await getCommunities(process.env.DEF_COUNTY);
+	// const counties = await getCounties(process.env.DEF_STATE);
+	const counties = await getCounties('States');
+	// const communities = await getCommunities(process.env.DEF_COUNTY);
+	const communities = await getCommunities('bucks');
 
 	return {
 		props: {
