@@ -1,6 +1,6 @@
 import Layout from '../../layouts/default';
 
-import { getStates, getCounties, getCommunities } from '../../lib/dynamo-db';
+import DynamoDb from '../../lib/dynamo-db';
 
 import CommunitiesSection from '../../components/communities/communities';
 
@@ -32,9 +32,19 @@ export default function Communities({ states, counties, communities }) {
 }
 
 export async function getStaticProps() {
-	const states = await getStates();
-	const counties = await getCounties(process.env.DEF_STATE);
-	const communities = await getCommunities(process.env.DEF_COUNTY);
+	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+
+	const states = await dynamoDb.getStates(process.env.TBL_STATES);
+	const counties = await dynamoDb.getCounties(
+		process.env.TBL_COUNTIES,
+		process.env.IND_STATE,
+		process.env.DEF_STATE
+	);
+	const communities = await dynamoDb.getCommunities(
+		process.env.TBL_COMMUNITIES,
+		process.env.IND_COUNTY,
+		process.env.DEF_COUNTY
+	);
 
 	return {
 		props: {

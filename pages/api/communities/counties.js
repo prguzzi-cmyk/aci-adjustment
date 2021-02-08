@@ -1,10 +1,15 @@
-import { getCounties } from '../../../lib/dynamo-db';
+import DynamoDb from '../../../lib/dynamo-db';
 import { ReFeedback } from '../../../utils/config';
 
 export default async (req, res) => {
 	let response;
+	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
 
-	const counties = await getCounties(req.body.state);
+	const counties = await dynamoDb.getCounties(
+		process.env.TBL_COUNTIES,
+		process.env.IND_STATE,
+		req.body.state
+	);
 
 	if (counties && counties.Items) {
 		res.statusCode = 200;

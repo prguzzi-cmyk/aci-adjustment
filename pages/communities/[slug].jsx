@@ -4,7 +4,7 @@ import Layout from '../../layouts/community';
 
 import dataset from '../../utils/datasets/bootstrap';
 
-import { getDefCommunities, getCommunity } from '../../lib/dynamo-db';
+import DynamoDb from '../../lib/dynamo-db';
 
 import IntroSection from '../../components/communities/detail/intro';
 import InspectionSection from '../../components/communities/detail/inspection';
@@ -67,9 +67,13 @@ export default function Community({ community }) {
 }
 
 export async function getStaticPaths() {
-	console.log('helllllllllllllllllllllllllllllll');
-	console.log(process.env.DEF_COUNTY);
-	const paths = await getDefCommunities();
+	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+
+	const paths = await dynamoDb.getDefCommunities(
+		process.env.TBL_COMMUNITIES,
+		process.env.IND_COUNTY,
+		process.env.DEF_COUNTY
+	);
 
 	return {
 		paths,
@@ -78,7 +82,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	let community = await getCommunity(params.slug);
+	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+
+	let community = await dynamoDb.getCommunity(
+		process.env.TBL_COMMUNITIES,
+		params.slug
+	);
 
 	if (!community) {
 		community = {
