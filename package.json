@@ -41,6 +41,7 @@
 		"react-google-recaptcha": "^2.1.0",
 		"react-youtube": "^7.13.1",
 		"remark": "^13.0.0",
-		"remark-html": "^13.0.1"
+		"remark-html": "^13.0.1",
+		"xmlbuilder2": "^2.4.0"
 	}
 }
