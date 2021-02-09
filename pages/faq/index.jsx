@@ -13,7 +13,7 @@ export default function FAQ() {
 		description:
 			'Here is the list of frequently asked questions that we receive about insurance claims, its process, hiring a public adjuster, and more.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerFaq,
 			title: dataset.router.faq.label,
 		},
 		breadcrumb: [dataset.router.faq],

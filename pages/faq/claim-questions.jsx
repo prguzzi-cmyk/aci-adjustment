@@ -12,7 +12,7 @@ export default function ClaimQuestions() {
 		description:
 			'The detailed information about the claim process from ACI Adjustment Group Pennsylvania. Please review the list of articles and questions.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerClaimQuestions,
 			title: dataset.router.faqClaimQuestions.label,
 		},
 		breadcrumb: [dataset.router.faq, dataset.router.faqClaimQuestions],

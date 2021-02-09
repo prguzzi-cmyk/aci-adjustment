@@ -1,12 +1,12 @@
-import { Space, Typography } from 'antd';
+import { Space, Typography, Button } from 'antd';
 import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
 import config from '../../utils/config';
-import dataset from '../../utils/datasets/images';
+import dataset from '../../utils/datasets/bootstrap';
 
-const { Title } = Typography;
+const { Title, Link } = Typography;
 
 const Banner = ({ banner }) => {
 	return (
@@ -50,6 +50,17 @@ const Banner = ({ banner }) => {
 								{banner.title}
 							</Title>
 						)}
+
+						<Button
+							key='call'
+							type='primary'
+							shape='circle'
+							className='app-btn'
+						>
+							<Link href={`tel:${dataset.general.phone}`} strong>
+								CALL {dataset.general.phoneFormatted}
+							</Link>
+						</Button>
 					</QueueAnim>
 				</div>
 			</div>

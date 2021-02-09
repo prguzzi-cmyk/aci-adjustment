@@ -1,7 +1,7 @@
 const General = {
 	bannerHome: {
 		src: '/images/banners/home.jpg',
-		alt: 'Home Banner Image',
+		alt: 'Home Banner',
 	},
 	bannerDefault: {
 		src: '/images/banners/home.jpg',
@@ -16,23 +16,43 @@ const General = {
 	},
 	bannerCareer: {
 		src: '/images/banners/career.jpg',
-		alt: 'Career Banner Image',
+		alt: 'Career Banner',
 	},
 	bannerPolicyReview: {
 		src: '/images/banners/policy-review.jpg',
-		alt: 'Policy Review Banner Image',
+		alt: 'Policy Review Banner',
 	},
 	bannerSchAppoint: {
 		src: '/images/banners/schedule-appointment.jpg',
-		alt: 'Schedule Appointment Banner Image',
+		alt: 'Schedule Appointment Banner',
 	},
 	bannerOurServices: {
 		src: '/images/banners/our-services.jpg',
-		alt: 'Our Services Banner Image',
+		alt: 'Our Services Banner',
+	},
+	bannerFileClaim: {
+		src: '/images/banners/file-claim.jpg',
+		alt: 'File A Claim Banner',
+	},
+	bannerFaq: {
+		src: '/images/banners/faq.jpg',
+		alt: 'Frequently Asked Questions Banner',
+	},
+	bannerClaimQuestions: {
+		src: '/images/banners/claim-questions.jpg',
+		alt: 'Claim Questions Banner',
+	},
+	bannerAboutUs: {
+		src: '/images/banners/about-us.jpg',
+		alt: 'About Us Banner',
 	},
 	bannerContactUs: {
 		src: '/images/banners/contact-us.jpg',
-		alt: 'Contact Us Banner Image',
+		alt: 'Contact Us Banner',
+	},
+	awardUpa: {
+		src: '/images/award-upa.png',
+		alt: 'UPA Award',
 	},
 	inspection: {
 		src: '/images/inspection.jpg',

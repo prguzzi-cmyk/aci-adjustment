@@ -16,7 +16,7 @@ export default function AboutUs() {
 		description:
 			'ACI Adjustment Group embodies the values of honesty, integrity, and above all else the experience and satisfaction of our customers. Initial Resident and Non-Resident Public Adjuster.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerAboutUs,
 			title: dataset.router.aboutUs.label,
 		},
 		breadcrumb: [dataset.router.aboutUs],

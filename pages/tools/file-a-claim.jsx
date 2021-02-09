@@ -13,7 +13,7 @@ export default function FileClaim() {
 		description:
 			'File your claim with the help of ACI Adjustment Group in Pennsylvania. Customer friendly services with all the documentation. We make the process as easy as 1, 2, 3! Contact us for details.',
 		banner: {
-			image: dataset.images.bannerDefault,
+			image: dataset.images.bannerFileClaim,
 			title: dataset.router.fileClaim.label,
 		},
 		breadcrumb: [dataset.router.tools, dataset.router.fileClaim],
