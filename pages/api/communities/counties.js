@@ -3,13 +3,9 @@ import { ReFeedback } from '../../../utils/config';
 
 export default async (req, res) => {
 	let response;
-	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+	const dynamoDb = new DynamoDb();
 
-	const counties = await dynamoDb.getCounties(
-		process.env.TBL_COUNTIES,
-		process.env.IND_STATE,
-		req.body.state
-	);
+	const counties = await dynamoDb.getCounties(req.body.state);
 
 	if (counties && counties.Items) {
 		res.statusCode = 200;

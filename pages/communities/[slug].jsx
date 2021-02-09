@@ -67,13 +67,9 @@ export default function Community({ community }) {
 }
 
 export async function getStaticPaths() {
-	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+	const dynamoDb = new DynamoDb();
 
-	const paths = await dynamoDb.getDefCommunities(
-		process.env.TBL_COMMUNITIES,
-		process.env.IND_COUNTY,
-		process.env.DEF_COUNTY
-	);
+	const paths = await dynamoDb.getDefCommunities();
 
 	return {
 		paths,
@@ -82,12 +78,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+	const dynamoDb = new DynamoDb();
 
-	let community = await dynamoDb.getCommunity(
-		process.env.TBL_COMMUNITIES,
-		params.slug
-	);
+	let community = await dynamoDb.getCommunity(params.slug);
 
 	if (!community) {
 		community = {

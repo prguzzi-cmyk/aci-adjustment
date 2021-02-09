@@ -32,19 +32,11 @@ export default function Communities({ states, counties, communities }) {
 }
 
 export async function getStaticProps() {
-	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+	const dynamoDb = new DynamoDb();
 
-	const states = await dynamoDb.getStates(process.env.TBL_STATES);
-	const counties = await dynamoDb.getCounties(
-		process.env.TBL_COUNTIES,
-		process.env.IND_STATE,
-		process.env.DEF_STATE
-	);
-	const communities = await dynamoDb.getCommunities(
-		process.env.TBL_COMMUNITIES,
-		process.env.IND_COUNTY,
-		process.env.DEF_COUNTY
-	);
+	const states = await dynamoDb.getStates();
+	const counties = await dynamoDb.getCounties('pennsylvania');
+	const communities = await dynamoDb.getCommunities('bucks');
 
 	return {
 		props: {

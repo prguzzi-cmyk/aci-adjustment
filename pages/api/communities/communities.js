@@ -3,13 +3,9 @@ import { ReFeedback } from '../../../utils/config';
 
 export default async (req, res) => {
 	let response;
-	const dynamoDb = new DynamoDb(process.env.AWS_REGION);
+	const dynamoDb = new DynamoDb();
 
-	const communities = await dynamoDb.getCommunities(
-		process.env.TBL_COMMUNITIES,
-		process.env.IND_COUNTY,
-		req.body.county
-	);
+	const communities = await dynamoDb.getCommunities(req.body.county);
 
 	if (communities && communities.Items) {
 		res.statusCode = 200;
