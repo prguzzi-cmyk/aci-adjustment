@@ -45,6 +45,9 @@ const lessConfig = {
 };
 
 const nextConfig = {
+	images: {
+		domains: ['public-adjusters.s3.amazonaws.com'],
+	},
 	async redirects() {
 		return redirects;
 	},

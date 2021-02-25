@@ -8,6 +8,7 @@ import DynamoDb from '../../lib/dynamo-db';
 
 import IntroSection from '../../components/communities/detail/intro';
 import InspectionSection from '../../components/communities/detail/inspection';
+import VideoSection from '../../components/communities/detail/video';
 import WhyChooseSection from '../../components/communities/detail/why-choose';
 import RankedSection from '../../components/communities/detail/ranked';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
@@ -33,7 +34,7 @@ export default function Community({ community }) {
 	const LayoutConfig = {
 		title: CommunityLable,
 		description: `Leading public adjuster in ${
-			CommunityLable ? CommunityLable : dataset.general.pincode
+			CommunityLable ? CommunityLable : 'USA'
 		}, get your claims and settlements. Have property claim issues? We are here to provide you best solutions for claims and adjustment. Get more money for your settlements and claim.`,
 		banner: {
 			title: pageHeading,
@@ -49,8 +50,9 @@ export default function Community({ community }) {
 
 	if (community.Image && community.Image.S !== '')
 		LayoutConfig.banner = {
+			...LayoutConfig.banner,
 			image: {
-				src: `${dataset.images.bannerCommunDir.src}${community.Image.S}`,
+				src: `${dataset.images.bannerCommunDir.src}${community.StateSlug.S}/${community.CountySlug.S}/${community.Image.S}`,
 				alt: community.ImageAlt ? community.ImageAlt.S : '',
 			},
 		};
@@ -59,6 +61,7 @@ export default function Community({ community }) {
 		<Layout {...LayoutConfig}>
 			<IntroSection community={community} />
 			<InspectionSection community={community} />
+			<VideoSection community={community} />
 			<WhyChooseSection community={community} />
 			<RankedSection />
 			<InspectionFormSection />

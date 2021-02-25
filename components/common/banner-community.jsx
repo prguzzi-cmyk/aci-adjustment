@@ -10,8 +10,8 @@ const { Title, Link } = Typography;
 
 const Banner = ({ banner }) => {
 	return (
-		<div className='page-banner-md-wrapper'>
-			<div className='page-banner-md'>
+		<div className='page-banner-community-wrapper'>
+			<div className='page-banner-community'>
 				<TweenOne
 					key='banner'
 					className='image-wrapper'
@@ -31,6 +31,7 @@ const Banner = ({ banner }) => {
 						}
 						layout='fill'
 						objectFit='cover'
+						objectPosition='center 55%'
 						quality={100}
 					/>
 				</TweenOne>

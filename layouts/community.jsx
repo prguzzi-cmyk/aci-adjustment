@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { enquireScreen } from 'enquire-js';
 
 import Navbar from '../components/common/navbar';
-import Banner from '../components/common/banner-medium';
+import Banner from '../components/common/banner-community';
 import Breadcrumb from '../components/common/breadcrumb';
 import FooterSocial from '../components/common/footer-social';
 import FooterLinks from '../components/common/footer-links';
@@ -46,10 +46,14 @@ const LayoutCommunity = ({
 	return (
 		<Layout className='container'>
 			<Head>
-				<title>{`Public Adjuster ${title} | ${dataset.general.name} ${dataset.general.tagline}`}</title>
+				<title>{`Public Adjuster ${title ? title + ' ' : title}| ${
+					dataset.general.name
+				} ${dataset.general.tagline}`}</title>
 				<meta
 					name='title'
-					content={`Public Adjuster ${title} | ${dataset.general.name} ${dataset.general.tagline}`}
+					content={`Public Adjuster ${title ? title + ' ' : title}| ${
+						dataset.general.name
+					} ${dataset.general.tagline}`}
 				/>
 				<meta name='description' content={description} />
 			</Head>

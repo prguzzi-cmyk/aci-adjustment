@@ -8,10 +8,10 @@ const General = {
 		alt: 'Default Banner',
 	},
 	bannerCommunDir: {
-		src: '/images/banners/communities/',
+		src: 'https://public-adjusters.s3.amazonaws.com/communities/',
 	},
 	bannerCommunDefault: {
-		src: '/images/banners/communities/default.jpg',
+		src: 'https://public-adjusters.s3.amazonaws.com/communities/default.jpg',
 		alt: 'Community Banner',
 	},
 	bannerCareer: {
