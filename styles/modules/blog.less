@@ -1,7 +1,7 @@
 @import '../theme.less';
 
 .blog {
-	/* About Us Intro Section */
+	/* Posts Listing Section */
 	.posts-container {
 		padding: @section-padding;
 		background-color: @section-background;
@@ -15,6 +15,7 @@
 				color: @primary-color;
 			}
 		}
+
 		.content {
 			.ant-card {
 				.ant-card-meta-title {
@@ -24,6 +25,41 @@
 
 				.ant-card-meta-description {
 					margin-bottom: @margin-3;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	/* Post Detail Section */
+	.post-container {
+		padding: @section-padding;
+		background-color: @section-background;
+		min-height: 700px;
+
+		.title {
+			text-align: center;
+			margin-bottom: 60px;
+		}
+
+		.post-date {
+			display: block;
+			margin-bottom: 50px;
+			text-align: right;
+			color: @primary-color;
+
+			em {
+				color: @primary-color;
+				font-weight: bold;
+			}
+		}
+
+		.content {
+			.aci-services {
+				margin-top: 38px;
+
+				ul {
+					margin-top: 18px;
 				}
 			}
 		}

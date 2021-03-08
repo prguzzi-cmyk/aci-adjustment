@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import moment from 'moment';
 
 import config from '../../utils/config';
 import dataset from '../../utils/datasets/bootstrap';
@@ -28,13 +29,16 @@ const PostsSection = ({ posts }) => {
 					{...config.QueueAnim({ type: 'left' })}
 				>
 					{posts.map((post, index) => {
+						const postDate = moment(post.date).format('LL');
+
 						return (
 							<Col key={index++} md={6}>
 								<Card
 									cover={
 										<Image
-											src={dataset.images[post.image].src}
-											alt={dataset.images[post.image].alt}
+											src={`${dataset.images.bannerBlogDir.src}${post.image}`}
+											alt={post.title}
+											objectFit='cover'
 											width={300}
 											height={300}
 										/>
@@ -46,10 +50,14 @@ const PostsSection = ({ posts }) => {
 												<a>{post.title}</a>
 											</Link>
 										}
-										description={post.date}
+										description={postDate}
 									/>
 
-									<Paragraph>{post.excerpt}</Paragraph>
+									<Paragraph>{post.excerpt}...</Paragraph>
+
+									<Link href={`${dataset.router.blog.path}/${post.id}`}>
+										<a>Read More</a>
+									</Link>
 								</Card>
 							</Col>
 						);

@@ -1,9 +1,9 @@
 ---
 title: '5 Post-Fire Tips to Preserve Your Home and Contents'
-date: '21 Dec 2020'
-author: 'Chris Ashley'
-image: 'postPreserveHome'
-excerpt: 'Smoke damage requires special cleaning techniques.'
+date: '2020-12-21'
+author: 'ACI'
+image: 'preserve-home.png'
+excerpt: 'Smoke damage requires special cleaning techniques'
 ---
 
 - **Clothing** - Smoke damage requires special cleaning techniques. Improper cleaning will set the stains and odor, making them impossible to remove. Check with your Public Adjuster for a recommendation about a dry cleaner.

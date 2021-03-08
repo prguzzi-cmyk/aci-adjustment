@@ -1,4 +1,4 @@
-import Layout from '../../layouts/default';
+import Layout from '../../layouts/blog';
 
 import dataset from '../../utils/datasets/bootstrap';
 
@@ -11,12 +11,18 @@ import '../../styles/modules/blog.less';
 export default function Post({ post }) {
 	const LayoutConfig = {
 		title: post.title,
-		banner: {
-			image: dataset.images.bannerDefault,
-		},
 		breadcrumb: [dataset.router.blog, { label: post.title }],
 		className: dataset.router.blog.key,
 	};
+
+	if (post.image)
+		LayoutConfig.banner = {
+			...LayoutConfig.banner,
+			image: {
+				src: `${dataset.images.bannerBlogDir.src}${post.image}`,
+				alt: post.title ? post.title : '',
+			},
+		};
 
 	return (
 		<Layout {...LayoutConfig}>

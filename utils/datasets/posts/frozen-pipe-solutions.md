@@ -1,8 +1,8 @@
 ---
 title: 'Frozen Pipe Solution'
-date: '21 Dec 2020'
-author: 'Chris Ashley'
-image: 'postPipeLeak'
+date: '2020-12-21'
+author: 'ACI'
+image: 'pipe-leak.png'
 excerpt: 'You will need a professional to document your damages with pictures, estimates and a report'
 ---
 

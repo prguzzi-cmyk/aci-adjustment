@@ -1,8 +1,8 @@
 ---
 title: '5 Steps to Help You get the Max'
-date: '21 Dec 2020'
-author: 'Chris Ashley'
-image: 'postHail'
+date: '2020-12-21'
+author: 'ACI'
+image: 'hail.png'
 excerpt: 'ACI will help prevent further damage to your roof, siding, windows and interior'
 ---
 

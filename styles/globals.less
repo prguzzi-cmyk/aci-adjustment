@@ -213,6 +213,56 @@
 			}
 		}
 
+		/* Page banner Blog*/
+		.page-banner-blog-wrapper {
+			width: 100%;
+			height: 65vh;
+			margin-top: @margin-2;
+			position: relative;
+			overflow: hidden;
+
+			.page-banner-blog {
+				padding: 1px 0 0;
+				height: 100%;
+
+				.image-wrapper {
+					overflow: hidden;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+
+					&::after {
+						content: '\A';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						background: rgba(0, 0, 0, 0.6);
+						transition: all 1s;
+						-webkit-transition: all 1s;
+					}
+				}
+
+				.content-wrapper {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+
+					.ant-space-vertical {
+						height: 100%;
+						justify-content: center;
+					}
+
+					.title {
+						color: @primary-color;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+
 		/* Page banner Small*/
 		.page-banner-sm-wrapper {
 			width: 100%;
