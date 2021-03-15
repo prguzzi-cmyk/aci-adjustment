@@ -5,7 +5,9 @@ import moment from 'moment';
 
 import config from '../../utils/config';
 
-const { Title, Text } = Typography;
+import dataset from '../../utils/datasets/bootstrap';
+
+const { Title, Text, Link } = Typography;
 
 const PostDetail = ({ post }) => {
 	return (
@@ -50,6 +52,23 @@ const PostDetail = ({ post }) => {
 								processed fast.
 							</li>
 						</ul>
+					</div>
+
+					<div key='3' className='aci-contacting'>
+						<h2>Contacting Us</h2>
+						<Text>
+							If you want assistance in any property insurance related issue,
+							you can contact us 24/7 via our toll free number{' '}
+							<Link href={`tel:${dataset.general.phone}`} strong>
+								{dataset.general.phoneFormatted}
+							</Link>{' '}
+							or by filling in the contact form on our website or by sending us
+							an email at{' '}
+							<Link href={`mailto:${dataset.emails.claim.email}`} strong>
+								<a>{dataset.emails.claim.email}</a>
+							</Link>
+							.
+						</Text>
 					</div>
 				</QueueAnim>
 			</OverPack>
