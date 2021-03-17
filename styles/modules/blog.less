@@ -56,12 +56,57 @@
 
 		.content {
 			table {
+				table-layout: auto;
+				width: 100%;
+				text-align: left;
+				border-radius: 2px 2px 0 0;
 				border-collapse: separate;
-				border-spacing: 20px 10px;
+				border-spacing: 0;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				margin: 0 0 22px 0;
+				padding: 0;
+				color: rgba(0, 0, 0, 0.85);
+				font-variant: tabular-nums;
+				line-height: 1.5715;
+				list-style: none;
+				-webkit-font-feature-settings: 'tnum';
+				-moz-font-feature-settings: 'tnum';
+				font-feature-settings: 'tnum';
+				position: relative;
+				font-size: 14px;
+				background: #fff;
 
 				th {
-					span {
-						font-weight: bold;
+					color: rgba(0, 0, 0, 0.85);
+					font-weight: 500;
+					text-align: left;
+					background: #fafafa;
+					border-bottom: 1px solid #f0f0f0;
+					-webkit-transition: background 0.3s ease;
+					-moz-transition: background 0.3s ease;
+					transition: background 0.3s ease;
+					position: relative;
+					padding: 16px;
+					overflow-wrap: break-word;
+				}
+
+				tbody {
+					tr {
+						&:hover {
+							background: #fafafa;
+						}
+
+						td {
+							border-bottom: 1px solid #f0f0f0;
+							-webkit-transition: background 0.3s;
+							-moz-transition: background 0.3s;
+							transition: background 0.3s;
+							position: relative;
+							padding: 16px;
+							overflow-wrap: break-word;
+						}
 					}
 				}
 			}
