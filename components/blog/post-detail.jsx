@@ -18,7 +18,7 @@ const PostDetail = ({ post }) => {
 
 			<Text className='post-date'>
 				By <em>{post.author}</em> | Posted On:{' '}
-				<em>{moment(post.date).format('LL')}</em>
+				<em>{moment(post.created_at).format('LL')}</em>
 			</Text>
 
 			<OverPack
@@ -26,8 +26,8 @@ const PostDetail = ({ post }) => {
 				{...config.OverPack({ playScale: config.PlayScale.bottom })}
 			>
 				<QueueAnim key='posts-queue' {...config.QueueAnim({})}>
-					<div key='1' dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-					<div key='2' className='aci-services'>
+					<div key='1' dangerouslySetInnerHTML={{ __html: post.content }} />
+					<div key='aci-services' className='aci-services'>
 						<h2>ACI Adjustment Group Services</h2>
 						<Text>
 							ACI Adjustment group provides assistance with insurance claim
@@ -54,7 +54,7 @@ const PostDetail = ({ post }) => {
 						</ul>
 					</div>
 
-					<div key='3' className='aci-contacting'>
+					<div key='aci-contacting' className='aci-contacting'>
 						<h2>Contacting Us</h2>
 						<Text>
 							If you want assistance in any property insurance related issue,

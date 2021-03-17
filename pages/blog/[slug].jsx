@@ -2,9 +2,9 @@ import Layout from '../../layouts/blog';
 
 import dataset from '../../utils/datasets/bootstrap';
 
-import { getAllPostIds, getPostData } from '../../lib/posts';
-
 import PostDetail from '../../components/blog/post-detail';
+
+import { getAllPostSlugs, getPostData } from '../../lib/posts';
 
 import '../../styles/modules/blog.less';
 
@@ -32,7 +32,8 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
-	const paths = getAllPostIds();
+	const paths = await getAllPostSlugs();
+
 	return {
 		paths,
 		fallback: false,
@@ -40,7 +41,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const post = await getPostData(params.id);
+	const post = await getPostData(params.slug);
+
 	return {
 		props: {
 			post,

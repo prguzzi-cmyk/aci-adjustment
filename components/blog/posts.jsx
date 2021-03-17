@@ -29,7 +29,7 @@ const PostsSection = ({ posts }) => {
 					{...config.QueueAnim({ type: 'left' })}
 				>
 					{posts.map((post, index) => {
-						const postDate = moment(post.date).format('LL');
+						const postDate = moment(post.created_at).format('LL');
 
 						return (
 							<Col key={index++} md={6}>
@@ -46,7 +46,7 @@ const PostsSection = ({ posts }) => {
 								>
 									<Meta
 										title={
-											<Link href={`${dataset.router.blog.path}/${post.id}`}>
+											<Link href={`${dataset.router.blog.path}/${post.slug}`}>
 												<a>{post.title}</a>
 											</Link>
 										}
@@ -55,7 +55,7 @@ const PostsSection = ({ posts }) => {
 
 									<Paragraph>{post.excerpt}...</Paragraph>
 
-									<Link href={`${dataset.router.blog.path}/${post.id}`}>
+									<Link href={`${dataset.router.blog.path}/${post.slug}`}>
 										<a>Read More</a>
 									</Link>
 								</Card>
