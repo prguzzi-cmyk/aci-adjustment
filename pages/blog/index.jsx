@@ -1,14 +1,43 @@
+import { useState, useEffect, useRef } from 'react';
+
+import { useRouter } from 'next/router';
+
 import Layout from '../../layouts/default';
 
 import dataset from '../../utils/datasets/bootstrap';
 
 import PostsSection from '../../components/blog/posts';
+import Pagination from '../../components/blog/pagination';
 
 import { getSortedPostsData } from '../../lib/posts';
 
 import '../../styles/modules/blog.less';
 
-export default function Blog({ posts }) {
+export default function Blog({ meta, posts }) {
+	const [loading, setLoading] = useState(false);
+	const postsSecRef = useRef(null);
+	const router = useRouter();
+
+	useEffect(() => {
+		router.events.on('routeChangeStart', () => {
+			setLoading(true);
+		});
+
+		router.events.on('routeChangeComplete', () => {
+			setLoading(false);
+		});
+
+		return () => {
+			router.events.off('routeChangeStart', () => {
+				setLoading(true);
+			});
+
+			router.events.off('routeChangeComplete', () => {
+				setLoading(false);
+			});
+		};
+	});
+
 	const LayoutConfig = {
 		title: 'Stay connected with Latest News',
 		description:
@@ -23,16 +52,35 @@ export default function Blog({ posts }) {
 
 	return (
 		<Layout {...LayoutConfig}>
-			<PostsSection posts={posts} />
+			<div ref={postsSecRef}>
+				<PostsSection posts={posts} loading={loading} />
+				<Pagination meta={meta} postsSecRef={postsSecRef} loading={loading} />
+			</div>
 		</Layout>
 	);
 }
 
-export async function getStaticProps() {
-	const posts = await getSortedPostsData();
+export async function getServerSideProps({ query }) {
+	const page = (query && query.page) || 1; //if page empty we request the first page
+
+	const meta = {
+		totalCount: 0,
+		currentPage: page,
+		perPage: 12,
+	}; //default meta for pagination
+
+	const posts = await getSortedPostsData({
+		offset: (meta.currentPage - 1) * meta.perPage,
+		limit: meta.perPage,
+	});
+
+	if (posts && posts[0]) {
+		meta.totalCount = posts[0].total_count;
+	}
 
 	return {
 		props: {
+			meta,
 			posts,
 		},
 	};
