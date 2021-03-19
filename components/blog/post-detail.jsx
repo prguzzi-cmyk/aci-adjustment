@@ -13,11 +13,13 @@ const PostDetail = ({ post }) => {
 	return (
 		<div className='post-container'>
 			<Title level={1} className='title'>
-				{post.title}
+				{post && post.title
+					? post.title
+					: ['Post ', <Text>Not</Text>, ' Found']}
 			</Title>
 
 			<Text className='post-date'>
-				By <em>{post.author}</em> | Posted On:{' '}
+				By <em>{post && post.author ? post.author : 'ACI'}</em> | Posted On:{' '}
 				<em>{moment(post.created_at).format('LL')}</em>
 			</Text>
 

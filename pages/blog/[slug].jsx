@@ -16,12 +16,15 @@ export default function Post({ post }) {
 	const router = useRouter();
 
 	const LayoutConfig = {
-		title: post.title,
-		breadcrumb: [dataset.router.blog, { label: post.title }],
+		title: post && post.title ? post.title : 'Post Not Found',
+		breadcrumb: [
+			dataset.router.blog,
+			{ label: post && post.title ? post.title : 'Post Not Found' },
+		],
 		className: dataset.router.blog.key,
 	};
 
-	if (post.image)
+	if (post && post.image) {
 		LayoutConfig.banner = {
 			...LayoutConfig.banner,
 			image: {
@@ -29,6 +32,7 @@ export default function Post({ post }) {
 				alt: post.title ? post.title : '',
 			},
 		};
+	}
 
 	return (
 		<Layout {...LayoutConfig}>
@@ -52,7 +56,7 @@ export async function getStaticPaths() {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: 'blocking',
 	};
 }
 
@@ -63,5 +67,6 @@ export async function getStaticProps({ params }) {
 		props: {
 			post,
 		},
+		revalidate: 1,
 	};
 }
