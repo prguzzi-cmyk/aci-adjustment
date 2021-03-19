@@ -8,10 +8,10 @@ const General = {
 		alt: 'Default Banner',
 	},
 	bannerBlogDir: {
-		src: 'https://public-adjusters.s3.amazonaws.com/blog/',
+		src: 'https://public-adjusters.s3.amazonaws.com/blog/aci/',
 	},
 	bannerBlogDefault: {
-		src: 'https://public-adjusters.s3.amazonaws.com/blog/default.jpg',
+		src: 'https://public-adjusters.s3.amazonaws.com/blog/aci/default.jpg',
 		alt: 'Blog Banner',
 	},
 	bannerCommunDir: {
