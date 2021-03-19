@@ -1,7 +1,7 @@
 import { create } from 'xmlbuilder2';
 import moment from 'moment';
 
-import DynamoDb from '../../../lib/dynamo-db';
+import { getAllPosts } from '../../../lib/posts';
 
 import dataset from '../../../utils/datasets/router';
 import { ReFeedback } from '../../../utils/config';
@@ -19,9 +19,7 @@ export default async (req, res) => {
 		res.json(response);
 	}
 
-	const lastmod = moment().format('YYYY-MM-DD');
-
-	const dynamoDb = new DynamoDb();
+	const posts = await getAllPosts();
 
 	const sitemap = create({ version: '1.0', encoding: 'UTF-8' }).ele('urlset', {
 		xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
@@ -30,35 +28,27 @@ export default async (req, res) => {
 			'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd',
 	});
 
-	const states = await dynamoDb.getStates();
+	posts.map((post) => {
+		const lastmod = moment(post.created_at).format('YYYY-MM-DD');
 
-	for (let state of states.Items) {
-		const counties = await dynamoDb.getCounties(state.StateSlug.S);
-
-		for (let county of counties.Items) {
-			const communities = await dynamoDb.getCommunities(county.CountySlug.S);
-
-			communities.Items.map((community) => {
-				sitemap
-					.ele('url')
-					.ele('loc')
-					.txt(
-						`https://${req.headers.host}${dataset.router.communities.path}/${community.CommunitySlug.S}`
-					)
-					.up()
-					.ele('lastmod')
-					.txt(lastmod)
-					.up()
-					.ele('changefreq')
-					.txt('weekly')
-					.up()
-					.ele('priority')
-					.txt('0.8')
-					.up()
-					.up();
-			});
-		}
-	}
+		sitemap
+			.ele('url')
+			.ele('loc')
+			.txt(
+				`https://${req.headers.host}${dataset.router.blog.path}/${post.slug}`
+			)
+			.up()
+			.ele('lastmod')
+			.txt(lastmod)
+			.up()
+			.ele('changefreq')
+			.txt('yearly')
+			.up()
+			.ele('priority')
+			.txt('0.8')
+			.up()
+			.up();
+	});
 
 	sitemap.up();
 

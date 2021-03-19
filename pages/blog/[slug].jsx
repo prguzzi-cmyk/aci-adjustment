@@ -8,7 +8,7 @@ import dataset from '../../utils/datasets/bootstrap';
 
 import PostDetail from '../../components/blog/post-detail';
 
-import { getAllPostSlugs, getPostData } from '../../lib/posts';
+import { getPostsSlug, getPostData } from '../../lib/posts';
 
 import '../../styles/modules/blog.less';
 
@@ -48,7 +48,7 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
-	const paths = await getAllPostSlugs();
+	const paths = await getPostsSlug();
 
 	return {
 		paths,
