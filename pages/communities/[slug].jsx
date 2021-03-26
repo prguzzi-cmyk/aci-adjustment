@@ -7,10 +7,11 @@ import dataset from '../../utils/datasets/bootstrap';
 import DynamoDb from '../../lib/dynamo-db';
 
 import IntroSection from '../../components/communities/detail/intro';
-import InspectionSection from '../../components/communities/detail/inspection';
-import VideoSection from '../../components/communities/detail/video';
+import PublicAdjusterSection from '../../components/communities/detail/public-adjuster';
+import WhatTheyDoSection from '../../components/communities/detail/what-they-do';
 import WhyChooseSection from '../../components/communities/detail/why-choose';
 import RankedSection from '../../components/communities/detail/ranked';
+import VideoSection from '../../components/communities/detail/video';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
 
 import '../../styles/modules/communities.less';
@@ -60,10 +61,11 @@ export default function Community({ community }) {
 	return (
 		<Layout {...LayoutConfig}>
 			<IntroSection community={community} />
-			<InspectionSection community={community} />
+			<PublicAdjusterSection community={community} />
+			<WhatTheyDoSection community={community} />
+			<WhyChooseSection />
+			<RankedSection community={community} />
 			<VideoSection community={community} />
-			<WhyChooseSection community={community} />
-			<RankedSection />
 			<InspectionFormSection />
 		</Layout>
 	);

@@ -1,8 +1,13 @@
+import Link from 'next/link';
+import { Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import YouTube from 'react-youtube';
 
 import config from '../../../utils/config';
+import dataset from '../../../utils/datasets/bootstrap';
+
+const { Text, Paragraph } = Typography;
 
 const WhyChooseSection = ({ community }) => {
 	const playerOpts = {
@@ -34,6 +39,30 @@ const WhyChooseSection = ({ community }) => {
 						}
 						opts={playerOpts}
 					/>
+
+					<br />
+					<br />
+
+					<Paragraph key='1'>
+						Don't settle for less! Contact us today for a{' '}
+						<Link
+							href={`${dataset.router.communities.path}/${community.CommunitySlug.S}#inspection-container`}
+						>
+							<a>
+								<Text>FREE</Text>
+							</a>
+						</Link>{' '}
+						policy review and property inspection. No cost, no obligation, and
+						you might receive a higher settlement. Call our customer service
+						hotline,{' '}
+						<Link href={`tel:${dataset.general.phone}`}>
+							<a>
+								<b>{dataset.general.phoneFormatted}</b>
+							</a>
+						</Link>{' '}
+						to get an immediate answer to any question you have regarding your
+						claim.
+					</Paragraph>
 				</QueueAnim>
 			</OverPack>
 		</div>
