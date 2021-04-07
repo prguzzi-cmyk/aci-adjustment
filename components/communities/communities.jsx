@@ -15,6 +15,7 @@ const CommunitiesSection = ({ states, counties, communities }) => {
 	const formRef = React.createRef();
 
 	const [statesArr, setStatesArr] = useState(states);
+	const [stateSlug, SetstateSlug] = useState(process.env.NEXT_PUBLIC_DEF_STATE);
 	const [countyLoading, setCountyLoading] = useState(false);
 	const [countiesArr, setCountiesArr] = useState(counties);
 	const [county, setCounty] = useState(process.env.NEXT_PUBLIC_DEF_COUNTY);
@@ -25,6 +26,8 @@ const CommunitiesSection = ({ states, counties, communities }) => {
 
 	const onSateChange = async (value, option) => {
 		const ref = formRef.current;
+
+		SetstateSlug(value);
 
 		const res = await fetch('/api/communities/counties', {
 			method: 'POST',
@@ -38,13 +41,19 @@ const CommunitiesSection = ({ states, counties, communities }) => {
 		if (jRes.success === true) {
 			setCountiesArr(jRes.data);
 
-			ref.setFieldsValue({
-				county: jRes.data[0].County.S,
-			});
+			if (jRes.data.length > 0) {
+				ref.setFieldsValue({
+					county: jRes.data[0].County.S,
+				});
 
-			await onCountyChange(jRes.data[0].CountySlug.S, {
-				children: jRes.data[0].County.S,
-			});
+				await onCountyChange(jRes.data[0].CountySlug.S, {
+					children: jRes.data[0].County.S,
+				});
+			} else {
+				ref.setFieldsValue({
+					county: '',
+				});
+			}
 
 			message.success(
 				`Counties of ${option.children} are showing!`,
@@ -63,7 +72,7 @@ const CommunitiesSection = ({ states, counties, communities }) => {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ county: value }),
+			body: JSON.stringify({ state: stateSlug, county: value }),
 		});
 		const jRes = await res.json();
 

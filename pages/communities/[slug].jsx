@@ -19,10 +19,7 @@ import '../../styles/modules/communities.less';
 export default function Community({ community }) {
 	const router = useRouter();
 
-	if (
-		!community ||
-		(community && community.ShowACI && community.ShowACI.BOOL === false)
-	) {
+	if (!community) {
 		community = {
 			Community: { S: '' },
 			CommunitySlug: { S: router.query.slug },

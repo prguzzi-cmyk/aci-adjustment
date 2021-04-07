@@ -32,34 +32,43 @@ export default async (req, res) => {
 
 	const states = await dynamoDb.getStates();
 
+	const getCommunities = async (state, county, lastKey = '') => {
+		const communities = await dynamoDb.getCommunities(
+			state,
+			county.CountySlug.S,
+			lastKey
+		);
+
+		communities.Items.map((community) => {
+			sitemap
+				.ele('url')
+				.ele('loc')
+				.txt(
+					`https://${req.headers.host}${dataset.router.communities.path}/${community.CommunitySlug.S}`
+				)
+				.up()
+				.ele('lastmod')
+				.txt(lastmod)
+				.up()
+				.ele('changefreq')
+				.txt('weekly')
+				.up()
+				.ele('priority')
+				.txt('0.8')
+				.up()
+				.up();
+		});
+
+		if (communities && communities.LastEvaluatedKey) {
+			getCommunities(state, county, communities.LastEvaluatedKey);
+		}
+	};
+
 	for (let state of states.Items) {
 		const counties = await dynamoDb.getCounties(state.StateSlug.S);
 
 		for (let county of counties.Items) {
-			const communities = await dynamoDb.getCommunities(county.CountySlug.S);
-
-			communities.Items.map((community) => {
-				if (community && community.ShowACI && community.ShowACI.BOOL === false)
-					return false;
-
-				sitemap
-					.ele('url')
-					.ele('loc')
-					.txt(
-						`https://${req.headers.host}${dataset.router.communities.path}/${community.CommunitySlug.S}`
-					)
-					.up()
-					.ele('lastmod')
-					.txt(lastmod)
-					.up()
-					.ele('changefreq')
-					.txt('weekly')
-					.up()
-					.ele('priority')
-					.txt('0.8')
-					.up()
-					.up();
-			});
+			await getCommunities(state.StateSlug.S, county);
 		}
 	}
 

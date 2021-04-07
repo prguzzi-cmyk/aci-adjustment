@@ -5,7 +5,10 @@ export default async (req, res) => {
 	let response;
 	const dynamoDb = new DynamoDb();
 
-	const communities = await dynamoDb.getCommunities(req.body.county);
+	const communities = await dynamoDb.getCommunities(
+		req.body.state,
+		req.body.county
+	);
 
 	if (communities && communities.Items) {
 		res.statusCode = 200;
