@@ -39,6 +39,9 @@ export default async (req, res) => {
 			const communities = await dynamoDb.getCommunities(county.CountySlug.S);
 
 			communities.Items.map((community) => {
+				if (community && community.ShowACI && community.ShowACI.BOOL === false)
+					return false;
+
 				sitemap
 					.ele('url')
 					.ele('loc')
