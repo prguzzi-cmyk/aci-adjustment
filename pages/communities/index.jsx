@@ -35,8 +35,11 @@ export async function getStaticProps() {
 	const dynamoDb = new DynamoDb();
 
 	const states = await dynamoDb.getStates();
-	const counties = await dynamoDb.getCounties('pennsylvania');
-	const communities = await dynamoDb.getCommunities('pennsylvania', 'bucks');
+	const counties = await dynamoDb.getCounties(process.env.DEF_STATE);
+	const communities = await dynamoDb.getCommunities(
+		process.env.DEF_STATE,
+		process.env.DEF_COUNTY
+	);
 
 	return {
 		props: {
