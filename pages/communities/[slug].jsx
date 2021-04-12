@@ -7,10 +7,16 @@ import dataset from '../../utils/datasets/bootstrap';
 import DynamoDb from '../../lib/dynamo-db';
 
 import IntroSection from '../../components/communities/detail/intro';
-import PublicAdjusterSection from '../../components/communities/detail/public-adjuster';
-import WhatTheyDoSection from '../../components/communities/detail/what-they-do';
-import WhyChooseSection from '../../components/communities/detail/why-choose';
-import RankedSection from '../../components/communities/detail/ranked';
+import ClaimSettlementSection from '../../components/communities/detail/claim-settlement';
+import NewInsuranceClaimSection from '../../components/communities/detail/new-insurance-claim';
+import CommonMistakesSection from '../../components/communities/detail/common-mistakes';
+import GroupHelpSection from '../../components/communities/detail/group-help';
+import PendingInsuranceClaimSection from '../../components/communities/detail/pending-insurance-claim';
+import HelpAnyStageSection from '../../components/communities/detail/help-any-stage';
+import ReopeningInsuranceClaimSection from '../../components/communities/detail/reopening-insurance-claim';
+import RejectedInsuranceClaimSection from '../../components/communities/detail/rejected-insurance-claim';
+import MoneyPartSection from '../../components/communities/detail/money-part';
+import AdjusterCoverageSection from '../../components/communities/detail/adjuster-coverage';
 import VideoSection from '../../components/communities/detail/video';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
 
@@ -36,7 +42,7 @@ export default function Community({ community }) {
 		title: CommunityLable,
 		description: `Leading public adjuster in ${
 			CommunityLable ? CommunityLable : 'USA'
-		}, get your claims and settlements. Have property claim issues? We are here to provide you best solutions for claims and adjustment. Get more money for your settlements and claim.`,
+		}, get your insurance claims and settlements. Have property claim issues? We are here to provide you best solutions for claims and adjustment. Get more money for your settlements and claim.`,
 		banner: {
 			title: pageHeading,
 		},
@@ -61,10 +67,16 @@ export default function Community({ community }) {
 	return (
 		<Layout {...LayoutConfig}>
 			<IntroSection community={community} />
-			<PublicAdjusterSection community={community} />
-			<WhatTheyDoSection community={community} />
-			<WhyChooseSection />
-			<RankedSection community={community} />
+			<ClaimSettlementSection community={community} />
+			<NewInsuranceClaimSection community={community} />
+			<CommonMistakesSection community={community} />
+			<GroupHelpSection community={community} />
+			<PendingInsuranceClaimSection community={community} />
+			<HelpAnyStageSection community={community} />
+			<ReopeningInsuranceClaimSection />
+			<RejectedInsuranceClaimSection community={community} />
+			<MoneyPartSection community={community} />
+			<AdjusterCoverageSection community={community} />
 			<VideoSection community={community} />
 			<InspectionFormSection />
 		</Layout>

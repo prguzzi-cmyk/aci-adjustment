@@ -18,30 +18,48 @@ const IntroSection = ({ community }) => {
 				</Link>
 				&nbsp;for a <Text>FREE</Text> consultation!
 				<br />
-				<Text>Do not miss out</Text> on what you’re entitled to!
+				<Text>Do not miss out</Text> on what you're entitled to!
 			</Title>
 
 			<OverPack {...config.OverPack({ playScale: config.PlayScale.bottom })}>
 				<QueueAnim key='intro-queue' {...config.QueueAnim({})}>
 					<Paragraph key='1'>
-						When you file an insurance claim, it is you versus a multi-million
-						dollar insurance company. Add to that the fact that they deal with
-						these cases daily and it's your first time.
+						If you want to get the most out of your property insurance claim,
+						you need someone to represent you. Someone with knowledge and
+						expertise in the field.
 					</Paragraph>
 
 					<Paragraph key='2'>
-						As much as we hate to say this, they might not be the same amicable
-						people that they were when selling you the insurance policy.
+						Remember, this is you, a homeowner, against a multi-million-dollar
+						insurance company. They have lots of guys to look after their
+						interests. You gotta have one for yours. That job is done by a
+						Public Adjuster
+						{community &&
+							community.Community &&
+							community.Community.S &&
+							` ${community.Community.S}`}
+						.
 					</Paragraph>
 
 					<Paragraph key='3'>
-						In short, you want someone on your side, someone who can present
-						your case, and negotiate for you.
+						No matter what your property insurance claim is about, we, at ACI
+						Adjustment Group, can maximize the claim, offer advice and counsel
+						in insurance cases, and make sure the insurer doesn't do any
+						injustice with you.
 					</Paragraph>
 
 					<Paragraph key='4'>
-						That someone is a public adjuster {community.Community.S}. But who
-						is a public adjuster? What do they do? How can they help? Let's see!
+						At ACI, you are the priority. We strive to make sure you get enough
+						settlement to rebuild the property you have lost.
+					</Paragraph>
+
+					<Paragraph key='5'>
+						Our claim staff will work with you and represent your case in front
+						of the insurer to safeguard your interests.
+					</Paragraph>
+
+					<Paragraph key='6'>
+						Here's an outline of the services we provide.
 					</Paragraph>
 				</QueueAnim>
 			</OverPack>
