@@ -1,9 +1,11 @@
 const withPlugins = require('next-compose-plugins');
 const withAntdLess = require('next-plugin-antd-less');
-
 const lessToJS = require('less-vars-to-js');
 const fs = require('fs');
 const path = require('path');
+
+const withPWA = require('next-pwa');
+const runtimeCaching = require('next-pwa/cache');
 
 const redirects = require('./utils/redirects');
 
@@ -23,6 +25,13 @@ const lessConfig = {
 	},
 };
 
+const pwaConfig = {
+	pwa: {
+		dest: 'public',
+		runtimeCaching,
+	},
+};
+
 const nextConfig = {
 	images: {
 		domains: ['public-adjusters.s3.amazonaws.com'],
@@ -35,5 +44,6 @@ const nextConfig = {
 module.exports = withPlugins([
 	[withBundleAnalyzer({})],
 	[withAntdLess, lessConfig],
+	[withPWA, pwaConfig],
 	nextConfig,
 ]);

@@ -1,8 +1,8 @@
 {
-	"name": "ACI",
-	"short_name": "aci",
+	"name": "ACI Adjustment Group",
+	"short_name": "ACI",
 	"lang": "en",
-	"description": "ACI Adjustment Group - Pennsylvania&#039;s #1 Public Adjuster!",
+	"description": "ACI Adjustment Group - #1 Public Adjuster!",
 	"start_url": "/",
 	"theme_color": "#4676b6",
 	"background_color": "#4676b6",
@@ -12,13 +12,14 @@
 	"prefer_related_applications": false,
 	"icons": [
 		{
-			"src": "icons/icon-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		},
-		{
 			"src": "icons/icon-192x192.png",
 			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "icons/icon-512x512.png",
+			"sizes": "512x512",
 			"type": "image/png"
 		}
 	]
