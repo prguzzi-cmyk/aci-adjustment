@@ -10,7 +10,7 @@ import PostDetail from '../../components/blog/post-detail';
 
 import { getPostsSlug, getPostData } from '../../lib/posts';
 
-import '../../styles/modules/blog.less';
+require('../../styles/modules/blog.less');
 
 export default function Post({ post }) {
 	const router = useRouter();

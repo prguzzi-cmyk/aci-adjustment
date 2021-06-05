@@ -6,7 +6,7 @@ import FaqSection from '../../components/claims/commercial/faq';
 import DamageSection from '../../components/claims/commercial/damage';
 import AskExpertsSection from '../../components/common/sections/ask-experts-form';
 
-import '../../styles/modules/claims/commercial.less';
+require('../../styles/modules/claims/commercial.less');
 
 export default function CommercialClaims() {
 	const LayoutConfig = {

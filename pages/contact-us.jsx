@@ -6,7 +6,7 @@ import IntroSection from '../components/contact-us/intro';
 import ContactFormSection from '../components/contact-us/form';
 import MapSection from '../components/contact-us/map';
 
-import '../styles/modules/contact-us.less';
+require('../styles/modules/contact-us.less');
 
 export default function ContactUs() {
 	const LayoutConfig = {

@@ -20,7 +20,7 @@ import AdjusterCoverageSection from '../../components/communities/detail/adjuste
 import VideoSection from '../../components/communities/detail/video';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
 
-import '../../styles/modules/communities.less';
+require('../../styles/modules/communities.less');
 
 export default function Community({ community }) {
 	const router = useRouter();

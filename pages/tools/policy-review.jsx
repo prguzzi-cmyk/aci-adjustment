@@ -5,7 +5,7 @@ import dataset from '../../utils/datasets/bootstrap';
 import IntroSection from '../../components/tools/policy-review/intro';
 import FormSection from '../../components/tools/policy-review/form';
 
-import '../../styles/modules/tools/policy-review.less';
+require('../../styles/modules/tools/policy-review.less');
 
 export default function PolicyReview() {
 	const LayoutConfig = {

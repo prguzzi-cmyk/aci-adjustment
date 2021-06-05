@@ -6,7 +6,7 @@ import FaqSection from '../../components/claims/storm/faq';
 import DamageSection from '../../components/claims/storm/damage';
 import AskExpertsSection from '../../components/common/sections/ask-experts-form';
 
-import '../../styles/modules/claims/storm.less';
+require('../../styles/modules/claims/storm.less');
 
 export default function StormClaims() {
 	const LayoutConfig = {

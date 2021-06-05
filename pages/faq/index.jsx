@@ -5,7 +5,7 @@ import dataset from '../../utils/datasets/bootstrap';
 import IntroSection from '../../components/faq/intro';
 import HireSection from '../../components/faq/hire';
 
-import '../../styles/modules/faq/faq.less';
+require('../../styles/modules/faq/faq.less');
 
 export default function FAQ() {
 	const LayoutConfig = {

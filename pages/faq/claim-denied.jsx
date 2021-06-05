@@ -5,7 +5,7 @@ import dataset from '../../utils/datasets/bootstrap';
 import IntroSection from '../../components/faq/claim-denied/intro';
 import FaqSection from '../../components/faq/claim-denied/faq';
 
-import '../../styles/modules/faq/claim-denied.less';
+require('../../styles/modules/faq/claim-denied.less');
 
 export default function ClaimDenied() {
 	const LayoutConfig = {

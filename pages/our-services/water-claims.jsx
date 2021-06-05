@@ -6,7 +6,7 @@ import FaqSection from '../../components/claims/water/faq';
 import DamageSection from '../../components/claims/water/damage';
 import AskExpertsSection from '../../components/common/sections/ask-experts-form';
 
-import '../../styles/modules/claims/water.less';
+require('../../styles/modules/claims/water.less');
 
 export default function WaterClaims() {
 	const LayoutConfig = {

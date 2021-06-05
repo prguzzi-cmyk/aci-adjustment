@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 import GoogleTagManager from '../components/common/google-tag-manager';
 
-import '../styles/globals.less';
-import '../styles/utils.less';
+require('../styles/globals.less');
+require('../styles/utils.less');
 
 function MyApp({ Component, pageProps }) {
 	return (

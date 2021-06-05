@@ -5,7 +5,7 @@ import StepsSection from '../../components/our-services/steps-section';
 import ServicesSection from '../../components/common/sections/services';
 import InspectionFormSection from '../../components/common/sections/inspection-form';
 
-import '../../styles/modules/our-services.less';
+require('../../styles/modules/our-services.less');
 
 export default function OurServices() {
 	const LayoutConfig = {

@@ -11,7 +11,7 @@ import Pagination from '../../components/blog/pagination';
 
 import { getSortedPostsData } from '../../lib/posts';
 
-import '../../styles/modules/blog.less';
+require('../../styles/modules/blog.less');
 
 export default function Blog({ meta, posts }) {
 	const [loading, setLoading] = useState(false);

@@ -5,7 +5,7 @@ import dataset from '../utils/datasets/bootstrap';
 import IntroSection from '../components/careers/intro';
 import CareerFormSection from '../components/careers/form';
 
-import '../styles/modules/careers.less';
+require('../styles/modules/careers.less');
 
 export default function Careers() {
 	const LayoutConfig = {

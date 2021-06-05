@@ -8,7 +8,7 @@ import Layout from '../layouts/default';
 import config from '../utils/config';
 import dataset from '../utils/datasets/bootstrap';
 
-import '../styles/modules/schedule-appointment.less';
+require('../styles/modules/schedule-appointment.less');
 
 const { Title, Text, Paragraph } = Typography;
 

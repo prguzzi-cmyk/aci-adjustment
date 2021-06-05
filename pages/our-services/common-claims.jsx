@@ -6,7 +6,7 @@ import FaqSection from '../../components/claims/common/faq';
 import DamageSection from '../../components/claims/common/damage';
 import AskExpertsSection from '../../components/common/sections/ask-experts-form';
 
-import '../../styles/modules/claims/common.less';
+require('../../styles/modules/claims/common.less');
 
 export default function CommonClaims() {
 	const LayoutConfig = {

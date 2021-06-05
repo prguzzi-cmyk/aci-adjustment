@@ -4,7 +4,7 @@ import IntroSection from '../../components/tools/intro';
 
 import dataset from '../../utils/datasets/bootstrap';
 
-import '../../styles/modules/tools/tools.less';
+require('../../styles/modules/tools/tools.less');
 
 export default function Tools() {
 	const LayoutConfig = {

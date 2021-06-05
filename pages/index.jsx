@@ -11,7 +11,7 @@ import AwardsSection from '../components/common/sections/awards';
 
 import dataset from '../utils/datasets/bootstrap';
 
-import '../styles/modules/home.less';
+require('../styles/modules/home.less');
 
 const { Link } = Typography;
 

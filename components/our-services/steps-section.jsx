@@ -11,7 +11,7 @@ import QueueAnim from 'rc-queue-anim';
 import config from '../../utils/config';
 import dataset from '../../utils/datasets/bootstrap';
 
-import '../../styles/modules/our-services.less';
+require('../../styles/modules/our-services.less');
 
 const { Title, Text, Link } = Typography;
 const { Step } = Steps;

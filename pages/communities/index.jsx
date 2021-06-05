@@ -6,7 +6,7 @@ import CommunitiesSection from '../../components/communities/communities';
 
 import dataset from '../../utils/datasets/bootstrap';
 
-import '../../styles/modules/communities.less';
+require('../../styles/modules/communities.less');
 
 export default function Communities({ states, counties, communities }) {
 	const LayoutConfig = {

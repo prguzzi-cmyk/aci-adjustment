@@ -4,7 +4,7 @@ import Layout from '../layouts/default';
 
 import dataset from '../utils/datasets/bootstrap';
 
-import '../styles/modules/page-not-found.less';
+require('../styles/modules/page-not-found.less');
 
 const { Link } = Typography;
 

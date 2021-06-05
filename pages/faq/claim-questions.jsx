@@ -4,7 +4,7 @@ import dataset from '../../utils/datasets/bootstrap';
 
 import FaqSection from '../../components/faq/claim-questions/faq';
 
-import '../../styles/modules/faq/claim-questions.less';
+require('../../styles/modules/faq/claim-questions.less');
 
 export default function ClaimQuestions() {
 	const LayoutConfig = {

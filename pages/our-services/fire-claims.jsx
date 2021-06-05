@@ -7,7 +7,7 @@ import DamageSection from '../../components/claims/fire/damage';
 import AskExpertsSection from '../../components/common/sections/ask-experts-form';
 import FireResourcesSection from '../../components/claims/fire/fire-resources';
 
-import '../../styles/modules/claims/fire.less';
+require('../../styles/modules/claims/fire.less');
 
 export default function FireClaims() {
 	const LayoutConfig = {

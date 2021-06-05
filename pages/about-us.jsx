@@ -8,7 +8,7 @@ import HistorySection from '../components/about-us/history';
 import FutureSection from '../components/about-us/future';
 import AwardsSection from '../components/common/sections/awards';
 
-import '../styles/modules/about-us.less';
+require('../styles/modules/about-us.less');
 
 export default function AboutUs() {
 	const LayoutConfig = {

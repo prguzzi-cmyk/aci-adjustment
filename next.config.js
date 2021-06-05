@@ -1,5 +1,6 @@
 const withPlugins = require('next-compose-plugins');
-const withLess = require('@zeit/next-less');
+const withAntdLess = require('next-plugin-antd-less');
+
 const lessToJS = require('less-vars-to-js');
 const fs = require('fs');
 const path = require('path');
@@ -15,31 +16,9 @@ const themeVariables = lessToJS(
 );
 
 const lessConfig = {
-	lessLoaderOptions: {
-		javascriptEnabled: true,
-		modifyVars: themeVariables, // make your antd custom effective
-	},
-	webpack: (config, { isServer }) => {
-		if (isServer) {
-			const antStyles = /(antd\/.*?\/style).*(?<![.]js)$/;
-			const origExternals = [...config.externals];
-			config.externals = [
-				(context, request, callback) => {
-					if (request.match(antStyles)) return callback();
-					if (typeof origExternals[0] === 'function') {
-						origExternals[0](context, request, callback);
-					} else {
-						callback();
-					}
-				},
-				...(typeof origExternals[0] === 'function' ? [] : origExternals),
-			];
-
-			config.module.rules.unshift({
-				test: antStyles,
-				use: 'null-loader',
-			});
-		}
+	modifyVars: themeVariables, // make your antd custom effective
+	cssLoaderOptions: { modules: true },
+	webpack: (config) => {
 		return config;
 	},
 };
@@ -55,6 +34,6 @@ const nextConfig = {
 
 module.exports = withPlugins([
 	[withBundleAnalyzer({})],
+	[withAntdLess, lessConfig],
 	nextConfig,
-	[withLess, lessConfig],
 ]);
