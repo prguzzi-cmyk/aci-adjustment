@@ -40,6 +40,8 @@ const ServicesSection = () => {
 									alt={dataset.images.claimStorm.alt}
 									width={imgConfig.width}
 									height={imgConfig.height}
+									loading='lazy'
+									quality={50}
 								/>
 							</div>
 
@@ -61,6 +63,8 @@ const ServicesSection = () => {
 									alt={dataset.images.claimFire.alt}
 									width={imgConfig.width}
 									height={imgConfig.height}
+									loading='lazy'
+									quality={50}
 								/>
 							</div>
 
@@ -82,6 +86,8 @@ const ServicesSection = () => {
 									alt={dataset.images.claimWater.alt}
 									width={imgConfig.width}
 									height={imgConfig.height}
+									loading='lazy'
+									quality={50}
 								/>
 							</div>
 
@@ -103,6 +109,8 @@ const ServicesSection = () => {
 									alt={dataset.images.claimCommercial.alt}
 									width={imgConfig.width}
 									height={imgConfig.height}
+									loading='lazy'
+									quality={50}
 								/>
 							</div>
 
@@ -124,6 +132,8 @@ const ServicesSection = () => {
 									alt={dataset.images.claimCommon.alt}
 									width={imgConfig.width}
 									height={imgConfig.height}
+									loading='lazy'
+									quality={50}
 								/>
 							</div>
 

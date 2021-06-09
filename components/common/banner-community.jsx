@@ -29,10 +29,11 @@ const Banner = ({ banner }) => {
 								? banner.image.alt
 								: dataset.images.bannerCommunDefault.alt
 						}
+						loading='lazy'
 						layout='fill'
 						objectFit='cover'
 						objectPosition='center 55%'
-						quality={100}
+						quality={50}
 					/>
 				</TweenOne>
 

@@ -24,9 +24,10 @@ const Banner = ({ banner }) => {
 								? banner.image.alt
 								: 'Banner Image'
 						}
+						loading='lazy'
 						layout='fill'
 						objectFit='cover'
-						quality={100}
+						quality={50}
 					/>
 				</TweenOne>
 

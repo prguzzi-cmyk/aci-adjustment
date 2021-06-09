@@ -1,9 +1,5 @@
 import { Space, Typography } from 'antd';
 import Image from 'next/image';
-import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
-
-import config from '../../utils/config';
 
 const { Title } = Typography;
 
@@ -11,11 +7,7 @@ const Banner = ({ banner }) => {
 	return (
 		<div className='page-banner-lg-wrapper'>
 			<div className='page-banner-lg'>
-				<TweenOne
-					key='banner'
-					className='image-wrapper'
-					{...config.TweenOne({})}
-				>
+				<div key='banner' className='image-wrapper'>
 					<Image
 						className='image'
 						src={banner.image && banner.image.src ? banner.image.src : ''}
@@ -24,22 +16,15 @@ const Banner = ({ banner }) => {
 								? banner.image.alt
 								: 'Banner Image'
 						}
+						loading='eager'
 						layout='fill'
 						objectFit='cover'
-						quality={100}
+						quality={20}
 					/>
-				</TweenOne>
+				</div>
 
 				<div className='content-wrapper'>
-					<QueueAnim
-						component={Space}
-						componentProps={{
-							align: 'center',
-							direction: 'vertical',
-						}}
-						key='text'
-						{...config.QueueAnim({})}
-					>
+					<Space key='text' align='center' direction='vertical'>
 						{banner.title && (
 							<Title key='title' className='title'>
 								{banner.title}
@@ -59,7 +44,7 @@ const Banner = ({ banner }) => {
 						)}
 
 						{banner.button && banner.button}
-					</QueueAnim>
+					</Space>
 				</div>
 			</div>
 		</div>
