@@ -70,6 +70,8 @@ export default async (req, res) => {
 		for (let county of counties.Items) {
 			await getCommunities(state.StateSlug.S, county);
 		}
+
+		res.writeContinue();
 	}
 
 	sitemap.up();
