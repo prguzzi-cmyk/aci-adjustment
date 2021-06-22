@@ -16,7 +16,7 @@ const AdjusterCoverageSection = ({ community }) => {
 					{community &&
 						community.Community &&
 						community.Community.S &&
-						` ${community.Community.S}`}
+						` ${community.Community.S} (${community.ZipCode.S})`}
 				</Text>{' '}
 				Coverage
 			</Title>

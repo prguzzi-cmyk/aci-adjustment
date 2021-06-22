@@ -14,7 +14,7 @@ const NewInsuranceClaimSection = ({ community }) => {
 				{community &&
 					community.Community &&
 					community.Community.S &&
-					`${community.Community.S} `}
+					`${community.Community.S} (${community.ZipCode.S}) `}
 				can <Text>Maximize the Payout</Text>
 			</Title>
 
