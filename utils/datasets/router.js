@@ -135,7 +135,7 @@ const DamageFire = {
 	},
 	damageKitchen: {
 		path: `${Claims.claimFire.path}/kitchen-fires`,
-		label: 'kitchen Fires',
+		label: 'Kitchen Fires',
 		key: 'kitchen-fires',
 	},
 	damageSmoke: {
