@@ -7,7 +7,7 @@ export default class StructuredData {
 
 	getACIGeneralData() {
 		return {
-			'@type': 'Public Adjustment Group',
+			'@type': 'Organization',
 			image: [
 				'https://aciadjustment.com/images/logo.png',
 				'https://aciadjustment.com/images/aci-hq.jpg',
