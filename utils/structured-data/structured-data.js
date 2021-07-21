@@ -7,7 +7,7 @@ export default class StructuredData {
 
 	getACIGeneralData() {
 		return {
-			'@type': 'Organization',
+			'@type': 'Notary',
 			image: [
 				'https://aciadjustment.com/images/logo.png',
 				'https://aciadjustment.com/images/aci-hq.jpg',
@@ -71,7 +71,7 @@ export default class StructuredData {
 		return {
 			department: [
 				{
-					'@type': 'Emergency',
+					'@type': 'Notary',
 					image: [
 						'https://aciadjustment.com/images/logo.png',
 						'https://aciadjustment.com/images/aci-hq.jpg',

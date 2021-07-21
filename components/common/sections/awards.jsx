@@ -50,14 +50,26 @@ const AwardsSection = () => {
 						<Card
 							hoverable
 							cover={
-								<Image
-									src={dataset.images.awardsInc500.src}
-									alt={dataset.images.awardsInc500.alt}
-									layout='fill'
-								/>
+								<a
+									href='https://www.inc.com/profile/aci-estate'
+									title='Inc ACI Profile'
+									target='_blank'
+								>
+									<Image
+										src={dataset.images.awardsInc500.src}
+										alt={dataset.images.awardsInc500.alt}
+										layout='fill'
+									/>
+								</a>
 							}
 						>
-							<Meta title='Inc. 500' description='2008 & 2009' />
+							<a
+								href='https://www.inc.com/profile/aci-estate'
+								title='Inc ACI Profile'
+								target='_blank'
+							>
+								<Meta title='Inc. 500' description='2008 & 2009' />
+							</a>
 
 							<Paragraph>
 								500 Fastest Growing Businesses in USA (ACI Estate, Inc.)
