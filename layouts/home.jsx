@@ -14,6 +14,7 @@ const { Header, Content, Footer } = Layout;
 const LayoutHome = ({
 	title,
 	description = '',
+	structuredData = '',
 	banner,
 	className = '',
 	children,
@@ -32,6 +33,16 @@ const LayoutHome = ({
 				<title>{title}</title>
 				<meta name='title' content={title} />
 				<meta name='description' content={description} />
+				{structuredData ? (
+					<script
+						type='application/ld+json'
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify(structuredData),
+						}}
+					/>
+				) : (
+					''
+				)}
 			</Head>
 
 			<Header>

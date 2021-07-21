@@ -11,6 +11,8 @@ import AwardsSection from '../components/common/sections/awards';
 
 import dataset from '../utils/datasets/bootstrap';
 
+import { HomePageData } from '../utils/structured-data/pages';
+
 require('../styles/modules/home.less');
 
 const { Link } = Typography;
@@ -20,6 +22,7 @@ export default function Home() {
 		title: 'Public Adjuster Near Me | Lowest Fee',
 		description:
 			'Call ACI Adjustment today, top rated Public Adjusters. Get your loss assessment today. Settle for Residential & Commercial Claims.',
+		structuredData: HomePageData(),
 		banner: {
 			image: dataset.images.bannerHome,
 			title: 'GET A FREE INSPECTION TODAY!',
