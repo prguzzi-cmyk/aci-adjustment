@@ -49,6 +49,11 @@ const General = {
 		label: 'About Us',
 		key: 'about-us',
 	},
+	privacy: {
+		path: '/privacy-policy',
+		label: 'Privacy Policy',
+		key: 'privacy-policy',
+	},
 	contact: {
 		path: '/contact-us',
 		label: 'Contact Us',

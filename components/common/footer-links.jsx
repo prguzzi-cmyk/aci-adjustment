@@ -37,6 +37,10 @@ const FooterLinks = () => {
 					<Link href={dataset.router.faq.path}>
 						<a className='footer-link'>{dataset.router.faq.label}</a>
 					</Link>
+
+					<Link href={dataset.router.privacy.path}>
+						<a className='footer-link'>{dataset.router.privacy.label}</a>
+					</Link>
 				</Col>
 
 				<Col key='2' xs={24} md={8}>
