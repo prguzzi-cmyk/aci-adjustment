@@ -30,16 +30,20 @@ const FooterLinks = () => {
 						Information
 					</Title>
 
-					<Link href={dataset.router.blog.path}>
-						<a className='footer-link'>{dataset.router.blog.label}</a>
-					</Link>
-
 					<Link href={dataset.router.faq.path}>
 						<a className='footer-link'>{dataset.router.faq.label}</a>
 					</Link>
 
+					<Link href={dataset.router.faqClaimDenied.path}>
+						<a className='footer-link'>{dataset.router.faqClaimDenied.label}</a>
+					</Link>
+
 					<Link href={dataset.router.privacy.path}>
 						<a className='footer-link'>{dataset.router.privacy.label}</a>
+					</Link>
+
+					<Link href={dataset.router.aboutUs.path}>
+						<a className='footer-link'>{dataset.router.aboutUs.label}</a>
 					</Link>
 				</Col>
 
@@ -54,6 +58,14 @@ const FooterLinks = () => {
 
 					<Link href={dataset.router.policyReview.path}>
 						<a className='footer-link'>{dataset.router.policyReview.label}</a>
+					</Link>
+
+					<Link href={dataset.router.blog.path}>
+						<a className='footer-link'>{dataset.router.blog.label}</a>
+					</Link>
+
+					<Link href={dataset.router.communities.path}>
+						<a className='footer-link'>Areas We Cover</a>
 					</Link>
 				</Col>
 

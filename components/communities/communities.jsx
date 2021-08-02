@@ -131,7 +131,7 @@ const CommunitiesSection = ({ states, counties, communities }) => {
 								</Col>
 
 								<Col key='2' xs={24} md={12}>
-									<Form.Item name='county' label='County'>
+									<Form.Item name='county' label='County/City'>
 										<Select loading={countyLoading} onChange={onCountyChange}>
 											{countiesArr.map((county) => (
 												<Option key={county.CountySlug.S}>
