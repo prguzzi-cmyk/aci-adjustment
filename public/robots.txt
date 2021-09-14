@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://aciadjustment.com/communities.xml
+Sitemap: https://aciadjustment.com/blog.xml
+Sitemap: https://aciadjustment.com/sitemap.xml
