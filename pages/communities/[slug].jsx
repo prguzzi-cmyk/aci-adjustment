@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Layout from '../../layouts/community';
 
 import dataset from '../../utils/datasets/bootstrap';
+import { CommunityPageData } from '../../utils/structured-data/pages';
 
 import DynamoDb from '../../lib/dynamo-db';
 
@@ -47,6 +48,7 @@ export default function Community({ community }) {
 			community && community.Canonical && !community.Canonical.BOOL
 				? ''
 				: dataset.router.home.url,
+		structuredData: CommunityPageData(),
 		banner: {
 			title: pageHeading,
 		},

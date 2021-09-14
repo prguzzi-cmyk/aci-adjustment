@@ -12,16 +12,24 @@ export default class StructuredData {
 				'https://aciadjustment.com/images/logo.png',
 				'https://aciadjustment.com/images/aci-hq.jpg',
 			],
-			'@id': 'https://aciadjustment.com',
+			'@id': '',
 			name: 'ACI Adjustment Group',
 			url: 'https://aciadjustment.com',
 			telephone: '+18008094302',
 			openingHoursSpecification: [
 				{
 					'@type': 'OpeningHoursSpecification',
-					dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-					opens: '09:00',
-					closes: '17:00',
+					dayOfWeek: [
+						'Monday',
+						'Tuesday',
+						'Wednesday',
+						'Thursday',
+						'Friday',
+						'Saturday',
+						'Sunday',
+					],
+					opens: '00:00',
+					closes: '23:59',
 				},
 			],
 		};

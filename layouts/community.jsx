@@ -25,6 +25,7 @@ const LayoutCommunity = ({
 	title,
 	description = '',
 	canonical = '',
+	structuredData = '',
 	banner,
 	breadcrumb,
 	className = '',
@@ -58,6 +59,16 @@ const LayoutCommunity = ({
 				/>
 				<meta name='description' content={description} />
 				{canonical && <link rel='canonical' href={canonical} />}
+				{structuredData ? (
+					<script
+						type='application/ld+json'
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify(structuredData),
+						}}
+					/>
+				) : (
+					''
+				)}
 			</Head>
 
 			<Header>
