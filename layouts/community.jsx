@@ -24,6 +24,7 @@ const { Header, Content, Sider, Footer } = Layout;
 const LayoutCommunity = ({
 	title,
 	description = '',
+	canonical = '',
 	banner,
 	breadcrumb,
 	className = '',
@@ -56,6 +57,7 @@ const LayoutCommunity = ({
 					} ${dataset.general.tagline}`}
 				/>
 				<meta name='description' content={description} />
+				{canonical && <link rel='canonical' href={canonical} />}
 			</Head>
 
 			<Header>

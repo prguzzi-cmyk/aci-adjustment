@@ -12,6 +12,7 @@ export default function Communities({ states, counties, communities }) {
 	const LayoutConfig = {
 		title: 'Communities',
 		description: 'Communities we cover',
+		canonical: dataset.router.home.url,
 		banner: {
 			image: dataset.images.bannerDefault,
 			title: dataset.router.communities.label,

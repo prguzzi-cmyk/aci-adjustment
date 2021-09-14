@@ -14,6 +14,7 @@ const { Header, Content, Footer } = Layout;
 const LayoutHome = ({
 	title,
 	description = '',
+	canonical = '',
 	structuredData = '',
 	banner,
 	className = '',
@@ -33,6 +34,7 @@ const LayoutHome = ({
 				<title>{title}</title>
 				<meta name='title' content={title} />
 				<meta name='description' content={description} />
+				{canonical && <link rel='canonical' href={canonical} />}
 				{structuredData ? (
 					<script
 						type='application/ld+json'

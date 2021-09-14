@@ -17,6 +17,7 @@ const { Header, Content, Footer } = Layout;
 const LayoutBlog = ({
 	title,
 	description = '',
+	canonical = '',
 	banner,
 	breadcrumb,
 	className = '',
@@ -39,6 +40,7 @@ const LayoutBlog = ({
 					content={`${title} | ${dataset.general.name} ${dataset.general.tagline}`}
 				/>
 				<meta name='description' content={description} />
+				{canonical && <link rel='canonical' href={canonical} />}
 			</Head>
 
 			<Header>

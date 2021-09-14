@@ -1,6 +1,7 @@
 const General = {
 	home: {
 		path: '/',
+		url: 'https://aciadjustment.com',
 		label: 'Home',
 		key: 'home',
 	},

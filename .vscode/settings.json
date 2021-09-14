@@ -1,0 +1,40 @@
+{
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"eslint.alwaysShowStatus": true,
+	"eslint.format.enable": true,
+	"eslint.probe": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"html",
+		"vue",
+		"markdown",
+		"react"
+	],
+	"eslint.run": "onSave",
+	"editor.wordWrap": "on",
+	"html.format.indentInnerHtml": true,
+	"phpfmt.enable_auto_align": true,
+	"phpfmt.indent_with_space": 4,
+	"phpfmt.psr1": true,
+	"phpfmt.smart_linebreak_after_curly": true,
+	"phpfmt.visibility_order": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"workbench.startupEditor": "newUntitledFile",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"extensions.ignoreRecommendations": false,
+	"editor.suggest.showStatusBar": true
+}

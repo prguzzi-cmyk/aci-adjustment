@@ -17,6 +17,7 @@ export default function Post({ post }) {
 
 	const LayoutConfig = {
 		title: post && post.title ? post.title : 'Post Not Found',
+		canonical: post && post.canonical ? dataset.router.home.url : '',
 		breadcrumb: [
 			dataset.router.blog,
 			{ label: post && post.title ? post.title : 'Post Not Found' },

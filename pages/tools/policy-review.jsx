@@ -12,6 +12,7 @@ export default function PolicyReview() {
 		title: 'Policy Review',
 		description:
 			'Fill out the information below to request a full policy review by a licensed Public Adjuster in Pennsylvania. We will get in touch with you shortly',
+		canonical: dataset.router.home.url,
 		banner: {
 			image: dataset.images.bannerPolicyReview,
 			title: 'Request a Policy Review',

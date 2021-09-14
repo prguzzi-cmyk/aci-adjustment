@@ -22,6 +22,7 @@ export default function Home() {
 		title: 'Public Adjuster Near Me | Lowest Fee',
 		description:
 			'Call ACI Adjustment today, top rated Public Adjusters. Get your loss assessment today. Settle for Residential & Commercial Claims.',
+		canonical: dataset.router.home.url,
 		structuredData: HomePageData(),
 		banner: {
 			image: dataset.images.bannerHome,
