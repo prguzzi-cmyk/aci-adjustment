@@ -1,11 +1,13 @@
 const dataset = require('./datasets/router');
+const homeRedirectURLs = require('./datasets/redirects-home');
 
-const Redirects = [
-	{
-		source: '/index.html',
-		destination: dataset.router.home.path,
-		permanent: true,
-	},
+const HomeRedirects = homeRedirectURLs.map((value) => ({
+	source: value,
+	destination: dataset.router.home.path,
+	permanent: true,
+}));
+
+const OtherRedirects = [
 	{
 		source: '/schedule-appointment.html',
 		destination: dataset.router.schAppointment.path,
@@ -82,5 +84,7 @@ const Redirects = [
 		permanent: true,
 	},
 ];
+
+const Redirects = HomeRedirects.concat(OtherRedirects);
 
 module.exports = Redirects;
