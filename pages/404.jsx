@@ -2,6 +2,9 @@ import { Result, Button, Typography } from 'antd';
 
 import Layout from '../layouts/default';
 
+import ConsultationSection from '../components/home/consultation';
+import InspectionFormSection from '../components/common/sections/inspection-form';
+
 import dataset from '../utils/datasets/bootstrap';
 
 require('../styles/modules/page-not-found.less');
@@ -28,11 +31,13 @@ export default function Custom404() {
 				extra={
 					<Button key='call' type='primary' shape='circle' className='app-btn'>
 						<Link href={dataset.router.home.path} strong>
-							Back Home
+							Visit Homepage
 						</Link>
 					</Button>
 				}
 			/>
+			<ConsultationSection />
+			<InspectionFormSection />
 		</Layout>
 	);
 }

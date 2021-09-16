@@ -28,63 +28,6 @@
 		}
 	}
 
-	/* Consultation Section */
-	.consult-container {
-		padding: @section-padding;
-		background-color: @section-background;
-		min-height: 672px;
-
-		.consult-title {
-			text-align: center;
-			margin-bottom: 60px;
-
-			span {
-				color: @primary-color;
-			}
-		}
-
-		.consult-content {
-			.consult-block {
-				display: block;
-				padding: 28px 24px;
-				box-shadow: 0 2px 16px fade(#000, 8);
-				background-repeat: no-repeat;
-				background-position: 100% 100%;
-				transition: box-shadow @animate-duration @ease-in-out,
-					transform @animate-duration @ease-in-out;
-
-				&:hover {
-					transform: translateY(-5px);
-					box-shadow: 0 6px 16px fade(#000, 12);
-				}
-
-				.img-wrapper {
-					display: flex;
-					justify-content: center;
-					flex-direction: column;
-					align-items: center;
-					min-height: 110px;
-					margin-bottom: @margin-3;
-				}
-
-				.consult-text {
-					display: inline-block;
-					margin-bottom: @margin-3;
-					min-height: 120px;
-				}
-
-				.btn-wrapper {
-					text-align: center;
-
-					.app-btn-lg {
-						min-height: 65px;
-						font-weight: 500;
-					}
-				}
-			}
-		}
-	}
-
 	/* Tab Section */
 	.tab-container {
 		padding: @section-padding;
