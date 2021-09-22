@@ -30,6 +30,11 @@ const General = {
 		label: 'Frequently Asked Questions',
 		key: 'faq',
 	},
+	gallery: {
+		path: '/gallery',
+		label: 'Gallery',
+		key: 'gallery',
+	},
 	careers: {
 		path: '/careers',
 		label: 'Careers',

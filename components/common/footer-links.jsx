@@ -67,6 +67,10 @@ const FooterLinks = () => {
 					<Link href={dataset.router.communities.path}>
 						<a className='footer-link'>Areas We Cover</a>
 					</Link>
+
+					<Link href={dataset.router.careers.path}>
+						<a className='footer-link'>{dataset.router.careers.label}</a>
+					</Link>
 				</Col>
 
 				<Col key='3' xs={24} md={8}>

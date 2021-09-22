@@ -137,9 +137,9 @@ const Navbar = ({ isMobile }) => {
 							</Menu.Item>
 						</SubMenu>
 
-						<Menu.Item key={dataset.router.careers.key}>
-							<Link href={dataset.router.careers.path}>
-								<a>{dataset.router.careers.label}</a>
+						<Menu.Item key={dataset.router.gallery.key}>
+							<Link href={dataset.router.gallery.path}>
+								<a>{dataset.router.gallery.label}</a>
 							</Link>
 						</Menu.Item>
 

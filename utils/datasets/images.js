@@ -254,11 +254,75 @@ const Awards = {
 	},
 };
 
+const Gallery = [
+	{
+		src: '/images/gallery/1.jpeg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/2.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/3.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/4.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/5.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/6.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/7.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/8.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/9.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/10.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/11.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/12.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/13.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/14.jpg',
+		alt: '',
+	},
+	{
+		src: '/images/gallery/15.jpg',
+		alt: '',
+	},
+];
+
 const Images = {
 	images: {
 		...General,
 		...Claims,
 		...Awards,
+		gallery: Gallery,
 	},
 };
 
