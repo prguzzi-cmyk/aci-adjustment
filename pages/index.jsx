@@ -6,6 +6,7 @@ import RankedSection from '../components/home/ranked';
 import ConsultationSection from '../components/home/consultation';
 import ServicesSection from '../components/common/sections/services';
 import TabSection from '../components/home/tab';
+import FeaturedGallerySection from '../components/common/sections/gallery';
 import InspectionFormSection from '../components/common/sections/inspection-form';
 import AwardsSection from '../components/common/sections/awards';
 
@@ -47,6 +48,7 @@ export default function Home() {
 			<ConsultationSection />
 			<ServicesSection />
 			<TabSection />
+			<FeaturedGallerySection />
 			<InspectionFormSection />
 			<AwardsSection />
 		</Layout>
