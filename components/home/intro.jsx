@@ -31,15 +31,35 @@ const IntroSection = () => {
 					{...config.QueueAnim({})}
 				>
 					<Text key='intro-text' className='text-xs-justify'>
-						Our mission at ACI Adjustment Group is to protect the policyholder.
-						Many home and business owners are unaware that they have thousands
-						of dollars that are rightfully due to them. Millions of dollars are
+						Our mission at ACI Adjustment Group as a Public Adjuster is to
+						protect the policyholder. Many home and business owners are unaware
+						that they have thousands of dollars that are rightfully due to them.
+						A Public Adjuster is an advocate for you. Millions of dollars are
 						left on the table and not paid each year by the insurance companies
 						to homeowners and business owners due to a lack of knowledge and
-						expertise! Along with assisting with claims, we are also dedicated
-						to bringing awareness and educating the general public on the
-						various coverages included in their policy. ACI Adjustment Group is
-						here to help.
+						expertise this is where a Public Adjuster is able to help. Along
+						with assisting with claims, we are also dedicated to bringing
+						awareness and educating the general public on the various coverage's
+						included in their policy. ACI Adjustment Group's Public Adjusters
+						are here to help. Public Adjusters are needed due to the Insurance
+						contracts you signed with the Insurance companies. In it you agree
+						to supply the burden of proof of damages. In doing so you must
+						provide estimates and a report to clearly state the extent of
+						damages. This is where a Public adjuster comes in. The Insurance
+						adjuster for the Insurance company has no obligation legally to
+						prove your damage. This Insurance adjuster isn't even required to be
+						licensed by the state and doesn't have to pass any kind of testing.
+						Insurance adjusters are employees of insurance companies or hired
+						sub contractors. Their main obligation is to the insurance company,
+						their employer. Insurance claims adjusters get paid by the insurance
+						companies. They are obligated to the guidelines of their employer.
+						Insurance adjusters by no means should be confused with a State
+						Licensed Public Adjuster. Public Adjusters go through a rigorous
+						state exam that consist of many hours of study. Insurance adjusters
+						have no such state exam and no study requirements. Comparing an
+						insurance claim adjuster to a Public Adjusters is like comparing
+						apples to oranges. Your home is a very important asset let a Public
+						adjuster get you what you are entitled to receive.
 					</Text>
 				</QueueAnim>
 			</OverPack>
