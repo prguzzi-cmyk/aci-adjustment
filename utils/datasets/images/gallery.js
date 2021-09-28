@@ -28,7 +28,7 @@ const galleryImgs = [
 	{
 		name: '4.jpg',
 		alt: keywords[3],
-		featured: true,
+		featured: false,
 	},
 	{
 		name: '5.jpg',
@@ -43,7 +43,7 @@ const galleryImgs = [
 	{
 		name: '7.jpg',
 		alt: keywords[0],
-		featured: true,
+		featured: false,
 	},
 	{
 		name: '8.jpg',
@@ -58,7 +58,7 @@ const galleryImgs = [
 	{
 		name: '10.jpg',
 		alt: keywords[3],
-		featured: true,
+		featured: false,
 	},
 	{
 		name: '11.jpg',
@@ -83,6 +83,86 @@ const galleryImgs = [
 	{
 		name: '15.jpg',
 		alt: keywords[2],
+		featured: false,
+	},
+	{
+		name: '16.jpg',
+		alt: keywords[3],
+		featured: true,
+	},
+	{
+		name: '17.jpg',
+		alt: keywords[4],
+		featured: false,
+	},
+	{
+		name: '18.jpg',
+		alt: keywords[5],
+		featured: false,
+	},
+	{
+		name: '19.jpg',
+		alt: keywords[0],
+		featured: false,
+	},
+	{
+		name: '20.jpeg',
+		alt: keywords[1],
+		featured: false,
+	},
+	{
+		name: '21.jpg',
+		alt: keywords[2],
+		featured: false,
+	},
+	{
+		name: '22.jpg',
+		alt: keywords[3],
+		featured: false,
+	},
+	{
+		name: '23.jpg',
+		alt: keywords[4],
+		featured: true,
+	},
+	{
+		name: '24.jpg',
+		alt: keywords[5],
+		featured: false,
+	},
+	{
+		name: '25.jpg',
+		alt: keywords[0],
+		featured: false,
+	},
+	{
+		name: '26.jpg',
+		alt: keywords[1],
+		featured: false,
+	},
+	{
+		name: '27.jpg',
+		alt: keywords[2],
+		featured: true,
+	},
+	{
+		name: '28.jpg',
+		alt: keywords[3],
+		featured: false,
+	},
+	{
+		name: '29.jpg',
+		alt: keywords[4],
+		featured: false,
+	},
+	{
+		name: '30.jpg',
+		alt: keywords[5],
+		featured: false,
+	},
+	{
+		name: '31.jpg',
+		alt: keywords[0],
 		featured: false,
 	},
 ];
