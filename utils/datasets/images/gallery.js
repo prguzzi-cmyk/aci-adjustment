@@ -165,6 +165,36 @@ const galleryImgs = [
 		alt: keywords[0],
 		featured: false,
 	},
+	{
+		name: '32.jpeg',
+		alt: keywords[1],
+		featured: false,
+	},
+	{
+		name: '33.jpeg',
+		alt: keywords[2],
+		featured: false,
+	},
+	{
+		name: '34.jpeg',
+		alt: keywords[3],
+		featured: false,
+	},
+	{
+		name: '35.jpeg',
+		alt: keywords[4],
+		featured: false,
+	},
+	{
+		name: '36.jpeg',
+		alt: keywords[5],
+		featured: false,
+	},
+	{
+		name: '37.jpeg',
+		alt: keywords[0],
+		featured: false,
+	},
 ];
 
 export const Gallery = galleryImgs.map((value) => {
