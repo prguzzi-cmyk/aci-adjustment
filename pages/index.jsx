@@ -27,9 +27,9 @@ export default function Home() {
 		structuredData: HomePageData(),
 		banner: {
 			image: dataset.images.bannerHome,
-			title: 'GET A FREE INSPECTION TODAY!',
+			title: dataset.general.description,
 			tagline: `${dataset.general.name} ${dataset.general.tagline}`,
-			content: dataset.general.description,
+			content: 'GET A FREE INSPECTION TODAY!',
 			button: (
 				<Button key='call' type='primary' shape='circle' className='app-btn'>
 					<Link href={`tel:${dataset.general.phone}`} strong>
