@@ -33,8 +33,35 @@ const PostDetail = ({ post }) => {
 						<h2>ACI Adjustment Group Services</h2>
 						<Text>
 							ACI Adjustment group provides assistance with insurance claim
-							investigation in storm, fire, water damage, and all other common
-							insurance claims. The services we provide include:
+							investigation in{' '}
+							<Link
+								href={`${dataset.router.home.url}${dataset.router.claimStorm.path}`}
+								strong
+							>
+								storm
+							</Link>
+							,{' '}
+							<Link
+								href={`${dataset.router.home.url}${dataset.router.claimFire.path}`}
+								strong
+							>
+								fire
+							</Link>
+							,{' '}
+							<Link
+								href={`${dataset.router.home.url}${dataset.router.claimWater.path}`}
+								strong
+							>
+								water damage
+							</Link>
+							, and all other{' '}
+							<Link
+								href={`${dataset.router.home.url}${dataset.router.claimCommon.path}`}
+								strong
+							>
+								common insurance claims
+							</Link>
+							. The services we provide include:
 						</Text>
 
 						<ul>
