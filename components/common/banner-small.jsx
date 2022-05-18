@@ -1,7 +1,7 @@
 import { Space, Typography } from 'antd';
 import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
+import TweenOne from 'rc-tween-one/lib/TweenOne';
 
 import config from '../../utils/config';
 

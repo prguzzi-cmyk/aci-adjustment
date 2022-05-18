@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
-import TweenOne from 'rc-tween-one';
+import TweenOne from 'rc-tween-one/lib/TweenOne';
 import { MenuOutlined, HomeTwoTone } from '@ant-design/icons';
 
 import dataset from '../../utils/datasets/router';
@@ -26,7 +26,7 @@ const Navbar = ({ isMobile }) => {
 
 	return (
 		<Row className={`nav-container ${phoneOpen ? 'open' : ''}`}>
-			<Col flex={isMobile ? '1 1 100%' : '1 1 auto'}>
+			<Col flex={isMobile ? '1 1 100%' : '1 1 20%'}>
 				<TweenOne
 					className={'logo-container'}
 					{...config.TweenOne({ coordinate: 'x', path: '-=30', delay: 200 })}
@@ -54,7 +54,7 @@ const Navbar = ({ isMobile }) => {
 				)}
 			</Col>
 
-			<Col flex={isMobile ? '0 1 100%' : '0 1 auto'} style={{ zIndex: 1 }}>
+			<Col flex={isMobile ? '0 1 100%' : '0 1 80%'} style={{ zIndex: 1 }}>
 				<TweenOne
 					animation={
 						isMobile

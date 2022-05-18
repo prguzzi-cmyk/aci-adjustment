@@ -27,11 +27,11 @@ html {
 				height: 64px;
 
 				a {
-					& > div {
+					& > span {
 						overflow: visible !important;
 
 						.logo {
-							margin-top: 12px !important;
+							margin-top: 6px !important;
 						}
 					}
 				}
@@ -61,6 +61,7 @@ html {
 			.navbar {
 				border-bottom: none;
 				background-color: rgba(255, 255, 255, 0);
+				justify-content: flex-end;
 
 				li:nth-child(2) {
 					margin-left: 0px;
@@ -109,7 +110,6 @@ html {
 		.page-banner-lg-wrapper {
 			width: 100%;
 			height: 600px;
-			margin-top: @margin-2;
 			position: relative;
 			overflow: hidden;
 
@@ -171,7 +171,6 @@ html {
 		.page-banner-community-wrapper {
 			width: 100%;
 			height: 45vh;
-			margin-top: @margin-2;
 			position: relative;
 			overflow: hidden;
 
@@ -221,7 +220,6 @@ html {
 		.page-banner-blog-wrapper {
 			width: 100%;
 			height: 65vh;
-			margin-top: @margin-2;
 			position: relative;
 			overflow: hidden;
 
@@ -271,7 +269,6 @@ html {
 		.page-banner-sm-wrapper {
 			width: 100%;
 			height: 200px;
-			margin-top: @margin-2;
 			position: relative;
 			overflow: hidden;
 
@@ -432,8 +429,13 @@ html {
 			.ant-row {
 				margin-bottom: 0px !important;
 
-				span {
-					color: @text-color-light;
+				.ant-col {
+					padding-top: @margin-2;
+					padding-bottom: @margin-2;
+
+					span {
+						color: @text-color-light;
+					}
 				}
 			}
 		}
@@ -472,12 +474,15 @@ html {
 
 	.content {
 		.ant-col {
+			padding: 20px;
+
 			&:hover {
 				background-color: #f0f0f0;
 				box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
 					0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 
 				img {
+					transition: all 1s ease-out;
 					transform: scale(1.1);
 				}
 			}
@@ -493,10 +498,6 @@ html {
 
 					div {
 						overflow: hidden;
-
-						img {
-							transition: all 0.36s ease-out;
-						}
 					}
 				}
 

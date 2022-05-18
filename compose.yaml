@@ -1,0 +1,5 @@
+services:
+  webapp:
+    image: aci
+    ports:
+      - 3000:3000

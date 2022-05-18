@@ -1,7 +1,5 @@
 const withPlugins = require('next-compose-plugins');
 const withAntdLess = require('next-plugin-antd-less');
-const lessToJS = require('less-vars-to-js');
-const fs = require('fs');
 const path = require('path');
 
 const withPWA = require('next-pwa');
@@ -13,16 +11,38 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 });
 
-const themeVariables = lessToJS(
-	fs.readFileSync(path.resolve(__dirname, './styles/theme.less'), 'utf8')
-);
+const themeVariables = path.resolve(__dirname, './styles/theme.less');
 
 const lessConfig = {
-	modifyVars: themeVariables, // make your antd custom effective
-	cssLoaderOptions: { modules: true },
-	webpack: (config) => {
-		return config;
+	lessVarsFilePath: themeVariables, // optional
+	cssLoaderOptions: {
+		mode: 'local',
+		localIdentName:
+			process.env.NODE_ENV === 'development'
+				? '[local]--[hash:base64:4]'
+				: '[hash:base64:8]', // invalid! for Unify getLocalIdent (Next.js / CRA), Cannot set it, but you can rewritten getLocalIdentFn
+		exportLocalsConvention: 'camelCase',
+		exportOnlyLocals: false,
+		getLocalIdent: (context, localIdentName, localName, options) => {
+			return 'aci';
+		},
 	},
+	nextjs: {
+		localIdentNameFollowDev: true, // default false, for easy to debug on PROD mode
+	},
+	// webpack: (config) => {
+	// 	config.module.rules.push({
+	// 		test: /\.pdf$/,
+	// 		type: 'asset/resource',
+	// 	});
+
+	// 	config.module.rules.push({
+	// 		test: /pdf\.worker\.(min\.)?js/,
+	// 		type: 'asset/resource',
+	// 	});
+
+	// 	return config;
+	// },
 };
 
 const pwaConfig = {
@@ -38,6 +58,9 @@ const nextConfig = {
 	},
 	async redirects() {
 		return redirects;
+	},
+	experimental: {
+		outputStandalone: true,
 	},
 };
 

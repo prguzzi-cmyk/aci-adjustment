@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import TweenOne from 'rc-tween-one';
+import TweenOne from 'rc-tween-one/lib/TweenOne';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import config from '../../utils/config';
