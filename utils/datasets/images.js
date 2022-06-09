@@ -8,7 +8,7 @@ const BannersPath = '/images/banners/';
 const General = {
 	bannerHome: {
 		src: `${BannersPath}home.jpg`,
-		alt: 'Home Banner',
+		alt: 'insurance adjuster Newtown, PA/public adjusters PA/public adjusters Newtown, PA /claim adjuster Newtown, PA /public adjuster group PA/public adjuster group Newtown, PA',
 	},
 	bannerDefault: {
 		src: `${BannersPath}home.jpg`,
@@ -42,7 +42,7 @@ const General = {
 	},
 	bannerOurServices: {
 		src: `${BannersPath}our-services.jpg`,
-		alt: 'Our Services Banner',
+		alt: 'insurance claim adjuster Newtown, PA/insurance property claim adjuster Newtown, PA',
 	},
 	bannerFileClaim: {
 		src: `${BannersPath}file-claim.jpg`,

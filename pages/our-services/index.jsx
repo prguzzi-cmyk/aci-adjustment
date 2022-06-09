@@ -9,12 +9,12 @@ require('../../styles/modules/our-services.less');
 
 export default function OurServices() {
 	const LayoutConfig = {
-		title: 'Claims Services For Property Disasters',
+		title: 'Insurance Claim Adjuster in Newtown, PA',
 		description:
-			'Your advocate for insurance claim for all kind of natural and accidental disasters in Pennsylvania. We will help you for a free damage evaluation and get your claim from the companies.',
+			'ACI Adjustment Group Inc. in Newtown, PA, offers an easy 3-step property claim process! Contact us to speak to one of our insurance claim adjusters today!',
 		banner: {
 			image: dataset.images.bannerOurServices,
-			title: dataset.router.services.label,
+			title: 'Insurance Property Claim Adjuster in Newtown, PA',
 		},
 		breadcrumb: [dataset.router.services],
 		className: dataset.router.services.key,

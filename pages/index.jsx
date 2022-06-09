@@ -20,14 +20,14 @@ const { Link } = Typography;
 
 export default function Home() {
 	const LayoutConfig = {
-		title: 'Public Adjuster Near Me | Lowest Fee',
+		title: 'Claim Adjuster Group in Newtown, PA',
 		description:
-			'Call ACI Adjustment today, top rated Public Adjusters. Get your loss assessment today. Settle for Residential & Commercial Claims.',
+			'ACI Adjustment Group is a public adjuster group serving the Newtown, PA, area. Call us at 1-800-809-4302 to schedule a free inspection!',
 		canonical: dataset.router.home.url,
 		structuredData: HomePageData(),
 		banner: {
 			image: dataset.images.bannerHome,
-			title: dataset.general.description,
+			title: 'Insurance Adjuster Serving the Newtown, PA, Area',
 			tagline: `${dataset.general.name} ${dataset.general.tagline}`,
 			content: 'GET A FREE INSPECTION TODAY!',
 			button: (
