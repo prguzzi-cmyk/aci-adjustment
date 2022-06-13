@@ -27,7 +27,7 @@ export default function Home() {
 		structuredData: HomePageData(),
 		banner: {
 			image: dataset.images.bannerHome,
-			title: 'Insurance Adjuster Serving the Newtown, PA, Area',
+			title: 'Insurance Adjuster Serving the Newtown, PA',
 			tagline: `${dataset.general.name} ${dataset.general.tagline}`,
 			content: 'GET A FREE INSPECTION TODAY!',
 			button: (
