@@ -1,6 +1,7 @@
 import Claims from './images/claims';
 import Awards from './images/awards';
 import { Gallery, FeaturedGallery } from './images/gallery';
+import Programs from './images/programs';
 
 const RootPath = '/images/';
 const BannersPath = '/images/banners/';
@@ -99,6 +100,7 @@ const Images = {
 		...General,
 		...Claims,
 		...Awards,
+		...Programs,
 		gallery: Gallery,
 		featuredGallery: FeaturedGallery,
 	},

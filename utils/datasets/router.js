@@ -25,6 +25,11 @@ const General = {
 		label: 'Tools',
 		key: 'tools',
 	},
+	programs: {
+		path: '/programs',
+		label: 'Programs',
+		key: 'programs',
+	},
 	faq: {
 		path: '/faq',
 		label: 'Frequently Asked Questions',
@@ -273,6 +278,14 @@ const Tools = {
 	},
 };
 
+const Programs = {
+	oneTreePlanted: {
+		path: `${General.programs.path}/one-tree-planted`,
+		label: 'One Tree Planted',
+		key: 'one-tree-planted',
+	},
+};
+
 const Faqs = {
 	faqClaimQuestions: {
 		path: `${General.faq.path}/claim-questions`,
@@ -296,6 +309,7 @@ const Router = {
 		...DamageCommercial,
 		...DamageCommon,
 		...Tools,
+		...Programs,
 		...Faqs,
 	},
 	routerDamageStorm: DamageStorm,

@@ -52,8 +52,8 @@ const FooterLinks = () => {
 						Resources
 					</Title>
 
-					<Link href={dataset.router.schAppointment.path}>
-						<a className='footer-link'>{dataset.router.schAppointment.label}</a>
+					<Link href={dataset.router.programs.path}>
+						<a className='footer-link'>{dataset.router.programs.label}</a>
 					</Link>
 
 					<Link href={dataset.router.policyReview.path}>

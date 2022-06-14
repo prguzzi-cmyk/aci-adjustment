@@ -53,7 +53,7 @@ const galleryImgs = [
 	{
 		name: '9.jpg',
 		alt: keywords[2],
-		featured: true,
+		featured: false,
 	},
 	{
 		name: '10.jpg',
@@ -194,6 +194,11 @@ const galleryImgs = [
 		name: '37.jpeg',
 		alt: keywords[0],
 		featured: false,
+	},
+	{
+		name: '38.jpeg',
+		alt: 'Claims settlements so large we have to have a safe at the office!',
+		featured: true,
 	},
 ];
 

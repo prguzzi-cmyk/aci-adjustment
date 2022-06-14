@@ -9,12 +9,12 @@ require('../../styles/modules/our-services.less');
 
 export default function OurServices() {
 	const LayoutConfig = {
-		title: 'Insurance Claim Adjuster in Newtown, PA',
+		title: 'Public Adjuster near you',
 		description:
 			'ACI Adjustment Group Inc. in Newtown, PA, offers an easy 3-step property claim process! Contact us to speak to one of our insurance claim adjusters today!',
 		banner: {
 			image: dataset.images.bannerOurServices,
-			title: 'Insurance Property Claim Adjuster in Newtown, PA',
+			title: 'Public Adjuster near you',
 		},
 		breadcrumb: [dataset.router.services],
 		className: dataset.router.services.key,
