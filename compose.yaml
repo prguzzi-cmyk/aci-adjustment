@@ -1,5 +1,5 @@
 services:
   webapp:
-    image: aci
+    image: aci/front-end
     ports:
       - 3000:3000
