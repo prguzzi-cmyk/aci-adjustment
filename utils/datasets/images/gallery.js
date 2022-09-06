@@ -200,6 +200,11 @@ const galleryImgs = [
 		alt: 'Claims settlements so large we have to have a safe at the office!',
 		featured: true,
 	},
+	{
+		name: '39.jpeg',
+		alt: keywords[1],
+		featured: false,
+	},
 ];
 
 export const Gallery = galleryImgs.map((value) => {
