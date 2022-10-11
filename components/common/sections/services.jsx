@@ -18,8 +18,7 @@ const ServicesSection = () => {
 	return (
 		<div className='services-container'>
 			<Title level={2} className='title'>
-				<Text>HIGHEST</Text> rated in customer service! <Text>LOWEST</Text>{' '}
-				fees!
+				<Text>Services</Text>
 			</Title>
 
 			<OverPack {...config.OverPack({})}>
