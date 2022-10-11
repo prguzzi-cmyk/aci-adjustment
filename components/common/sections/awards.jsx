@@ -97,7 +97,7 @@ const AwardsSection = () => {
 						</Card>
 					</Col>
 
-					<Col key='4' md={6}>
+					{/* <Col key='4' md={6}>
 						<Card
 							hoverable
 							cover={
@@ -112,7 +112,7 @@ const AwardsSection = () => {
 
 							<Paragraph>#1 in Customer Service & Satisfaction</Paragraph>
 						</Card>
-					</Col>
+					</Col> */}
 				</QueueAnim>
 			</OverPack>
 		</div>

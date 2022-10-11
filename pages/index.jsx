@@ -44,7 +44,7 @@ export default function Home() {
 	return (
 		<Layout {...LayoutConfig}>
 			<IntroSection />
-			<RankedSection />
+			{/* <RankedSection /> */}
 			<ConsultationSection />
 			<ServicesSection />
 			<TabSection />

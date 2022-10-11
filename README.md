@@ -4,7 +4,7 @@
 
 ### Build image
 
-    docker build --tag aci-dev .
+    docker build --file Dockerfile.dev --tag aci-dev .
 
 ### Run compose
 
