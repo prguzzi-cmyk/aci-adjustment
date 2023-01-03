@@ -11,7 +11,7 @@ const { Title, Text } = Typography;
 const FaqSection = () => {
 	return (
 		<div className='faq-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Frequently</Text> asked <Text>Questions</Text>
 			</Title>
 

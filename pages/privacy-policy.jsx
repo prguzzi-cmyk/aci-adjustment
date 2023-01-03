@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
 			</div>
 
 			<div className='information-container'>
-				<Title level={2} className='title'>
+				<Title level={3} className='title'>
 					<Text>Information</Text> Collection, Use, and Sharing
 				</Title>
 
@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
 			</div>
 
 			<div className='access-container'>
-				<Title level={2} className='title'>
+				<Title level={3} className='title'>
 					Your Access to and Control Over
 					<Text> Information</Text>
 				</Title>
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
 			</div>
 
 			<div className='security-container'>
-				<Title level={2} className='title'>
+				<Title level={3} className='title'>
 					<Text>Security</Text>
 				</Title>
 
@@ -164,7 +164,7 @@ export default function PrivacyPolicy() {
 			</div>
 
 			<div className='cookies-container'>
-				<Title level={2} className='title'>
+				<Title level={3} className='title'>
 					<Text>Cookies</Text>
 				</Title>
 
@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
 			</div>
 
 			<div className='links-container'>
-				<Title level={2} className='title'>
+				<Title level={3} className='title'>
 					<Text>Links</Text>
 				</Title>
 

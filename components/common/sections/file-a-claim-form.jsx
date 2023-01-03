@@ -160,7 +160,7 @@ const FileClaimSection = () => {
 
 	return (
 		<div className='file-claim-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				Claim <Text>Submission</Text> Form
 			</Title>
 

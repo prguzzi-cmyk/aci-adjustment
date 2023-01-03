@@ -126,7 +126,7 @@ const CareerFormSection = () => {
 
 	return (
 		<div className='careers-form'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Apply Now</Text>
 			</Title>
 

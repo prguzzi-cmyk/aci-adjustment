@@ -17,7 +17,7 @@ const DamageSection = () => {
 
 	return (
 		<div className='damage-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Damage</Text> Types
 			</Title>
 

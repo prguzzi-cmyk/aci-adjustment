@@ -11,7 +11,7 @@ const { Title, Text, Paragraph } = Typography;
 const FireResourcesSection = () => {
 	return (
 		<div className='fire-resources-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Fire</Text> Resources
 			</Title>
 

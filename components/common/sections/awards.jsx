@@ -54,7 +54,7 @@ const AwardsSection = () => {
 									href='https://www.inc.com/profile/aci-estate'
 									title='Inc ACI Profile'
 									target='_blank'
-									rel='noopener'
+									rel='noreferrer'
 								>
 									<Image
 										src={dataset.images.awardsInc500.src}
@@ -68,6 +68,7 @@ const AwardsSection = () => {
 								href='https://www.inc.com/profile/aci-estate'
 								title='Inc ACI Profile'
 								target='_blank'
+								rel='noreferrer'
 							>
 								<Meta title='Inc. 500' description='2008 & 2009' />
 							</a>

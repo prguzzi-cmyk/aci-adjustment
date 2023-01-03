@@ -76,7 +76,7 @@ const CareerFormSection = () => {
 
 	return (
 		<div className='form-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Ask us.</Text> We are here to help!
 			</Title>
 
