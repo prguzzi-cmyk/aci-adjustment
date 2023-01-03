@@ -30,7 +30,7 @@ const PostDetail = ({ post }) => {
 				<QueueAnim key='posts-queue' {...config.QueueAnim({})}>
 					<div key='1' dangerouslySetInnerHTML={{ __html: post.content }} />
 					<div key='aci-services' className='aci-services'>
-						<h2>ACI Adjustment Group Services</h2>
+						<h3>ACI Adjustment Group Services</h3>
 						<Text>
 							ACI Adjustment group provides assistance with insurance claim
 							investigation in{' '}
