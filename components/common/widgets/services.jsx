@@ -48,7 +48,7 @@ const WidgetServices = () => {
 
 	return (
 		<div className='widget-services-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Services</Text> we provide
 			</Title>
 
