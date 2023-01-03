@@ -19,6 +19,7 @@ ENV HOST=0.0.0.0
 ENV PORT=3000
 ENV NODE_ENV=development
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV ANALYZE=true
 
 COPY --from=deps /app/package-lock.json ./
 COPY --from=deps /app/node_modules ./node_modules

@@ -54,6 +54,7 @@ const AwardsSection = () => {
 									href='https://www.inc.com/profile/aci-estate'
 									title='Inc ACI Profile'
 									target='_blank'
+									rel='noopener'
 								>
 									<Image
 										src={dataset.images.awardsInc500.src}

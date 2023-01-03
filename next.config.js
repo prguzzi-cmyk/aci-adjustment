@@ -30,19 +30,6 @@ const lessConfig = {
 	nextjs: {
 		localIdentNameFollowDev: true, // default false, for easy to debug on PROD mode
 	},
-	// webpack: (config) => {
-	// 	config.module.rules.push({
-	// 		test: /\.pdf$/,
-	// 		type: 'asset/resource',
-	// 	});
-
-	// 	config.module.rules.push({
-	// 		test: /pdf\.worker\.(min\.)?js/,
-	// 		type: 'asset/resource',
-	// 	});
-
-	// 	return config;
-	// },
 };
 
 const pwaConfig = {
@@ -50,6 +37,62 @@ const pwaConfig = {
 		dest: 'public',
 		runtimeCaching,
 	},
+};
+
+// Before defining your Security Headers
+// add Content Security Policy directives using a template string.
+// let ContentSecurityPolicy = '';
+let ContentSecurityPolicy = `
+  default-src 'self' *.google-analytics.com *.facebook.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google.com *.gstatic.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.googleadservices.com *.facebook.net *.facebook.com *.setmore.com *.youtube.com;
+  img-src 'self' data: *.facebook.com *.google.com *.google.co.in *.googleapis.com *.google-analytics.com *.doubleclick.net  *.amazonaws.com;
+  style-src 'unsafe-inline' 'self' *.setmore.com;
+  font-src 'self';
+  frame-src *.google.com *.youtube.com;
+`;
+
+if (process.env.NODE_ENV == 'production') {
+	ContentSecurityPolicy = `
+  default-src 'self' *.google-analytics.com *.facebook.com;
+  script-src 'self' 'unsafe-inline' *.google.com *.gstatic.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.googleadservices.com *.facebook.net *.facebook.com *.setmore.com *.youtube.com;
+  img-src 'self' data: *.facebook.com *.google.com *.google.co.in *.googleapis.com *.google-analytics.com *.doubleclick.net  *.amazonaws.com;
+  style-src 'unsafe-inline' 'self' *.setmore.com;
+  font-src 'self';
+  frame-src *.google.com *.youtube.com;
+`;
+}
+
+const securityHeaders = [
+	{
+		key: 'Content-Security-Policy',
+		value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+	},
+	{
+		key: 'Strict-Transport-Security',
+		value: 'max-age=63072000; includeSubDomains; preload',
+	},
+	{
+		key: 'X-Content-Type-Options',
+		value: 'nosniff',
+	},
+	{
+		key: 'X-Frame-Options',
+		value: 'SAMEORIGIN',
+	},
+	{
+		key: 'Referrer-Policy',
+		value: 'strict-origin-when-cross-origin',
+	},
+];
+
+const headers = async () => {
+	return [
+		{
+			// Apply these headers to all routes in your application.
+			source: '/:path*',
+			headers: securityHeaders,
+		},
+	];
 };
 
 const nextConfig = {
@@ -62,11 +105,12 @@ const nextConfig = {
 	experimental: {
 		outputStandalone: true,
 	},
+	headers,
 };
 
 module.exports = withPlugins([
-	[withBundleAnalyzer({})],
 	[withAntdLess, lessConfig],
 	[withPWA, pwaConfig],
 	nextConfig,
+	[withBundleAnalyzer],
 ]);
