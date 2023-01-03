@@ -9,7 +9,7 @@ const { Title, Text, Paragraph } = Typography;
 const MoneyPartSection = ({ community }) => {
 	return (
 		<div className='money-part-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				The <Text>Money</Text> Part
 			</Title>
 

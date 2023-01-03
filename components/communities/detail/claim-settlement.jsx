@@ -9,7 +9,7 @@ const { Title, Text, Paragraph } = Typography;
 const ClaimSettlementSection = ({ community }) => {
 	return (
 		<div className='claim-settlement-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				Insurance Claim <Text>Settlement</Text>
 			</Title>
 

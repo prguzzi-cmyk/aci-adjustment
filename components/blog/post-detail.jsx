@@ -84,7 +84,7 @@ const PostDetail = ({ post }) => {
 					</div>
 
 					<div key='aci-contacting' className='aci-contacting'>
-						<h2>Contacting Us</h2>
+						<h3>Contacting Us</h3>
 						<Text>
 							If you want assistance in any property insurance related issue,
 							you can contact us 24/7 via our toll free number{' '}

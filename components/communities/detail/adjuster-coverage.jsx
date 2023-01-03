@@ -9,7 +9,7 @@ const { Title, Text, Paragraph } = Typography;
 const AdjusterCoverageSection = ({ community }) => {
 	return (
 		<div className='adjuster-coverage-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				Public{' '}
 				<Text>
 					Adjuster
