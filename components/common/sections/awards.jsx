@@ -12,7 +12,7 @@ const { Meta } = Card;
 const AwardsSection = () => {
 	return (
 		<div className='award-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				<Text>Awards</Text> &amp; <Text>Achievements</Text>
 			</Title>
 

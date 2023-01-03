@@ -11,7 +11,7 @@ const { Title, Text, Link } = Typography;
 const IntroSection = () => {
 	return (
 		<div className='intro-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				Our <Text>Mission</Text>
 			</Title>
 

@@ -12,7 +12,7 @@ const { Title, Text } = Typography;
 const ConsultationSection = () => {
 	return (
 		<div className='consult-container'>
-			<Title level={2} className='consult-title'>
+			<Title level={3} className='consult-title'>
 				Call{' '}
 				<Link href={`tel:${dataset.general.phone}`}>
 					<a>{dataset.general.phoneFormatted}</a>

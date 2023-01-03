@@ -11,7 +11,7 @@ const { Title, Text } = Typography;
 const GallerySection = () => {
 	return (
 		<div className='featured-gallery-container'>
-			<Title level={2} className='title'>
+			<Title level={3} className='title'>
 				ACI <Text>Gallery</Text>
 			</Title>
 
