@@ -16,10 +16,10 @@ const Banner = ({ banner }) => {
 								? banner.image.alt
 								: 'Banner Image'
 						}
-						loading='eager'
+						priority='true'
 						layout='fill'
 						objectFit='cover'
-						quality={20}
+						quality={10}
 					/>
 				</div>
 

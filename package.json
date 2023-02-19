@@ -18,6 +18,7 @@
 	"dependencies": {
 		"@ant-design/icons": "4.7.0",
 		"@aws-sdk/client-dynamodb": "3.87.0",
+		"@builder.io/partytown": "0.7.5",
 		"@next/bundle-analyzer": "12.1.6",
 		"antd": "4.20.4",
 		"babel-plugin-import": "1.13.5",
@@ -39,8 +40,8 @@
 		"react-dom": "17.0.2",
 		"react-google-recaptcha": "2.1.0",
 		"react-youtube": "9.0.1",
+		"sharp": "0.30.4",
 		"superjson": "1.9.1",
-		"xmlbuilder2": "3.0.2",
-		"sharp": "0.30.4"
+		"xmlbuilder2": "3.0.2"
 	}
 }

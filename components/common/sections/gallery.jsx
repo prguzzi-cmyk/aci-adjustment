@@ -1,5 +1,6 @@
-import { Row, Col, Card, Typography, Image, Button } from 'antd';
+import { Row, Col, Typography, Button } from 'antd';
 import Link from 'next/link';
+import Image from 'next/image';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
@@ -27,9 +28,15 @@ const GallerySection = () => {
 				>
 					{dataset.images.featuredGallery.map((ele, index) => (
 						<Col key={index} md={6}>
-							<Card hoverable>
-								<Image src={ele.src} alt={ele.alt} />
-							</Card>
+							<Image
+								src={ele.src}
+								alt={ele.alt}
+								loading='lazy'
+								layout='responsive'
+								width='100'
+								height='150'
+								quality={50}
+							/>
 						</Col>
 					))}
 				</QueueAnim>

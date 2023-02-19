@@ -104,6 +104,7 @@ const nextConfig = {
 	},
 	experimental: {
 		outputStandalone: true,
+		nextScriptWorkers: true,
 	},
 	headers,
 };
