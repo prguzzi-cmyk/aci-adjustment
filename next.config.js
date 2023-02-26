@@ -45,7 +45,7 @@ const pwaConfig = {
 let ContentSecurityPolicy = `
   default-src 'self' *.youtube.com *.google-analytics.com *.facebook.com *.gstatic.com *.google.com *.googletagmanager.com *.googleapis.com *.setmore.com *.amazonaws.com;
   script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google.com *.gstatic.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.googleadservices.com *.facebook.net *.facebook.com *.setmore.com *.youtube.com;
-  img-src 'self' data: *.facebook.com *.google.com *.google.co.in *.googleapis.com *.google-analytics.com *.doubleclick.net  *.amazonaws.com *.youtube.com *.gstatic.com *.googletagmanager.com;
+  img-src 'self' data: *.facebook.com *.google.com *.google.co.in *.googleapis.com *.google-analytics.com *.doubleclick.net  *.amazonaws.com *.youtube.com *.gstatic.com *.googletagmanager.com securesslcom.a.cdnify.io;
   style-src 'unsafe-inline' 'self' *.setmore.com *.youtube.com *.gstatic.com;
   font-src 'self';
   frame-src *.google.com *.youtube.com *.gstatic.com;
@@ -55,7 +55,7 @@ if (process.env.NODE_ENV == 'production') {
 	ContentSecurityPolicy = `
   default-src 'self' *.google-analytics.com *.facebook.com *.gstatic.com *.youtube.com *.google.com *.googletagmanager.com *.googleapis.com *.setmore.com *.amazonaws.com;
   script-src 'self' 'unsafe-inline' *.google.com *.gstatic.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.googleadservices.com *.facebook.net *.facebook.com *.setmore.com *.youtube.com;
-  img-src 'self' data: *.facebook.com *.google.com *.google.co.in *.googleapis.com *.google-analytics.com *.doubleclick.net  *.amazonaws.com *.gstatic.com *.youtube.com *.googletagmanager.com;
+  img-src 'self' data: *.facebook.com *.google.com *.google.co.in *.googleapis.com *.google-analytics.com *.doubleclick.net  *.amazonaws.com *.gstatic.com *.youtube.com *.googletagmanager.com securesslcom.a.cdnify.io;
   style-src 'unsafe-inline' 'self' *.setmore.com *.gstatic.com *.youtube.com;
   font-src 'self';
   frame-src *.google.com *.youtube.com *.gstatic.com;
@@ -97,7 +97,7 @@ const headers = async () => {
 
 const nextConfig = {
 	images: {
-		domains: ['public-adjusters.s3.amazonaws.com'],
+		domains: ['public-adjusters.s3.amazonaws.com', 'securesslcom.a.cdnify.io'],
 	},
 	async redirects() {
 		return redirects;
