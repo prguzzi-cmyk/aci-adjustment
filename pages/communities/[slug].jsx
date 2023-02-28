@@ -44,7 +44,7 @@ export default function Community({ community }) {
 		description: `Leading public adjuster in ${
 			CommunityLable ? CommunityLable : 'USA'
 		}, get your insurance claims and settlements. Have property claim issues? We are here to provide you best solutions for claims and adjustment. Get more money for your settlements and claim.`,
-		canonical:`${dataset.router.home.url}${dataset.router.communities.path}/${community.CommunitySlug.S}`,
+		canonical: dataset.router.home.url,
 		structuredData: CommunityPageData(),
 		banner: {
 			title: pageHeading,
