@@ -45,6 +45,10 @@ const FooterLinks = () => {
 					<Link href={dataset.router.aboutUs.path}>
 						<a className='footer-link'>{dataset.router.aboutUs.label}</a>
 					</Link>
+
+					<Link href={dataset.router.becomeAdjuster.path}>
+						<a className='footer-link'>{dataset.router.becomeAdjuster.label}</a>
+					</Link>
 				</Col>
 
 				<Col key='2' xs={24} md={8}>
