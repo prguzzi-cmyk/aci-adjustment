@@ -70,6 +70,11 @@ const General = {
 		label: 'Contact Us',
 		key: 'contact-us',
 	},
+	becomeAdjuster: {
+		path: '/how-to-become-adjuster',
+		label: 'How to become Adjuster',
+		key: 'how-to-become-adjuster',
+	},
 };
 
 const Claims = {
