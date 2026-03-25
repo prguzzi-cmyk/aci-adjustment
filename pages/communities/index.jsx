@@ -33,20 +33,32 @@ export default function Communities({ states, counties, communities }) {
 }
 
 export async function getStaticProps() {
-	const dynamoDb = new DynamoDb();
+	try {
+		const dynamoDb = new DynamoDb();
 
-	const states = await dynamoDb.getStates();
-	const counties = await dynamoDb.getCounties(process.env.DEF_STATE);
-	const communities = await dynamoDb.getCommunities(
-		process.env.DEF_STATE,
-		process.env.DEF_COUNTY
-	);
+		const states = await dynamoDb.getStates();
+		const counties = await dynamoDb.getCounties(process.env.DEF_STATE);
+		const communities = await dynamoDb.getCommunities(
+			process.env.DEF_STATE,
+			process.env.DEF_COUNTY
+		);
 
-	return {
-		props: {
-			states: states.Items,
-			counties: counties.Items,
-			communities: communities.Items,
-		},
-	};
+		return {
+			props: {
+				states: states.Items,
+				counties: counties.Items,
+				communities: communities.Items,
+			},
+			revalidate: 60,
+		};
+	} catch (e) {
+		return {
+			props: {
+				states: [],
+				counties: [],
+				communities: [],
+			},
+		};
+	}
 }
+

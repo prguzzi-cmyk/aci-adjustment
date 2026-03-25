@@ -87,32 +87,36 @@ export default function Community({ community }) {
 }
 
 export async function getStaticPaths() {
-	const dynamoDb = new DynamoDb();
-
-	const paths = await dynamoDb.getDefCommunities();
-
-	return {
-		paths,
-		fallback: 'blocking',
-	};
+	try {
+		const dynamoDb = new DynamoDb();
+		const paths = await dynamoDb.getDefCommunities();
+		return { paths, fallback: 'blocking' };
+	} catch (e) {
+		return { paths: [], fallback: 'blocking' };
+	}
 }
 
 export async function getStaticProps({ params }) {
-	const dynamoDb = new DynamoDb();
+	try {
+		const dynamoDb = new DynamoDb();
+		let community = await dynamoDb.getCommunity(params.slug);
 
-	let community = await dynamoDb.getCommunity(params.slug);
+		if (!community) {
+			community = {
+				Community: { S: '' },
+				CommunitySlug: { S: params.slug },
+			};
+		}
 
-	if (!community) {
-		community = {
-			Community: { S: '' },
-			CommunitySlug: { S: params.slug },
+		return { props: { community }, revalidate: 1 };
+	} catch (e) {
+		return {
+			props: {
+				community: {
+					Community: { S: '' },
+					CommunitySlug: { S: params.slug },
+				},
+			},
 		};
 	}
-
-	return {
-		props: {
-			community,
-		},
-		revalidate: 1,
-	};
 }

@@ -61,27 +61,31 @@ export default function Blog({ meta, posts }) {
 }
 
 export async function getServerSideProps({ query }) {
-	const page = (query && query.page) || 1; //if page empty we request the first page
+	try {
+		const page = (query && query.page) || 1;
 
-	const meta = {
-		totalCount: 0,
-		currentPage: page,
-		perPage: 12,
-	}; //default meta for pagination
+		const meta = {
+			totalCount: 0,
+			currentPage: page,
+			perPage: 12,
+		};
 
-	const posts = await getSortedPostsData({
-		offset: (meta.currentPage - 1) * meta.perPage,
-		limit: meta.perPage,
-	});
+		const posts = await getSortedPostsData({
+			offset: (meta.currentPage - 1) * meta.perPage,
+			limit: meta.perPage,
+		});
 
-	if (posts && posts[0]) {
-		meta.totalCount = posts[0].total_count;
+		if (posts && posts[0]) {
+			meta.totalCount = posts[0].total_count;
+		}
+
+		return { props: { meta, posts } };
+	} catch (e) {
+		return {
+			props: {
+				meta: { totalCount: 0, currentPage: 1, perPage: 12 },
+				posts: [],
+			},
+		};
 	}
-
-	return {
-		props: {
-			meta,
-			posts,
-		},
-	};
 }

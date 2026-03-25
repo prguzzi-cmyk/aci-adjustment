@@ -53,21 +53,19 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
-	const paths = await getPostsSlug();
-
-	return {
-		paths,
-		fallback: 'blocking',
-	};
+	try {
+		const paths = await getPostsSlug();
+		return { paths, fallback: 'blocking' };
+	} catch (e) {
+		return { paths: [], fallback: 'blocking' };
+	}
 }
 
 export async function getStaticProps({ params }) {
-	const post = await getPostData(params.slug);
-
-	return {
-		props: {
-			post,
-		},
-		revalidate: 1,
-	};
+	try {
+		const post = await getPostData(params.slug);
+		return { props: { post }, revalidate: 1 };
+	} catch (e) {
+		return { props: { post: null } };
+	}
 }
